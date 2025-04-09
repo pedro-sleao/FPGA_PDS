@@ -1,10 +1,11 @@
-`include "./hdl_files/multiplicador_defines.sv"
+`include "./multiplicador_defines.sv"
 
 module controlador_ram
 (
     input          clk_i,
     input          rst_i,
-    input          strt_cmpt_i,      
+	 input          control_i,
+	 input          end_mult_i,
     output [2:0]   state_o
 );
 
@@ -22,52 +23,59 @@ assign state_o = state;
     always @(posedge clk_i, negedge rst_i) 
 	 begin
         if (rst_i == 1'b0)
-            state <= ST_IDLE;
+            state <= ST_RAM_IDLE;
         else
             state <= next_state;
     end
 
     // transiction logic
-    always @(strt_cmpt_i, state) begin
+    always @(control_i, end_mult_i, state) begin
         case (state)
-            ST_IDLE:
+            ST_RAM_IDLE:
             begin
-                if(strt_cmpt_i)
-                    next_state   <=  ST_BIT0;
+                if(control_i)
+                    next_state   <=  ST_RAM_READ_NUMBERS;
                 else
-                    next_state   <=  ST_IDLE;
+                    next_state   <=  ST_RAM_IDLE;
             end    
-            ST_BIT0:
+            ST_RAM_READ_NUMBERS:
             begin   
-					 next_state   <=  ST_BIT1;
+					 next_state   <=  ST_RAM_INIT_CALC;
             end
             
-            ST_BIT1:
+            ST_RAM_INIT_CALC:
 				begin		  
-					 next_state   <=  ST_BIT2;
+					 next_state   <=  ST_RAM_WAIT_CALC;
 				end
-				ST_BIT2:
+				ST_RAM_WAIT_CALC:
 				begin
-					 next_state   <=  ST_BIT3;
+					 if(end_mult_i)
+                    next_state   <=  ST_RAM_STORE_RESULT;
+                else
+                    next_state   <=  ST_RAM_WAIT_CALC;
 				end
-			   ST_BIT3:
+			   ST_RAM_STORE_RESULT:
 				begin
-					 next_state   <=  ST_END;
+					 next_state   <=  ST_RAM_END_CALC;
 				end
-				ST_END:
+				ST_RAM_END_CALC:
 				begin
-					 if (strt_cmpt_i == 1'b0)
-					 begin
-						  next_state <= ST_IDLE;
-					 end
-					 else
-					 begin
-						  next_state <= ST_END;
-					 end
+					 next_state   <=  ST_RAM_WAIT_CONTROL;
+				end
+				ST_RAM_WAIT_CONTROL:
+				begin
+					 if(control_i)
+                    next_state   <=  ST_RAM_WAIT_CONTROL;
+                else
+                    next_state   <=  ST_RAM_RESET_STATUS;
+				end
+				ST_RAM_RESET_STATUS:
+				begin
+					 next_state   <=  ST_RAM_IDLE;
 				end
             default: 
             begin   
-                next_state     <= ST_IDLE;
+                next_state     <= ST_RAM_IDLE;
             end
         endcase
     end

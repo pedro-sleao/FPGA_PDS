@@ -98,12 +98,70 @@ wire                hps_warm_reset;
 wire                hps_debug_reset;
 wire     [27: 0]    stm_hw_events;
 wire                fpga_clk_50;
+wire					  write_ram_en;
+wire		[31: 0]	  ram_address;
+wire		[7: 0]	  write_ram_data;
+wire		[2: 0]	  state_ram_o_w;
+wire					  control_reg_i_w;
+wire					  control_reg_o_w;
+wire		[3: 0]     A_i_w, A_o_w, B_i_w, B_o_w;
+wire		[7: 0]	  Y_o_w;
+wire					  fim_o_w;
+wire					  en_mult;
+wire		[7: 0]	  read_ram;
 // connection of internal logics
 assign fpga_clk_50 = FPGA_CLK1_50;
 assign stm_hw_events = {{15{1'b0}}, SW, fpga_led_internal, fpga_debounced_buttons};
-// test ram regs
-reg [7:0] numbers_reg;
+assign ram_address = (state_ram_o_w == ST_RAM_IDLE) ? 1'b0 :
+							(state_ram_o_w == ST_RAM_READ_NUMBERS) ? 1'b1 :
+							(state_ram_o_w == ST_RAM_STORE_RESULT) ? 2'b10 : 
+							(state_ram_o_w == ST_RAM_END_CALC) ? 2'b11 :
+							(state_ram_o_w == ST_RAM_WAIT_CONTROL) ? 1'b0 :
+							(state_ram_o_w == ST_RAM_RESET_STATUS) ? 2'b11 : 1'b0;
+assign control_reg_i_w = (state_ram_o_w == ST_RAM_IDLE | state_ram_o_w == ST_RAM_WAIT_CONTROL) ? read_ram[0] : control_reg_o_w;
+assign write_ram_data = (state_ram_o_w == ST_RAM_STORE_RESULT) ? Y_o_w :
+								(state_ram_o_w == ST_RAM_END_CALC) ? 1'b1 : 1'b0;
+assign write_ram_en = (state_ram_o_w == ST_RAM_STORE_RESULT | state_ram_o_w == ST_RAM_END_CALC | state_ram_o_w == ST_RAM_RESET_STATUS) ? 1 : 0;
+assign A_i_w = (state_ram_o_w == ST_RAM_READ_NUMBERS) ? read_ram[3:0] : A_o_w;
+assign B_i_w = (state_ram_o_w == ST_RAM_READ_NUMBERS) ? read_ram[7:4] : B_o_w;
+assign en_mult = (state_ram_o_w >= ST_RAM_INIT_CALC & state_ram_o_w <= ST_RAM_RESET_STATUS) ? 1 : 0;
 
+// test ram regs
+registrador
+	#(
+	.DATA_WIDTH(1)
+	)
+	control_reg_inst
+		(
+		.clk (FPGA_CLK1_50),
+		.reset (1'b1),
+		.data_i (control_reg_i_w),
+		.data_o (control_reg_o_w)
+		);
+		
+registrador
+	#(
+	.DATA_WIDTH(4)
+	)
+	A_reg_inst
+		(
+		.clk (FPGA_CLK1_50),
+		.reset (1'b1),
+		.data_i (A_i_w),
+		.data_o (A_o_w)
+		);
+	
+registrador
+	#(
+	.DATA_WIDTH(4)
+	)
+	B_reg_inst
+		(
+		.clk (FPGA_CLK1_50),
+		.reset (1'b1),
+		.data_i (B_i_w),
+		.data_o (B_o_w)
+		);
 
 
 //=======================================================
@@ -196,17 +254,36 @@ soc_system u0(
                .hps_0_f2h_debug_reset_req_reset_n(~hps_debug_reset),        //      hps_0_f2h_debug_reset_req.reset_n
                .hps_0_f2h_stm_hw_events_stm_hwevents(stm_hw_events),        //        hps_0_f2h_stm_hw_events.stm_hwevents
                .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset),          //       hps_0_f2h_warm_reset_req.reset_n
-					.ramteste_s2_address                   (1'b1),                   //                    ramteste_s2.address
+					.ramteste_s2_address                   (ram_address),                   //                    ramteste_s2.address
 				   .ramteste_s2_chipselect                (1),                //                               .chipselect
 				   .ramteste_s2_clken                     (1),                     //                               .clken
-				   .ramteste_s2_write                     (0),                     //                               .write
-				   .ramteste_s2_readdata                  (numbers_reg),                  //                               .readdata
-				   .ramteste_s2_writedata                 (),                 //                               .writedata
+				   .ramteste_s2_write                     (write_ram_en),                     //                               .write
+				   .ramteste_s2_readdata                  (read_ram),                  //                               .readdata
+				   .ramteste_s2_writedata                 (write_ram_data),                 //                               .writedata
 				   .ramteste_s2_byteenable                (4'b1111),                //                               .byteenable
 				   .ramteste_clk2_clk                     (FPGA_CLK1_50),                     //                  ramteste_clk2.clk
 				   .ramteste_reset2_reset                 (),                 //                ramteste_reset2.reset
 				   .ramteste_reset2_reset_req             ()              //                               .reset_req
            );
+			  
+
+controlador_ram controlador_ram_inst (
+	 .clk_i (FPGA_CLK1_50),
+	 .rst_i (1'b1),
+	 .control_i (control_reg_o_w),
+	 .end_mult_i (fim_o_w),
+	 .state_o (state_ram_o_w)
+);
+
+mult_4bits mult_4bits_inst (
+	.clk_i (FPGA_CLK1_50),
+	.rst_i (1'b1),
+	.en_i (en_mult),
+	.A_i (read_ram[3:0]),
+	.B_i (read_ram[7:4]),
+	.Y_o (Y_o_w),
+	.fim_o (fim_o_w)
+);
 
 // Debounce logic to clean out glitches within 1ms
 debounce debounce_inst(
@@ -272,7 +349,8 @@ always @(posedge fpga_clk_50 or negedge hps_fpga_reset_n) begin
         counter <= counter + 1'b1;
 end
 
-assign LED = numbers_reg;
+
+assign LED = (KEY[0]) ? Y_o_w : {A_o_w, B_o_w};
 
 
 endmodule

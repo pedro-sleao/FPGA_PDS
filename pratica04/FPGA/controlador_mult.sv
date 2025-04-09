@@ -1,4 +1,4 @@
-`include "./hdl_files/multiplicador_defines.sv"
+`include "./multiplicador_defines.sv"
 
 module controlador_mult
 (

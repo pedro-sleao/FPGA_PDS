@@ -4,10 +4,11 @@ module mult_4bits (
 	input 		en_i,
 	input [3:0] A_i,
 	input [3:0] B_i,
-	output [7:0] Y_o
+	output [7:0] Y_o,
+	output      fim_o	
 );
 
-estado_t state_o_w;
+estado_mult_t state_o_w;
 
 wire [3:0] B_i_w, B_o_w;
 wire [7:0] A_i_w, A_o_w, Y_i_w, Y_o_w;
@@ -62,6 +63,6 @@ controlador_mult controlador_inst (
 );
 
 assign Y_o = Y_o_w;
-
+assign fim_o = (state_o_w == ST_END)? 1'b1: 1'b0;
 
 endmodule

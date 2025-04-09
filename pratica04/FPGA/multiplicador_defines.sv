@@ -16,14 +16,14 @@ typedef enum logic [2:0] {
 } estado_mult_t;
 
 typedef enum logic [2:0] {
-   ST_IDLE = 3'b000, 
-	ST_READ_NUMBERS,
-	ST_INIT_CALC,
-	ST_WAIT_CALC,
-	ST_STORE_RESULT,
-	ST_END_CALC,
-	ST_WAIT_CONTROL,
-	ST_RESET_STATUS
+   ST_RAM_IDLE = 3'b000, 
+	ST_RAM_READ_NUMBERS,
+	ST_RAM_INIT_CALC,
+	ST_RAM_WAIT_CALC,
+	ST_RAM_STORE_RESULT,
+	ST_RAM_END_CALC,
+	ST_RAM_WAIT_CONTROL,
+	ST_RAM_RESET_STATUS
 } estado_ram_t;
 
 `endif

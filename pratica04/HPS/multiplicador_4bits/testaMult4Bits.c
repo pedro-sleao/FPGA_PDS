@@ -40,6 +40,8 @@
 #define PORT_1_MEM_SPAN PORT_1_ADDR_SPAN*32
 #define CONTROL_ADDR 0
 #define NUMBERS_ADDR 1
+#define RESULT_ADDR 2
+#define STATUS_ADDR 3
 
 //UDP
 #define N_BUF    20
@@ -96,14 +98,24 @@ int main()
 	   	else
 	   	{   
 			unsigned int A, B;
+			unsigned int result;
 
             buf[n] = '\0';
 
             int k = sscanf(buf, "%d %d", &A, &B);
-
+			printf("Reset control bit\n");
 			peripheral_write32(dualPortRam, CONTROL_ADDR, 0x0);
+			printf("Writing numbers...\n");
 			peripheral_write32(dualPortRam, NUMBERS_ADDR, ((B & 0xF) << 4)| (A & 0xF));
+			printf("Set control bit\n");
 			peripheral_write32(dualPortRam, CONTROL_ADDR, 0x1);
+
+			while(!peripheral_read32(dualPortRam,STATUS_ADDR));
+
+			result = peripheral_read32(dualPortRam, RESULT_ADDR);
+
+			char result_buf[sizeof(result)];
+			sprintf(result_buf, "%d", result);
 
 			printf("Reading the RAM:\n");
 			for(i = 0; i < PORT_1_ADDR_SPAN; i++)
@@ -112,7 +124,13 @@ int main()
 				mem_read =  peripheral_read32(dualPortRam,i);
 				printf("Endereco: %X, Valor: %X\n", 4*i, mem_read);
 				
-			}		
+			}
+			
+			printf("Devolvendo pacote recebido:\n");
+			n = sendto(sock,result_buf, strlen(result_buf)+1,0,(struct sockaddr *)&from,fromlen);
+			if (n  < 0) printf("sendto");	
+
+			printf("Enviado: '%s' (%d bytes)\n", result_buf, n);
 		}
 	}	
 }
