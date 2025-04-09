@@ -16,7 +16,7 @@ def generate_test_result():
                 f.write(f"{i * b}\n")
 
 generate_test_result()
-serverAddressPort   = ("10.42.0.127", 9090) 
+serverAddressPort   = ("10.42.0.181", 9090) 
 
 # Create a UDP socket at client side
 UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
@@ -39,5 +39,6 @@ for a in range(16):
         
         print("Mensagem recebida:")
         msg = "Resultado {}".format(msgFromServer[0])
+        print(msg)
         
         resultado.append(y == int(msgFromServer[0].decode().strip("\x00")))
