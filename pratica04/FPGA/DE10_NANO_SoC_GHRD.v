@@ -104,7 +104,6 @@ wire		[7: 0]	  write_ram_data;
 wire		[2: 0]	  state_ram_o_w;
 wire					  control_reg_i_w;
 wire					  control_reg_o_w;
-wire		[3: 0]     A_i_w, A_o_w, B_i_w, B_o_w;
 wire		[7: 0]	  Y_o_w;
 wire					  fim_o_w;
 wire					  en_mult;
@@ -122,8 +121,6 @@ assign control_reg_i_w = (state_ram_o_w == ST_RAM_IDLE | state_ram_o_w == ST_RAM
 assign write_ram_data = (state_ram_o_w == ST_RAM_STORE_RESULT) ? Y_o_w :
 								(state_ram_o_w == ST_RAM_END_CALC) ? 1'b1 : 1'b0;
 assign write_ram_en = (state_ram_o_w == ST_RAM_STORE_RESULT | state_ram_o_w == ST_RAM_END_CALC | state_ram_o_w == ST_RAM_RESET_STATUS) ? 1 : 0;
-assign A_i_w = (state_ram_o_w == ST_RAM_READ_NUMBERS) ? read_ram[3:0] : A_o_w;
-assign B_i_w = (state_ram_o_w == ST_RAM_READ_NUMBERS) ? read_ram[7:4] : B_o_w;
 assign en_mult = (state_ram_o_w >= ST_RAM_INIT_CALC & state_ram_o_w <= ST_RAM_RESET_STATUS) ? 1 : 0;
 
 // test ram regs
@@ -138,31 +135,6 @@ registrador
 		.data_i (control_reg_i_w),
 		.data_o (control_reg_o_w)
 		);
-		
-registrador
-	#(
-	.DATA_WIDTH(4)
-	)
-	A_reg_inst
-		(
-		.clk (FPGA_CLK1_50),
-		.reset (1'b1),
-		.data_i (A_i_w),
-		.data_o (A_o_w)
-		);
-	
-registrador
-	#(
-	.DATA_WIDTH(4)
-	)
-	B_reg_inst
-		(
-		.clk (FPGA_CLK1_50),
-		.reset (1'b1),
-		.data_i (B_i_w),
-		.data_o (B_o_w)
-		);
-
 
 //=======================================================
 //  Structural coding
@@ -350,7 +322,7 @@ always @(posedge fpga_clk_50 or negedge hps_fpga_reset_n) begin
 end
 
 
-assign LED = (KEY[0]) ? Y_o_w : {A_o_w, B_o_w};
+assign LED = Y_o_w;
 
 
 endmodule
