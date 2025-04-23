@@ -13,7 +13,7 @@
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "13";
          type = "int";
       }
    }
@@ -34,7 +34,7 @@
    {
       datum _sortIndex
       {
-         value = "0";
+         value = "1";
          type = "int";
       }
    }
@@ -46,11 +46,27 @@
          type = "String";
       }
    }
+   element avmm_to_wishbone_bridge_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element avmm_to_wishbone_bridge_0.avmm
+   {
+      datum baseAddress
+      {
+         value = "262272";
+         type = "String";
+      }
+   }
    element button_pio
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "10";
          type = "int";
       }
       datum sopceditor_expanded
@@ -76,7 +92,7 @@
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "2";
          type = "int";
       }
       datum sopceditor_expanded
@@ -89,7 +105,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "11";
          type = "int";
       }
       datum sopceditor_expanded
@@ -123,7 +139,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "7";
          type = "int";
       }
    }
@@ -131,7 +147,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "6";
          type = "int";
       }
       datum sopceditor_expanded
@@ -144,7 +160,7 @@
    {
       datum _sortIndex
       {
-         value = "2";
+         value = "3";
          type = "int";
       }
       datum sopceditor_expanded
@@ -165,7 +181,7 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "5";
          type = "int";
       }
       datum sopceditor_expanded
@@ -178,7 +194,7 @@
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "9";
          type = "int";
       }
       datum sopceditor_expanded
@@ -204,7 +220,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "12";
          type = "int";
       }
       datum sopceditor_expanded
@@ -230,7 +246,7 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "8";
          type = "int";
       }
    }
@@ -246,7 +262,7 @@
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "4";
          type = "int";
       }
       datum sopceditor_expanded
@@ -289,6 +305,11 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
+ <interface
+   name="avmm_to_wishbone_bridge_0_wishbone"
+   internal="avmm_to_wishbone_bridge_0.wishbone"
+   type="conduit"
+   dir="end" />
  <interface
    name="button_pio_external_connection"
    internal="button_pio.external_connection"
@@ -381,6 +402,15 @@
   <parameter name="useNonDefaultInitFile" value="false" />
   <parameter name="useShallowMemBlocks" value="false" />
   <parameter name="writable" value="true" />
+ </module>
+ <module
+   name="avmm_to_wishbone_bridge_0"
+   kind="avmm_to_wishbone_bridge"
+   version="1.0"
+   enabled="1">
+  <parameter name="BE_WIDTH" value="4" />
+  <parameter name="BUS_WIDTH" value="5" />
+  <parameter name="DATA_WIDTH" value="32" />
  </module>
  <module name="button_pio" kind="altera_avalon_pio" version="20.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="true" />
@@ -1050,6 +1080,15 @@
    kind="avalon"
    version="20.1"
    start="hps_0.h2f_lw_axi_master"
+   end="avmm_to_wishbone_bridge_0.avmm">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00040080" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="20.1"
+   start="hps_0.h2f_lw_axi_master"
    end="mm_bridge_0.s0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
@@ -1213,6 +1252,11 @@
    kind="clock"
    version="20.1"
    start="clk_0.clk"
+   end="avmm_to_wishbone_bridge_0.clock" />
+ <connection
+   kind="clock"
+   version="20.1"
+   start="clk_0.clk"
    end="hps_0.f2h_axi_clock" />
  <connection
    kind="clock"
@@ -1304,6 +1348,11 @@
    version="20.1"
    start="clk_0.clk_reset"
    end="mm_bridge_0.reset" />
+ <connection
+   kind="reset"
+   version="20.1"
+   start="clk_0.clk_reset"
+   end="avmm_to_wishbone_bridge_0.reset" />
  <connection
    kind="reset"
    version="20.1"

@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2025.04.02.08:57:51</td>
+    <td class="l">2025.04.23.09:05:03</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -93,6 +93,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <br/>&#160;&#160;
      <a href="#module_RAMteste"><b>RAMteste</b>
      </a> altera_avalon_onchip_memory2 20.1
+     <br/>&#160;&#160;
+     <a href="#module_avmm_to_wishbone_bridge_0"><b>avmm_to_wishbone_bridge_0</b>
+     </a> avmm_to_wishbone_bridge 1.0
      <br/>&#160;&#160;
      <a href="#module_button_pio"><b>button_pio</b>
      </a> altera_avalon_pio 20.1
@@ -212,6 +215,29 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_avmm_to_wishbone_bridge_0"><b>avmm_to_wishbone_bridge_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avmm&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00040080</td>
+    <td class="addr"><span style="color:#989898">0x</span>ff240080</td>
+    <td class="addr"><span style="color:#989898">0x</span>ff240080</td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -1714,6 +1740,81 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
       </table>
      </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_avmm_to_wishbone_bridge_0"> </a>
+  <div>
+   <hr/>
+   <h2>avmm_to_wishbone_bridge_0</h2>avmm_to_wishbone_bridge v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_hps_0_bridges">hps_0_bridges</a>
+      </td>
+      <td class="from">h2f_lw&#160;&#160;</td>
+      <td class="main" rowspan="7">avmm_to_wishbone_bridge_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avmm</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">BUS_WIDTH</td>
+        <td class="parametervalue">5</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">BE_WIDTH</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
     </tr>
    </table>
   </div>
@@ -21580,7 +21681,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_hps_0_clk_0">hps_0_clk_0</a>
       </td>
       <td class="from">clk_reset&#160;&#160;</td>
-      <td class="main" rowspan="150">hps_0_bridges</td>
+      <td class="main" rowspan="153">hps_0_bridges</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset_sink</td>
@@ -22293,6 +22394,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;axi_slave0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">h2f_lw&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_avmm_to_wishbone_bridge_0">avmm_to_wishbone_bridge_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avmm</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -30791,7 +30908,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">timestamp</td>
-        <td class="parametervalue">1743595070</td>
+        <td class="parametervalue">1745409902</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -30816,7 +30933,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TIMESTAMP</td>
-        <td class="parametervalue">1743595070</td>
+        <td class="parametervalue">1745409902</td>
        </tr>
       </table>
      </td>
@@ -30825,8 +30942,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </div>
   <table class="blueBar">
    <tr>
-    <td class="l">generation took 0.01 seconds</td>
-    <td class="r">rendering took 0.45 seconds</td>
+    <td class="l">generation took 0.02 seconds</td>
+    <td class="r">rendering took 0.37 seconds</td>
    </tr>
   </table>
  </body>

@@ -1,5 +1,12 @@
 
 module soc_system (
+	avmm_to_wishbone_bridge_0_wishbone_address,
+	avmm_to_wishbone_bridge_0_wishbone_datain,
+	avmm_to_wishbone_bridge_0_wishbone_dataout,
+	avmm_to_wishbone_bridge_0_wishbone_writeenable,
+	avmm_to_wishbone_bridge_0_wishbone_selectarray,
+	avmm_to_wishbone_bridge_0_wishbone_strobeout,
+	avmm_to_wishbone_bridge_0_wishbone_acknowledged,
 	button_pio_external_connection_export,
 	clk_clk,
 	dipsw_pio_external_connection_export,
@@ -73,7 +80,9 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	reset_reset_n,
+	ramteste_clk2_clk,
+	ramteste_reset2_reset,
+	ramteste_reset2_reset_req,
 	ramteste_s2_address,
 	ramteste_s2_chipselect,
 	ramteste_s2_clken,
@@ -81,10 +90,15 @@ module soc_system (
 	ramteste_s2_readdata,
 	ramteste_s2_writedata,
 	ramteste_s2_byteenable,
-	ramteste_clk2_clk,
-	ramteste_reset2_reset,
-	ramteste_reset2_reset_req);	
+	reset_reset_n);	
 
+	output	[4:0]	avmm_to_wishbone_bridge_0_wishbone_address;
+	input	[31:0]	avmm_to_wishbone_bridge_0_wishbone_datain;
+	output	[31:0]	avmm_to_wishbone_bridge_0_wishbone_dataout;
+	output		avmm_to_wishbone_bridge_0_wishbone_writeenable;
+	output	[3:0]	avmm_to_wishbone_bridge_0_wishbone_selectarray;
+	output		avmm_to_wishbone_bridge_0_wishbone_strobeout;
+	input		avmm_to_wishbone_bridge_0_wishbone_acknowledged;
 	input	[1:0]	button_pio_external_connection_export;
 	input		clk_clk;
 	input	[3:0]	dipsw_pio_external_connection_export;
@@ -158,7 +172,9 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	input		reset_reset_n;
+	input		ramteste_clk2_clk;
+	input		ramteste_reset2_reset;
+	input		ramteste_reset2_reset_req;
 	input	[1:0]	ramteste_s2_address;
 	input		ramteste_s2_chipselect;
 	input		ramteste_s2_clken;
@@ -166,7 +182,5 @@ module soc_system (
 	output	[31:0]	ramteste_s2_readdata;
 	input	[31:0]	ramteste_s2_writedata;
 	input	[3:0]	ramteste_s2_byteenable;
-	input		ramteste_clk2_clk;
-	input		ramteste_reset2_reset;
-	input		ramteste_reset2_reset_req;
+	input		reset_reset_n;
 endmodule
