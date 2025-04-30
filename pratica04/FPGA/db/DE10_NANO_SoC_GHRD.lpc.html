@@ -16,56 +16,8 @@
 <TH>Output only Bidir</TH>
 </TR>
 <TR >
-<TD >pulse_debug_reset</TD>
+<TD >mult_4bits_inst2|controlador_inst</TD>
 <TD >3</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >1</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >pulse_warm_reset</TD>
-<TD >3</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >1</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >pulse_cold_reset</TD>
-<TD >3</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >1</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >hps_reset_inst</TD>
-<TD >1</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -80,15 +32,111 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >debounce_inst</TD>
+<TD >mult_4bits_inst2|reg_Y_inst</TD>
+<TD >10</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >mult_4bits_inst2|reg_B_inst</TD>
+<TD >6</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
 <TD >4</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
-<TD >2</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >mult_4bits_inst2|reg_A_inst</TD>
+<TD >10</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >mult_4bits_inst2</TD>
+<TD >11</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >9</TD>
+<TD >1</TD>
+<TD >1</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >dp_ram_inst|AB_reg_inst</TD>
+<TD >10</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >dp_ram_inst|control_reg_inst2</TD>
+<TD >3</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >dp_ram_inst</TD>
+<TD >50</TD>
+<TD >15</TD>
+<TD >27</TD>
+<TD >15</TD>
+<TD >42</TD>
+<TD >15</TD>
+<TD >15</TD>
+<TD >15</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -185,6 +233,86 @@
 <TD >1</TD>
 <TD >1</TD>
 <TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >pulse_debug_reset</TD>
+<TD >3</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >pulse_warm_reset</TD>
+<TD >3</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >pulse_cold_reset</TD>
+<TD >3</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >hps_reset_inst</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >3</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >debounce_inst</TD>
+<TD >4</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -3536,7 +3664,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|dc_sub|subtract</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|dc_sub|subtract</TD>
 <TD >17</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -3552,7 +3680,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|dc_sub</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|dc_sub</TD>
 <TD >16</TD>
 <TD >2</TD>
 <TD >0</TD>
@@ -3568,7 +3696,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|db_sub|subtract</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|db_sub|subtract</TD>
 <TD >17</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -3584,7 +3712,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|db_sub</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|db_sub</TD>
 <TD >16</TD>
 <TD >2</TD>
 <TD >0</TD>
@@ -3600,7 +3728,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|da_sub|subtract</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|da_sub|subtract</TD>
 <TD >17</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -3616,7 +3744,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|da_sub</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|da_sub</TD>
 <TD >16</TD>
 <TD >2</TD>
 <TD >0</TD>
@@ -3632,7 +3760,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|bc_sub|subtract</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|bc_sub|subtract</TD>
 <TD >17</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -3648,7 +3776,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|bc_sub</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|bc_sub</TD>
 <TD >16</TD>
 <TD >2</TD>
 <TD >0</TD>
@@ -3664,7 +3792,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|ac_sub|subtract</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|ac_sub|subtract</TD>
 <TD >17</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -3680,7 +3808,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|ac_sub</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|ac_sub</TD>
 <TD >16</TD>
 <TD >2</TD>
 <TD >0</TD>
@@ -3696,7 +3824,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|ab_sub|subtract</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|ab_sub|subtract</TD>
 <TD >17</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -3712,7 +3840,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|ab_sub</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min|ab_sub</TD>
 <TD >16</TD>
 <TD >2</TD>
 <TD >0</TD>
@@ -3728,7 +3856,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_min</TD>
 <TD >31</TD>
 <TD >0</TD>
 <TD >2</TD>
@@ -3744,7 +3872,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_burstwrap_increment</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|the_burstwrap_increment</TD>
 <TD >7</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -3760,7 +3888,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|align_address_to_size</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|align_address_to_size</TD>
 <TD >29</TD>
 <TD >5</TD>
 <TD >0</TD>
@@ -3776,7 +3904,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter</TD>
 <TD >123</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -3792,7 +3920,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_burst_adapter</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_burst_adapter</TD>
 <TD >123</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -4128,7 +4256,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_agent_rdata_fifo</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_agent_rdata_fifo</TD>
 <TD >79</TD>
 <TD >41</TD>
 <TD >0</TD>
@@ -4144,7 +4272,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_agent_rsp_fifo</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_agent_rsp_fifo</TD>
 <TD >160</TD>
 <TD >39</TD>
 <TD >0</TD>
@@ -4160,7 +4288,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_agent|uncompressor</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_agent|uncompressor</TD>
 <TD >45</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -4176,7 +4304,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_agent</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_agent</TD>
 <TD >316</TD>
 <TD >39</TD>
 <TD >40</TD>
@@ -4256,7 +4384,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_0_avmm_translator</TD>
+<TD >u0|mm_interconnect_0|avmm_to_wishbone_bridge_avmm_translator</TD>
 <TD >104</TD>
 <TD >5</TD>
 <TD >16</TD>
@@ -4290,13 +4418,13 @@
 <TR >
 <TD >u0|sysid_qsys</TD>
 <TD >3</TD>
-<TD >16</TD>
+<TD >13</TD>
 <TD >2</TD>
-<TD >16</TD>
+<TD >13</TD>
 <TD >32</TD>
-<TD >16</TD>
-<TD >16</TD>
-<TD >16</TD>
+<TD >13</TD>
+<TD >13</TD>
+<TD >13</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -6656,7 +6784,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >u0|avmm_to_wishbone_bridge_0</TD>
+<TD >u0|avmm_to_wishbone_bridge</TD>
 <TD >80</TD>
 <TD >1</TD>
 <TD >5</TD>
@@ -6817,14 +6945,14 @@
 </TR>
 <TR >
 <TD >u0</TD>
-<TD >93</TD>
-<TD >69</TD>
+<TD >126</TD>
+<TD >73</TD>
 <TD >0</TD>
-<TD >69</TD>
-<TD >84</TD>
-<TD >69</TD>
-<TD >69</TD>
-<TD >69</TD>
+<TD >73</TD>
+<TD >127</TD>
+<TD >73</TD>
+<TD >73</TD>
+<TD >73</TD>
 <TD >64</TD>
 <TD >0</TD>
 <TD >0</TD>

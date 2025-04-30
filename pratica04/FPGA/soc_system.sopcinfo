@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 20.1 711 (Future versions may contain additional information.) -->
- <!-- 2025.04.23.09:05:03 -->
+ <!-- 2025.04.23.10:08:29 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1745409902</value>
+  <value>1745413708</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -2094,10 +2094,10 @@ parameters are a RESULT of the module parameters. -->
   </interface>
  </module>
  <module
-   name="avmm_to_wishbone_bridge_0"
+   name="avmm_to_wishbone_bridge"
    kind="avmm_to_wishbone_bridge"
    version="1.0"
-   path="avmm_to_wishbone_bridge_0">
+   path="avmm_to_wishbone_bridge">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
   <parameter name="BUS_WIDTH">
@@ -2140,96 +2140,6 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="clock" kind="clock_sink" version="20.1">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="externallyDriven">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="ptfSchematicName">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>clock</type>
-   <isStart>false</isStart>
-   <port>
-    <name>clk_i</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>clk</role>
-   </port>
-  </interface>
-  <interface name="reset" kind="reset_sink" version="20.1">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="associatedClock">
-    <type>java.lang.String</type>
-    <value>clock</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="synchronousEdges">
-    <type>com.altera.sopcmodel.reset.Reset$Edges</type>
-    <value>DEASSERT</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>reset</type>
-   <isStart>false</isStart>
-   <port>
-    <name>rst_i</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>reset</role>
-   </port>
-  </interface>
   <interface name="avmm" kind="avalon_slave" version="20.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
@@ -2617,6 +2527,96 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>1</width>
     <role>waitrequest</role>
+   </port>
+  </interface>
+  <interface name="clock" kind="clock_sink" version="20.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="externallyDriven">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="ptfSchematicName">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>clock</type>
+   <isStart>false</isStart>
+   <port>
+    <name>clk_i</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="reset" kind="reset_sink" version="20.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>clock</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="synchronousEdges">
+    <type>com.altera.sopcmodel.reset.Reset$Edges</type>
+    <value>DEASSERT</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>reset</type>
+   <isStart>false</isStart>
+   <port>
+    <name>rst_i</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>reset</role>
    </port>
   </interface>
   <interface name="wishbone" kind="conduit_end" version="20.1">
@@ -3879,9 +3879,9 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>avmm_to_wishbone_bridge_0</moduleName>
+    <moduleName>avmm_to_wishbone_bridge</moduleName>
     <slaveName>clock</slaveName>
-    <name>avmm_to_wishbone_bridge_0.clock</name>
+    <name>avmm_to_wishbone_bridge.clock</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -23033,9 +23033,9 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>avmm_to_wishbone_bridge_0</moduleName>
+    <moduleName>avmm_to_wishbone_bridge</moduleName>
     <slaveName>avmm</slaveName>
-    <name>avmm_to_wishbone_bridge_0.avmm</name>
+    <name>avmm_to_wishbone_bridge.avmm</name>
     <baseAddress>262272</baseAddress>
     <span>128</span>
    </memoryBlock>
@@ -49962,9 +49962,9 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>avmm_to_wishbone_bridge_0</moduleName>
+    <moduleName>avmm_to_wishbone_bridge</moduleName>
     <slaveName>avmm</slaveName>
-    <name>avmm_to_wishbone_bridge_0.avmm</name>
+    <name>avmm_to_wishbone_bridge.avmm</name>
     <baseAddress>262272</baseAddress>
     <span>128</span>
    </memoryBlock>
@@ -52003,9 +52003,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>avmm_to_wishbone_bridge_0</moduleName>
+    <moduleName>avmm_to_wishbone_bridge</moduleName>
     <slaveName>avmm</slaveName>
-    <name>avmm_to_wishbone_bridge_0.avmm</name>
+    <name>avmm_to_wishbone_bridge.avmm</name>
     <baseAddress>4280549504</baseAddress>
     <span>128</span>
    </memoryBlock>
@@ -52898,9 +52898,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>avmm_to_wishbone_bridge_0</moduleName>
+    <moduleName>avmm_to_wishbone_bridge</moduleName>
     <slaveName>avmm</slaveName>
-    <name>avmm_to_wishbone_bridge_0.avmm</name>
+    <name>avmm_to_wishbone_bridge.avmm</name>
     <baseAddress>4280549504</baseAddress>
     <span>128</span>
    </memoryBlock>
@@ -84012,7 +84012,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1745409902</value>
+   <value>1745413708</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -84032,7 +84032,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1745409902</value>
+   <value>1745413708</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -84048,7 +84048,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1745409902</value>
+   <value>1745413708</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -94632,11 +94632,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>axi_slave0</endConnectionPoint>
  </connection>
  <connection
-   name="hps_0_bridges.h2f_lw/avmm_to_wishbone_bridge_0.avmm"
+   name="hps_0_bridges.h2f_lw/avmm_to_wishbone_bridge.avmm"
    kind="avalon"
    version="20.1"
    start="hps_0_bridges.h2f_lw"
-   end="avmm_to_wishbone_bridge_0.avmm">
+   end="avmm_to_wishbone_bridge.avmm">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -94679,7 +94679,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>hps_0_bridges</startModule>
   <startConnectionPoint>h2f_lw</startConnectionPoint>
-  <endModule>avmm_to_wishbone_bridge_0</endModule>
+  <endModule>avmm_to_wishbone_bridge</endModule>
   <endConnectionPoint>avmm</endConnectionPoint>
  </connection>
  <connection
@@ -95796,11 +95796,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk1</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk/avmm_to_wishbone_bridge_0.clock"
+   name="clk_0.clk/avmm_to_wishbone_bridge.clock"
    kind="clock"
    version="20.1"
    start="clk_0.clk"
-   end="avmm_to_wishbone_bridge_0.clock">
+   end="avmm_to_wishbone_bridge.clock">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -95819,7 +95819,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>avmm_to_wishbone_bridge_0</endModule>
+  <endModule>avmm_to_wishbone_bridge</endModule>
   <endConnectionPoint>clock</endConnectionPoint>
  </connection>
  <connection
@@ -96384,11 +96384,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk_reset/avmm_to_wishbone_bridge_0.reset"
+   name="clk_0.clk_reset/avmm_to_wishbone_bridge.reset"
    kind="reset"
    version="20.1"
    start="clk_0.clk_reset"
-   end="avmm_to_wishbone_bridge_0.reset">
+   end="avmm_to_wishbone_bridge.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -96407,7 +96407,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>avmm_to_wishbone_bridge_0</endModule>
+  <endModule>avmm_to_wishbone_bridge</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection

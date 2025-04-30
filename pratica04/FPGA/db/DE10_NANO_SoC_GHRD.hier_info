@@ -1,5 +1,5 @@
 |DE10_NANO_SoC_GHRD
-FPGA_CLK1_50 => fpga_clk_50.IN10
+FPGA_CLK1_50 => FPGA_CLK1_50.IN12
 FPGA_CLK2_50 => ~NO_FANOUT~
 FPGA_CLK3_50 => ~NO_FANOUT~
 HDMI_I2C_SCL <> <UNC>
@@ -181,11 +181,11 @@ data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DE10_NANO_SoC_GHRD|soc_system:u0
-avmm_to_wishbone_bridge_0_wishbone_address[0] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.adr_o
-avmm_to_wishbone_bridge_0_wishbone_address[1] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.adr_o
-avmm_to_wishbone_bridge_0_wishbone_address[2] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.adr_o
-avmm_to_wishbone_bridge_0_wishbone_address[3] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.adr_o
-avmm_to_wishbone_bridge_0_wishbone_address[4] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.adr_o
+avmm_to_wishbone_bridge_0_wishbone_address[0] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.adr_o
+avmm_to_wishbone_bridge_0_wishbone_address[1] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.adr_o
+avmm_to_wishbone_bridge_0_wishbone_address[2] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.adr_o
+avmm_to_wishbone_bridge_0_wishbone_address[3] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.adr_o
+avmm_to_wishbone_bridge_0_wishbone_address[4] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.adr_o
 avmm_to_wishbone_bridge_0_wishbone_datain[0] => avmm_to_wishbone_bridge_0_wishbone_datain[0].IN1
 avmm_to_wishbone_bridge_0_wishbone_datain[1] => avmm_to_wishbone_bridge_0_wishbone_datain[1].IN1
 avmm_to_wishbone_bridge_0_wishbone_datain[2] => avmm_to_wishbone_bridge_0_wishbone_datain[2].IN1
@@ -218,44 +218,44 @@ avmm_to_wishbone_bridge_0_wishbone_datain[28] => avmm_to_wishbone_bridge_0_wishb
 avmm_to_wishbone_bridge_0_wishbone_datain[29] => avmm_to_wishbone_bridge_0_wishbone_datain[29].IN1
 avmm_to_wishbone_bridge_0_wishbone_datain[30] => avmm_to_wishbone_bridge_0_wishbone_datain[30].IN1
 avmm_to_wishbone_bridge_0_wishbone_datain[31] => avmm_to_wishbone_bridge_0_wishbone_datain[31].IN1
-avmm_to_wishbone_bridge_0_wishbone_dataout[0] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[1] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[2] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[3] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[4] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[5] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[6] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[7] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[8] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[9] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[10] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[11] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[12] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[13] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[14] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[15] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[16] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[17] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[18] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[19] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[20] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[21] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[22] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[23] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[24] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[25] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[26] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[27] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[28] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[29] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[30] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_dataout[31] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.data_o
-avmm_to_wishbone_bridge_0_wishbone_writeenable <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.we_o
-avmm_to_wishbone_bridge_0_wishbone_selectarray[0] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.sel_o
-avmm_to_wishbone_bridge_0_wishbone_selectarray[1] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.sel_o
-avmm_to_wishbone_bridge_0_wishbone_selectarray[2] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.sel_o
-avmm_to_wishbone_bridge_0_wishbone_selectarray[3] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.sel_o
-avmm_to_wishbone_bridge_0_wishbone_strobeout <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0.stb_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[0] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[1] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[2] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[3] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[4] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[5] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[6] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[7] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[8] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[9] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[10] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[11] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[12] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[13] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[14] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[15] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[16] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[17] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[18] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[19] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[20] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[21] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[22] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[23] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[24] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[25] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[26] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[27] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[28] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[29] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[30] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_dataout[31] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.data_o
+avmm_to_wishbone_bridge_0_wishbone_writeenable <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.we_o
+avmm_to_wishbone_bridge_0_wishbone_selectarray[0] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.sel_o
+avmm_to_wishbone_bridge_0_wishbone_selectarray[1] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.sel_o
+avmm_to_wishbone_bridge_0_wishbone_selectarray[2] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.sel_o
+avmm_to_wishbone_bridge_0_wishbone_selectarray[3] <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.sel_o
+avmm_to_wishbone_bridge_0_wishbone_strobeout <= avalon_to_wishone_bridge:avmm_to_wishbone_bridge.stb_o
 avmm_to_wishbone_bridge_0_wishbone_acknowledged => avmm_to_wishbone_bridge_0_wishbone_acknowledged.IN1
 button_pio_external_connection_export[0] => button_pio_external_connection_export[0].IN1
 button_pio_external_connection_export[1] => button_pio_external_connection_export[1].IN1
@@ -1593,7 +1593,7 @@ wren_b => ram_block1a30.PORTBWE
 wren_b => ram_block1a31.PORTBWE
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|avalon_to_wishone_bridge:avmm_to_wishbone_bridge_0
+|DE10_NANO_SoC_GHRD|soc_system:u0|avalon_to_wishone_bridge:avmm_to_wishbone_bridge
 clk_i => ~NO_FANOUT~
 rst_i => ~NO_FANOUT~
 avmm_chipselect => stb_o.DATAIN
@@ -23870,27 +23870,30 @@ address => readdata[18].DATAIN
 address => readdata[16].DATAIN
 address => readdata[15].DATAIN
 address => readdata[14].DATAIN
+address => readdata[13].DATAIN
+address => readdata[12].DATAIN
 address => readdata[10].DATAIN
+address => readdata[8].DATAIN
 address => readdata[6].DATAIN
-address => readdata[5].DATAIN
 address => readdata[3].DATAIN
 address => readdata[2].DATAIN
+address => readdata[1].DATAIN
 clock => ~NO_FANOUT~
 reset_n => ~NO_FANOUT~
 readdata[0] <= <GND>
-readdata[1] <= <VCC>
+readdata[1] <= address.DB_MAX_OUTPUT_PORT_TYPE
 readdata[2] <= address.DB_MAX_OUTPUT_PORT_TYPE
 readdata[3] <= address.DB_MAX_OUTPUT_PORT_TYPE
 readdata[4] <= <GND>
-readdata[5] <= address.DB_MAX_OUTPUT_PORT_TYPE
+readdata[5] <= <GND>
 readdata[6] <= address.DB_MAX_OUTPUT_PORT_TYPE
 readdata[7] <= <GND>
-readdata[8] <= <VCC>
+readdata[8] <= address.DB_MAX_OUTPUT_PORT_TYPE
 readdata[9] <= <VCC>
 readdata[10] <= address.DB_MAX_OUTPUT_PORT_TYPE
 readdata[11] <= <GND>
-readdata[12] <= <VCC>
-readdata[13] <= <GND>
+readdata[12] <= address.DB_MAX_OUTPUT_PORT_TYPE
+readdata[13] <= address.DB_MAX_OUTPUT_PORT_TYPE
 readdata[14] <= address.DB_MAX_OUTPUT_PORT_TYPE
 readdata[15] <= address.DB_MAX_OUTPUT_PORT_TYPE
 readdata[16] <= address.DB_MAX_OUTPUT_PORT_TYPE
@@ -24135,86 +24138,86 @@ hps_0_h2f_lw_axi_master_rlast <= altera_merlin_axi_master_ni:hps_0_h2f_lw_axi_ma
 hps_0_h2f_lw_axi_master_rvalid <= altera_merlin_axi_master_ni:hps_0_h2f_lw_axi_master_agent.rvalid
 hps_0_h2f_lw_axi_master_rready => hps_0_h2f_lw_axi_master_rready.IN1
 clk_0_clk_clk => clk_0_clk_clk.IN36
-avmm_to_wishbone_bridge_0_reset_reset_bridge_in_reset_reset => avmm_to_wishbone_bridge_0_reset_reset_bridge_in_reset_reset.IN27
+avmm_to_wishbone_bridge_reset_reset_bridge_in_reset_reset => avmm_to_wishbone_bridge_reset_reset_bridge_in_reset_reset.IN27
 hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset => hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset.IN8
-avmm_to_wishbone_bridge_0_avmm_address[0] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_address
-avmm_to_wishbone_bridge_0_avmm_address[1] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_address
-avmm_to_wishbone_bridge_0_avmm_address[2] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_address
-avmm_to_wishbone_bridge_0_avmm_address[3] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_address
-avmm_to_wishbone_bridge_0_avmm_address[4] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_address
-avmm_to_wishbone_bridge_0_avmm_write <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_write
-avmm_to_wishbone_bridge_0_avmm_read <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_read
-avmm_to_wishbone_bridge_0_avmm_readdata[0] => avmm_to_wishbone_bridge_0_avmm_readdata[0].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[1] => avmm_to_wishbone_bridge_0_avmm_readdata[1].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[2] => avmm_to_wishbone_bridge_0_avmm_readdata[2].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[3] => avmm_to_wishbone_bridge_0_avmm_readdata[3].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[4] => avmm_to_wishbone_bridge_0_avmm_readdata[4].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[5] => avmm_to_wishbone_bridge_0_avmm_readdata[5].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[6] => avmm_to_wishbone_bridge_0_avmm_readdata[6].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[7] => avmm_to_wishbone_bridge_0_avmm_readdata[7].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[8] => avmm_to_wishbone_bridge_0_avmm_readdata[8].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[9] => avmm_to_wishbone_bridge_0_avmm_readdata[9].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[10] => avmm_to_wishbone_bridge_0_avmm_readdata[10].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[11] => avmm_to_wishbone_bridge_0_avmm_readdata[11].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[12] => avmm_to_wishbone_bridge_0_avmm_readdata[12].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[13] => avmm_to_wishbone_bridge_0_avmm_readdata[13].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[14] => avmm_to_wishbone_bridge_0_avmm_readdata[14].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[15] => avmm_to_wishbone_bridge_0_avmm_readdata[15].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[16] => avmm_to_wishbone_bridge_0_avmm_readdata[16].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[17] => avmm_to_wishbone_bridge_0_avmm_readdata[17].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[18] => avmm_to_wishbone_bridge_0_avmm_readdata[18].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[19] => avmm_to_wishbone_bridge_0_avmm_readdata[19].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[20] => avmm_to_wishbone_bridge_0_avmm_readdata[20].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[21] => avmm_to_wishbone_bridge_0_avmm_readdata[21].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[22] => avmm_to_wishbone_bridge_0_avmm_readdata[22].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[23] => avmm_to_wishbone_bridge_0_avmm_readdata[23].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[24] => avmm_to_wishbone_bridge_0_avmm_readdata[24].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[25] => avmm_to_wishbone_bridge_0_avmm_readdata[25].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[26] => avmm_to_wishbone_bridge_0_avmm_readdata[26].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[27] => avmm_to_wishbone_bridge_0_avmm_readdata[27].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[28] => avmm_to_wishbone_bridge_0_avmm_readdata[28].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[29] => avmm_to_wishbone_bridge_0_avmm_readdata[29].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[30] => avmm_to_wishbone_bridge_0_avmm_readdata[30].IN1
-avmm_to_wishbone_bridge_0_avmm_readdata[31] => avmm_to_wishbone_bridge_0_avmm_readdata[31].IN1
-avmm_to_wishbone_bridge_0_avmm_writedata[0] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[1] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[2] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[3] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[4] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[5] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[6] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[7] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[8] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[9] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[10] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[11] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[12] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[13] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[14] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[15] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[16] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[17] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[18] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[19] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[20] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[21] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[22] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[23] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[24] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[25] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[26] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[27] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[28] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[29] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[30] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_writedata[31] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_writedata
-avmm_to_wishbone_bridge_0_avmm_begintransfer <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_begintransfer
-avmm_to_wishbone_bridge_0_avmm_byteenable[0] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_byteenable
-avmm_to_wishbone_bridge_0_avmm_byteenable[1] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_byteenable
-avmm_to_wishbone_bridge_0_avmm_byteenable[2] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_byteenable
-avmm_to_wishbone_bridge_0_avmm_byteenable[3] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_byteenable
-avmm_to_wishbone_bridge_0_avmm_waitrequest => avmm_to_wishbone_bridge_0_avmm_waitrequest.IN1
-avmm_to_wishbone_bridge_0_avmm_chipselect <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator.av_chipselect
+avmm_to_wishbone_bridge_avmm_address[0] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_address
+avmm_to_wishbone_bridge_avmm_address[1] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_address
+avmm_to_wishbone_bridge_avmm_address[2] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_address
+avmm_to_wishbone_bridge_avmm_address[3] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_address
+avmm_to_wishbone_bridge_avmm_address[4] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_address
+avmm_to_wishbone_bridge_avmm_write <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_write
+avmm_to_wishbone_bridge_avmm_read <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_read
+avmm_to_wishbone_bridge_avmm_readdata[0] => avmm_to_wishbone_bridge_avmm_readdata[0].IN1
+avmm_to_wishbone_bridge_avmm_readdata[1] => avmm_to_wishbone_bridge_avmm_readdata[1].IN1
+avmm_to_wishbone_bridge_avmm_readdata[2] => avmm_to_wishbone_bridge_avmm_readdata[2].IN1
+avmm_to_wishbone_bridge_avmm_readdata[3] => avmm_to_wishbone_bridge_avmm_readdata[3].IN1
+avmm_to_wishbone_bridge_avmm_readdata[4] => avmm_to_wishbone_bridge_avmm_readdata[4].IN1
+avmm_to_wishbone_bridge_avmm_readdata[5] => avmm_to_wishbone_bridge_avmm_readdata[5].IN1
+avmm_to_wishbone_bridge_avmm_readdata[6] => avmm_to_wishbone_bridge_avmm_readdata[6].IN1
+avmm_to_wishbone_bridge_avmm_readdata[7] => avmm_to_wishbone_bridge_avmm_readdata[7].IN1
+avmm_to_wishbone_bridge_avmm_readdata[8] => avmm_to_wishbone_bridge_avmm_readdata[8].IN1
+avmm_to_wishbone_bridge_avmm_readdata[9] => avmm_to_wishbone_bridge_avmm_readdata[9].IN1
+avmm_to_wishbone_bridge_avmm_readdata[10] => avmm_to_wishbone_bridge_avmm_readdata[10].IN1
+avmm_to_wishbone_bridge_avmm_readdata[11] => avmm_to_wishbone_bridge_avmm_readdata[11].IN1
+avmm_to_wishbone_bridge_avmm_readdata[12] => avmm_to_wishbone_bridge_avmm_readdata[12].IN1
+avmm_to_wishbone_bridge_avmm_readdata[13] => avmm_to_wishbone_bridge_avmm_readdata[13].IN1
+avmm_to_wishbone_bridge_avmm_readdata[14] => avmm_to_wishbone_bridge_avmm_readdata[14].IN1
+avmm_to_wishbone_bridge_avmm_readdata[15] => avmm_to_wishbone_bridge_avmm_readdata[15].IN1
+avmm_to_wishbone_bridge_avmm_readdata[16] => avmm_to_wishbone_bridge_avmm_readdata[16].IN1
+avmm_to_wishbone_bridge_avmm_readdata[17] => avmm_to_wishbone_bridge_avmm_readdata[17].IN1
+avmm_to_wishbone_bridge_avmm_readdata[18] => avmm_to_wishbone_bridge_avmm_readdata[18].IN1
+avmm_to_wishbone_bridge_avmm_readdata[19] => avmm_to_wishbone_bridge_avmm_readdata[19].IN1
+avmm_to_wishbone_bridge_avmm_readdata[20] => avmm_to_wishbone_bridge_avmm_readdata[20].IN1
+avmm_to_wishbone_bridge_avmm_readdata[21] => avmm_to_wishbone_bridge_avmm_readdata[21].IN1
+avmm_to_wishbone_bridge_avmm_readdata[22] => avmm_to_wishbone_bridge_avmm_readdata[22].IN1
+avmm_to_wishbone_bridge_avmm_readdata[23] => avmm_to_wishbone_bridge_avmm_readdata[23].IN1
+avmm_to_wishbone_bridge_avmm_readdata[24] => avmm_to_wishbone_bridge_avmm_readdata[24].IN1
+avmm_to_wishbone_bridge_avmm_readdata[25] => avmm_to_wishbone_bridge_avmm_readdata[25].IN1
+avmm_to_wishbone_bridge_avmm_readdata[26] => avmm_to_wishbone_bridge_avmm_readdata[26].IN1
+avmm_to_wishbone_bridge_avmm_readdata[27] => avmm_to_wishbone_bridge_avmm_readdata[27].IN1
+avmm_to_wishbone_bridge_avmm_readdata[28] => avmm_to_wishbone_bridge_avmm_readdata[28].IN1
+avmm_to_wishbone_bridge_avmm_readdata[29] => avmm_to_wishbone_bridge_avmm_readdata[29].IN1
+avmm_to_wishbone_bridge_avmm_readdata[30] => avmm_to_wishbone_bridge_avmm_readdata[30].IN1
+avmm_to_wishbone_bridge_avmm_readdata[31] => avmm_to_wishbone_bridge_avmm_readdata[31].IN1
+avmm_to_wishbone_bridge_avmm_writedata[0] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[1] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[2] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[3] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[4] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[5] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[6] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[7] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[8] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[9] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[10] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[11] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[12] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[13] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[14] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[15] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[16] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[17] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[18] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[19] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[20] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[21] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[22] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[23] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[24] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[25] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[26] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[27] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[28] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[29] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[30] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_writedata[31] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_writedata
+avmm_to_wishbone_bridge_avmm_begintransfer <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_begintransfer
+avmm_to_wishbone_bridge_avmm_byteenable[0] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_byteenable
+avmm_to_wishbone_bridge_avmm_byteenable[1] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_byteenable
+avmm_to_wishbone_bridge_avmm_byteenable[2] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_byteenable
+avmm_to_wishbone_bridge_avmm_byteenable[3] <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_byteenable
+avmm_to_wishbone_bridge_avmm_waitrequest => avmm_to_wishbone_bridge_avmm_waitrequest.IN1
+avmm_to_wishbone_bridge_avmm_chipselect <= altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator.av_chipselect
 mm_bridge_0_s0_address[0] <= altera_merlin_slave_translator:mm_bridge_0_s0_translator.av_address
 mm_bridge_0_s0_address[1] <= altera_merlin_slave_translator:mm_bridge_0_s0_translator.av_address
 mm_bridge_0_s0_address[2] <= altera_merlin_slave_translator:mm_bridge_0_s0_translator.av_address
@@ -24382,7 +24385,7 @@ RAMteste_s1_chipselect <= altera_merlin_slave_translator:ramteste_s1_translator.
 RAMteste_s1_clken <= altera_merlin_slave_translator:ramteste_s1_translator.av_clken
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:avmm_to_wishbone_bridge_0_avmm_translator
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:avmm_to_wishbone_bridge_avmm_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -26075,7 +26078,7 @@ out_data[22] <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
 out_ready => always2.IN1
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:avmm_to_wishbone_bridge_0_avmm_agent
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:avmm_to_wishbone_bridge_avmm_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -26783,7 +26786,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:avmm_to_wishbone_bridge_0_avmm_agent|altera_merlin_burst_uncompressor:uncompressor
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:avmm_to_wishbone_bridge_avmm_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -27081,7 +27084,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:avmm_to_wishbone_bridge_0_avmm_agent_rsp_fifo
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:avmm_to_wishbone_bridge_avmm_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -27966,7 +27969,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:avmm_to_wishbone_bridge_0_avmm_agent_rdata_fifo
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:avmm_to_wishbone_bridge_avmm_agent_rdata_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -36540,7 +36543,7 @@ rsp_src_ready => response_sink_accepted.IN1
 rsp_src_ready => rsp_sink_ready.DATAIN
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter
 clk => clk.IN1
 reset => reset.IN1
 sink0_valid => sink0_valid.IN1
@@ -36787,7 +36790,7 @@ source0_endofpacket <= altera_merlin_burst_adapter_13_1:altera_merlin_burst_adap
 source0_ready => source0_ready.IN1
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter
 clk => clk.IN1
 reset => reset.IN1
 sink0_valid => in_valid.IN1
@@ -37070,7 +37073,7 @@ source0_ready => nxt_out_eop.OUTPUTSELECT
 source0_ready => nxt_uncomp_subburst_byte_cnt.IN1
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_address_alignment:align_address_to_size
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_address_alignment:align_address_to_size
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 in_data[0] => LessThan0.IN6
@@ -37129,7 +37132,7 @@ out_data[22] <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
 out_ready => ~NO_FANOUT~
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_burstwrap_increment:the_burstwrap_increment
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_burstwrap_increment:the_burstwrap_increment
 mask[0] => inc.IN0
 mask[0] => inc[0].DATAIN
 mask[1] => inc.IN0
@@ -37152,7 +37155,7 @@ inc[5] <= inc.DB_MAX_OUTPUT_PORT_TYPE
 inc[6] <= inc.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min
 clk => ~NO_FANOUT~
 reset => ~NO_FANOUT~
 a[0] => a_reg[0].IN3
@@ -37194,7 +37197,7 @@ result[5] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
 result[6] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:ab_sub
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:ab_sub
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -37221,7 +37224,7 @@ diff[6] <= altera_merlin_burst_adapter_adder:subtract.sum
 diff[7] <= altera_merlin_burst_adapter_adder:subtract.sum
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:ab_sub|altera_merlin_burst_adapter_adder:subtract
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:ab_sub|altera_merlin_burst_adapter_adder:subtract
 cin => sum.IN1
 cin => carry.IN0
 cin => carry.IN0
@@ -37279,7 +37282,7 @@ sum[6] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 sum[7] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:ac_sub
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:ac_sub
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -37306,7 +37309,7 @@ diff[6] <= altera_merlin_burst_adapter_adder:subtract.sum
 diff[7] <= altera_merlin_burst_adapter_adder:subtract.sum
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:ac_sub|altera_merlin_burst_adapter_adder:subtract
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:ac_sub|altera_merlin_burst_adapter_adder:subtract
 cin => sum.IN1
 cin => carry.IN0
 cin => carry.IN0
@@ -37364,7 +37367,7 @@ sum[6] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 sum[7] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:bc_sub
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:bc_sub
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -37391,7 +37394,7 @@ diff[6] <= altera_merlin_burst_adapter_adder:subtract.sum
 diff[7] <= altera_merlin_burst_adapter_adder:subtract.sum
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:bc_sub|altera_merlin_burst_adapter_adder:subtract
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:bc_sub|altera_merlin_burst_adapter_adder:subtract
 cin => sum.IN1
 cin => carry.IN0
 cin => carry.IN0
@@ -37449,7 +37452,7 @@ sum[6] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 sum[7] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:da_sub
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:da_sub
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -37476,7 +37479,7 @@ diff[6] <= altera_merlin_burst_adapter_adder:subtract.sum
 diff[7] <= altera_merlin_burst_adapter_adder:subtract.sum
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:da_sub|altera_merlin_burst_adapter_adder:subtract
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:da_sub|altera_merlin_burst_adapter_adder:subtract
 cin => sum.IN1
 cin => carry.IN0
 cin => carry.IN0
@@ -37534,7 +37537,7 @@ sum[6] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 sum[7] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:db_sub
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:db_sub
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -37561,7 +37564,7 @@ diff[6] <= altera_merlin_burst_adapter_adder:subtract.sum
 diff[7] <= altera_merlin_burst_adapter_adder:subtract.sum
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:db_sub|altera_merlin_burst_adapter_adder:subtract
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:db_sub|altera_merlin_burst_adapter_adder:subtract
 cin => sum.IN1
 cin => carry.IN0
 cin => carry.IN0
@@ -37619,7 +37622,7 @@ sum[6] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 sum[7] <= sum.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:dc_sub
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:dc_sub
 a[0] => a[0].IN1
 a[1] => a[1].IN1
 a[2] => a[2].IN1
@@ -37646,7 +37649,7 @@ diff[6] <= altera_merlin_burst_adapter_adder:subtract.sum
 diff[7] <= altera_merlin_burst_adapter_adder:subtract.sum
 
 
-|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_0_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:dc_sub|altera_merlin_burst_adapter_adder:subtract
+|DE10_NANO_SoC_GHRD|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:avmm_to_wishbone_bridge_avmm_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|altera_merlin_burst_adapter_min:the_min|altera_merlin_burst_adapter_subtractor:dc_sub|altera_merlin_burst_adapter_adder:subtract
 cin => sum.IN1
 cin => carry.IN0
 cin => carry.IN0
@@ -117870,143 +117873,6 @@ clk => altera_reset_synchronizer_int_chain[1].CLK
 reset_out <= altera_reset_synchronizer_int_chain_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE10_NANO_SoC_GHRD|controlador_ram:controlador_ram_inst
-clk_i => state~1.DATAIN
-rst_i => state~3.DATAIN
-control_i => next_state.ST_RAM_READ_NUMBERS.DATAB
-control_i => Selector2.IN3
-control_i => Selector0.IN2
-control_i => next_state.ST_RAM_RESET_STATUS.DATAB
-end_mult_i => next_state.ST_RAM_STORE_RESULT.DATAB
-end_mult_i => Selector1.IN2
-state_o[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-state_o[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-state_o[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst
-clk_i => clk_i.IN4
-rst_i => rst_i.IN4
-en_i => en_i.IN1
-A_i[0] => A_i_w.DATAB
-A_i[1] => A_i_w.DATAB
-A_i[2] => A_i_w.DATAB
-A_i[3] => A_i_w.DATAB
-B_i[0] => B_i_w.DATAB
-B_i[1] => B_i_w.DATAB
-B_i[2] => B_i_w.DATAB
-B_i[3] => B_i_w.DATAB
-Y_o[0] <= registrador:reg_Y_inst.data_o
-Y_o[1] <= registrador:reg_Y_inst.data_o
-Y_o[2] <= registrador:reg_Y_inst.data_o
-Y_o[3] <= registrador:reg_Y_inst.data_o
-Y_o[4] <= registrador:reg_Y_inst.data_o
-Y_o[5] <= registrador:reg_Y_inst.data_o
-Y_o[6] <= registrador:reg_Y_inst.data_o
-Y_o[7] <= registrador:reg_Y_inst.data_o
-fim_o <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst|registrador:reg_A_inst
-clk => data_reg[0].CLK
-clk => data_reg[1].CLK
-clk => data_reg[2].CLK
-clk => data_reg[3].CLK
-clk => data_reg[4].CLK
-clk => data_reg[5].CLK
-clk => data_reg[6].CLK
-clk => data_reg[7].CLK
-reset => data_reg[0].ACLR
-reset => data_reg[1].ACLR
-reset => data_reg[2].ACLR
-reset => data_reg[3].ACLR
-reset => data_reg[4].ACLR
-reset => data_reg[5].ACLR
-reset => data_reg[6].ACLR
-reset => data_reg[7].ACLR
-data_i[0] => data_reg[0].DATAIN
-data_i[1] => data_reg[1].DATAIN
-data_i[2] => data_reg[2].DATAIN
-data_i[3] => data_reg[3].DATAIN
-data_i[4] => data_reg[4].DATAIN
-data_i[5] => data_reg[5].DATAIN
-data_i[6] => data_reg[6].DATAIN
-data_i[7] => data_reg[7].DATAIN
-data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-data_o[1] <= data_reg[1].DB_MAX_OUTPUT_PORT_TYPE
-data_o[2] <= data_reg[2].DB_MAX_OUTPUT_PORT_TYPE
-data_o[3] <= data_reg[3].DB_MAX_OUTPUT_PORT_TYPE
-data_o[4] <= data_reg[4].DB_MAX_OUTPUT_PORT_TYPE
-data_o[5] <= data_reg[5].DB_MAX_OUTPUT_PORT_TYPE
-data_o[6] <= data_reg[6].DB_MAX_OUTPUT_PORT_TYPE
-data_o[7] <= data_reg[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst|registrador:reg_B_inst
-clk => data_reg[0].CLK
-clk => data_reg[1].CLK
-clk => data_reg[2].CLK
-clk => data_reg[3].CLK
-reset => data_reg[0].ACLR
-reset => data_reg[1].ACLR
-reset => data_reg[2].ACLR
-reset => data_reg[3].ACLR
-data_i[0] => data_reg[0].DATAIN
-data_i[1] => data_reg[1].DATAIN
-data_i[2] => data_reg[2].DATAIN
-data_i[3] => data_reg[3].DATAIN
-data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-data_o[1] <= data_reg[1].DB_MAX_OUTPUT_PORT_TYPE
-data_o[2] <= data_reg[2].DB_MAX_OUTPUT_PORT_TYPE
-data_o[3] <= data_reg[3].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst|registrador:reg_Y_inst
-clk => data_reg[0].CLK
-clk => data_reg[1].CLK
-clk => data_reg[2].CLK
-clk => data_reg[3].CLK
-clk => data_reg[4].CLK
-clk => data_reg[5].CLK
-clk => data_reg[6].CLK
-clk => data_reg[7].CLK
-reset => data_reg[0].ACLR
-reset => data_reg[1].ACLR
-reset => data_reg[2].ACLR
-reset => data_reg[3].ACLR
-reset => data_reg[4].ACLR
-reset => data_reg[5].ACLR
-reset => data_reg[6].ACLR
-reset => data_reg[7].ACLR
-data_i[0] => data_reg[0].DATAIN
-data_i[1] => data_reg[1].DATAIN
-data_i[2] => data_reg[2].DATAIN
-data_i[3] => data_reg[3].DATAIN
-data_i[4] => data_reg[4].DATAIN
-data_i[5] => data_reg[5].DATAIN
-data_i[6] => data_reg[6].DATAIN
-data_i[7] => data_reg[7].DATAIN
-data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-data_o[1] <= data_reg[1].DB_MAX_OUTPUT_PORT_TYPE
-data_o[2] <= data_reg[2].DB_MAX_OUTPUT_PORT_TYPE
-data_o[3] <= data_reg[3].DB_MAX_OUTPUT_PORT_TYPE
-data_o[4] <= data_reg[4].DB_MAX_OUTPUT_PORT_TYPE
-data_o[5] <= data_reg[5].DB_MAX_OUTPUT_PORT_TYPE
-data_o[6] <= data_reg[6].DB_MAX_OUTPUT_PORT_TYPE
-data_o[7] <= data_reg[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst|controlador_mult:controlador_inst
-clk_i => state~1.DATAIN
-rst_i => state~3.DATAIN
-strt_cmpt_i => next_state.ST_BIT0.DATAB
-strt_cmpt_i => Selector1.IN3
-strt_cmpt_i => Selector0.IN1
-state_o[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-state_o[1] <= state_o.DB_MAX_OUTPUT_PORT_TYPE
-state_o[2] <= state_o.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |DE10_NANO_SoC_GHRD|debounce:debounce_inst
 clk => counter[1][0].CLK
 clk => counter[1][1].CLK
@@ -118536,5 +118402,409 @@ signal_in => next_state.CAPT.DATAB
 signal_in => Selector0.IN1
 signal_in => state.DATAA
 pulse_out <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|controlador_ram:controlador_ram_inst
+clk_i => state~1.DATAIN
+rst_i => state~3.DATAIN
+control_i => next_state.ST_RAM_READ_NUMBERS.DATAB
+control_i => Selector2.IN3
+control_i => Selector0.IN2
+control_i => next_state.ST_RAM_RESET_STATUS.DATAB
+end_mult_i => next_state.ST_RAM_STORE_RESULT.DATAB
+end_mult_i => Selector1.IN2
+state_o[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+state_o[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+state_o[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst
+clk_i => clk_i.IN4
+rst_i => rst_i.IN4
+en_i => en_i.IN1
+A_i[0] => A_i_w.DATAB
+A_i[1] => A_i_w.DATAB
+A_i[2] => A_i_w.DATAB
+A_i[3] => A_i_w.DATAB
+B_i[0] => B_i_w.DATAB
+B_i[1] => B_i_w.DATAB
+B_i[2] => B_i_w.DATAB
+B_i[3] => B_i_w.DATAB
+Y_o[0] <= registrador:reg_Y_inst.data_o
+Y_o[1] <= registrador:reg_Y_inst.data_o
+Y_o[2] <= registrador:reg_Y_inst.data_o
+Y_o[3] <= registrador:reg_Y_inst.data_o
+Y_o[4] <= registrador:reg_Y_inst.data_o
+Y_o[5] <= registrador:reg_Y_inst.data_o
+Y_o[6] <= registrador:reg_Y_inst.data_o
+Y_o[7] <= registrador:reg_Y_inst.data_o
+fim_o <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst|registrador:reg_A_inst
+clk => data_reg[0].CLK
+clk => data_reg[1].CLK
+clk => data_reg[2].CLK
+clk => data_reg[3].CLK
+clk => data_reg[4].CLK
+clk => data_reg[5].CLK
+clk => data_reg[6].CLK
+clk => data_reg[7].CLK
+reset => data_reg[0].ACLR
+reset => data_reg[1].ACLR
+reset => data_reg[2].ACLR
+reset => data_reg[3].ACLR
+reset => data_reg[4].ACLR
+reset => data_reg[5].ACLR
+reset => data_reg[6].ACLR
+reset => data_reg[7].ACLR
+data_i[0] => data_reg[0].DATAIN
+data_i[1] => data_reg[1].DATAIN
+data_i[2] => data_reg[2].DATAIN
+data_i[3] => data_reg[3].DATAIN
+data_i[4] => data_reg[4].DATAIN
+data_i[5] => data_reg[5].DATAIN
+data_i[6] => data_reg[6].DATAIN
+data_i[7] => data_reg[7].DATAIN
+data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+data_o[1] <= data_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+data_o[2] <= data_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+data_o[3] <= data_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+data_o[4] <= data_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+data_o[5] <= data_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+data_o[6] <= data_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+data_o[7] <= data_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst|registrador:reg_B_inst
+clk => data_reg[0].CLK
+clk => data_reg[1].CLK
+clk => data_reg[2].CLK
+clk => data_reg[3].CLK
+reset => data_reg[0].ACLR
+reset => data_reg[1].ACLR
+reset => data_reg[2].ACLR
+reset => data_reg[3].ACLR
+data_i[0] => data_reg[0].DATAIN
+data_i[1] => data_reg[1].DATAIN
+data_i[2] => data_reg[2].DATAIN
+data_i[3] => data_reg[3].DATAIN
+data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+data_o[1] <= data_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+data_o[2] <= data_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+data_o[3] <= data_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst|registrador:reg_Y_inst
+clk => data_reg[0].CLK
+clk => data_reg[1].CLK
+clk => data_reg[2].CLK
+clk => data_reg[3].CLK
+clk => data_reg[4].CLK
+clk => data_reg[5].CLK
+clk => data_reg[6].CLK
+clk => data_reg[7].CLK
+reset => data_reg[0].ACLR
+reset => data_reg[1].ACLR
+reset => data_reg[2].ACLR
+reset => data_reg[3].ACLR
+reset => data_reg[4].ACLR
+reset => data_reg[5].ACLR
+reset => data_reg[6].ACLR
+reset => data_reg[7].ACLR
+data_i[0] => data_reg[0].DATAIN
+data_i[1] => data_reg[1].DATAIN
+data_i[2] => data_reg[2].DATAIN
+data_i[3] => data_reg[3].DATAIN
+data_i[4] => data_reg[4].DATAIN
+data_i[5] => data_reg[5].DATAIN
+data_i[6] => data_reg[6].DATAIN
+data_i[7] => data_reg[7].DATAIN
+data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+data_o[1] <= data_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+data_o[2] <= data_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+data_o[3] <= data_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+data_o[4] <= data_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+data_o[5] <= data_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+data_o[6] <= data_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+data_o[7] <= data_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst|controlador_mult:controlador_inst
+clk_i => state~1.DATAIN
+rst_i => state~3.DATAIN
+strt_cmpt_i => next_state.ST_BIT0.DATAB
+strt_cmpt_i => Selector1.IN3
+strt_cmpt_i => Selector0.IN1
+state_o[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+state_o[1] <= state_o.DB_MAX_OUTPUT_PORT_TYPE
+state_o[2] <= state_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|dp_ram:dp_ram_inst
+clk => clk.IN2
+reset => reset.IN2
+adr_i[0] => ~NO_FANOUT~
+data_i[0] => dpram_control_reg_i_w.DATAB
+data_i[1] => ~NO_FANOUT~
+data_i[2] => ~NO_FANOUT~
+data_i[3] => ~NO_FANOUT~
+data_i[4] => ~NO_FANOUT~
+data_i[5] => ~NO_FANOUT~
+data_i[6] => ~NO_FANOUT~
+data_i[7] => ~NO_FANOUT~
+data_i[8] => AB_i_w.DATAB
+data_i[9] => AB_i_w.DATAB
+data_i[10] => AB_i_w.DATAB
+data_i[11] => AB_i_w.DATAB
+data_i[12] => AB_i_w.DATAB
+data_i[13] => AB_i_w.DATAB
+data_i[14] => AB_i_w.DATAB
+data_i[15] => AB_i_w.DATAB
+data_i[16] => ~NO_FANOUT~
+data_i[17] => ~NO_FANOUT~
+data_i[18] => ~NO_FANOUT~
+data_i[19] => ~NO_FANOUT~
+data_i[20] => ~NO_FANOUT~
+data_i[21] => ~NO_FANOUT~
+data_i[22] => ~NO_FANOUT~
+data_i[23] => ~NO_FANOUT~
+data_i[24] => ~NO_FANOUT~
+data_i[25] => ~NO_FANOUT~
+data_i[26] => ~NO_FANOUT~
+data_i[27] => ~NO_FANOUT~
+data_i[28] => ~NO_FANOUT~
+data_i[29] => ~NO_FANOUT~
+data_i[30] => ~NO_FANOUT~
+data_i[31] => ~NO_FANOUT~
+data_o[0] <= registrador:control_reg_inst2.data_o
+data_o[1] <= <GND>
+data_o[2] <= <GND>
+data_o[3] <= <GND>
+data_o[4] <= <GND>
+data_o[5] <= <GND>
+data_o[6] <= <GND>
+data_o[7] <= <GND>
+data_o[8] <= registrador:AB_reg_inst.data_o
+data_o[9] <= registrador:AB_reg_inst.data_o
+data_o[10] <= registrador:AB_reg_inst.data_o
+data_o[11] <= registrador:AB_reg_inst.data_o
+data_o[12] <= registrador:AB_reg_inst.data_o
+data_o[13] <= registrador:AB_reg_inst.data_o
+data_o[14] <= registrador:AB_reg_inst.data_o
+data_o[15] <= registrador:AB_reg_inst.data_o
+data_o[16] <= Y_i[0].DB_MAX_OUTPUT_PORT_TYPE
+data_o[17] <= Y_i[1].DB_MAX_OUTPUT_PORT_TYPE
+data_o[18] <= Y_i[2].DB_MAX_OUTPUT_PORT_TYPE
+data_o[19] <= Y_i[3].DB_MAX_OUTPUT_PORT_TYPE
+data_o[20] <= Y_i[4].DB_MAX_OUTPUT_PORT_TYPE
+data_o[21] <= Y_i[5].DB_MAX_OUTPUT_PORT_TYPE
+data_o[22] <= Y_i[6].DB_MAX_OUTPUT_PORT_TYPE
+data_o[23] <= Y_i[7].DB_MAX_OUTPUT_PORT_TYPE
+data_o[24] <= fim_i.DB_MAX_OUTPUT_PORT_TYPE
+data_o[25] <= <GND>
+data_o[26] <= <GND>
+data_o[27] <= <GND>
+data_o[28] <= <GND>
+data_o[29] <= <GND>
+data_o[30] <= <GND>
+data_o[31] <= <GND>
+we_i => dpram_control_reg_i_w.IN0
+we_i => AB_i_w.IN0
+sel_i[0] => dpram_control_reg_i_w.IN1
+sel_i[1] => AB_i_w.IN1
+sel_i[2] => ~NO_FANOUT~
+sel_i[3] => ~NO_FANOUT~
+stb_i => ~NO_FANOUT~
+ack_o <= <GND>
+cyc_i => ~NO_FANOUT~
+status_o[0] <= <GND>
+status_o[1] <= <GND>
+status_o[2] <= <GND>
+status_o[3] <= <GND>
+status_o[4] <= <GND>
+A_o[0] <= registrador:AB_reg_inst.data_o
+A_o[1] <= registrador:AB_reg_inst.data_o
+A_o[2] <= registrador:AB_reg_inst.data_o
+A_o[3] <= registrador:AB_reg_inst.data_o
+B_o[0] <= registrador:AB_reg_inst.data_o
+B_o[1] <= registrador:AB_reg_inst.data_o
+B_o[2] <= registrador:AB_reg_inst.data_o
+B_o[3] <= registrador:AB_reg_inst.data_o
+en_o <= registrador:control_reg_inst2.data_o
+Y_i[0] => data_o[16].DATAIN
+Y_i[1] => data_o[17].DATAIN
+Y_i[2] => data_o[18].DATAIN
+Y_i[3] => data_o[19].DATAIN
+Y_i[4] => data_o[20].DATAIN
+Y_i[5] => data_o[21].DATAIN
+Y_i[6] => data_o[22].DATAIN
+Y_i[7] => data_o[23].DATAIN
+fim_i => data_o[24].DATAIN
+
+
+|DE10_NANO_SoC_GHRD|dp_ram:dp_ram_inst|registrador:control_reg_inst2
+clk => data_reg[0].CLK
+reset => data_reg[0].ACLR
+data_i[0] => data_reg[0].DATAIN
+data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|dp_ram:dp_ram_inst|registrador:AB_reg_inst
+clk => data_reg[0].CLK
+clk => data_reg[1].CLK
+clk => data_reg[2].CLK
+clk => data_reg[3].CLK
+clk => data_reg[4].CLK
+clk => data_reg[5].CLK
+clk => data_reg[6].CLK
+clk => data_reg[7].CLK
+reset => data_reg[0].ACLR
+reset => data_reg[1].ACLR
+reset => data_reg[2].ACLR
+reset => data_reg[3].ACLR
+reset => data_reg[4].ACLR
+reset => data_reg[5].ACLR
+reset => data_reg[6].ACLR
+reset => data_reg[7].ACLR
+data_i[0] => data_reg[0].DATAIN
+data_i[1] => data_reg[1].DATAIN
+data_i[2] => data_reg[2].DATAIN
+data_i[3] => data_reg[3].DATAIN
+data_i[4] => data_reg[4].DATAIN
+data_i[5] => data_reg[5].DATAIN
+data_i[6] => data_reg[6].DATAIN
+data_i[7] => data_reg[7].DATAIN
+data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+data_o[1] <= data_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+data_o[2] <= data_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+data_o[3] <= data_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+data_o[4] <= data_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+data_o[5] <= data_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+data_o[6] <= data_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+data_o[7] <= data_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst2
+clk_i => clk_i.IN4
+rst_i => rst_i.IN4
+en_i => en_i.IN1
+A_i[0] => A_i_w.DATAB
+A_i[1] => A_i_w.DATAB
+A_i[2] => A_i_w.DATAB
+A_i[3] => A_i_w.DATAB
+B_i[0] => B_i_w.DATAB
+B_i[1] => B_i_w.DATAB
+B_i[2] => B_i_w.DATAB
+B_i[3] => B_i_w.DATAB
+Y_o[0] <= registrador:reg_Y_inst.data_o
+Y_o[1] <= registrador:reg_Y_inst.data_o
+Y_o[2] <= registrador:reg_Y_inst.data_o
+Y_o[3] <= registrador:reg_Y_inst.data_o
+Y_o[4] <= registrador:reg_Y_inst.data_o
+Y_o[5] <= registrador:reg_Y_inst.data_o
+Y_o[6] <= registrador:reg_Y_inst.data_o
+Y_o[7] <= registrador:reg_Y_inst.data_o
+fim_o <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst2|registrador:reg_A_inst
+clk => data_reg[0].CLK
+clk => data_reg[1].CLK
+clk => data_reg[2].CLK
+clk => data_reg[3].CLK
+clk => data_reg[4].CLK
+clk => data_reg[5].CLK
+clk => data_reg[6].CLK
+clk => data_reg[7].CLK
+reset => data_reg[0].ACLR
+reset => data_reg[1].ACLR
+reset => data_reg[2].ACLR
+reset => data_reg[3].ACLR
+reset => data_reg[4].ACLR
+reset => data_reg[5].ACLR
+reset => data_reg[6].ACLR
+reset => data_reg[7].ACLR
+data_i[0] => data_reg[0].DATAIN
+data_i[1] => data_reg[1].DATAIN
+data_i[2] => data_reg[2].DATAIN
+data_i[3] => data_reg[3].DATAIN
+data_i[4] => data_reg[4].DATAIN
+data_i[5] => data_reg[5].DATAIN
+data_i[6] => data_reg[6].DATAIN
+data_i[7] => data_reg[7].DATAIN
+data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+data_o[1] <= data_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+data_o[2] <= data_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+data_o[3] <= data_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+data_o[4] <= data_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+data_o[5] <= data_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+data_o[6] <= data_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+data_o[7] <= data_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst2|registrador:reg_B_inst
+clk => data_reg[0].CLK
+clk => data_reg[1].CLK
+clk => data_reg[2].CLK
+clk => data_reg[3].CLK
+reset => data_reg[0].ACLR
+reset => data_reg[1].ACLR
+reset => data_reg[2].ACLR
+reset => data_reg[3].ACLR
+data_i[0] => data_reg[0].DATAIN
+data_i[1] => data_reg[1].DATAIN
+data_i[2] => data_reg[2].DATAIN
+data_i[3] => data_reg[3].DATAIN
+data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+data_o[1] <= data_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+data_o[2] <= data_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+data_o[3] <= data_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst2|registrador:reg_Y_inst
+clk => data_reg[0].CLK
+clk => data_reg[1].CLK
+clk => data_reg[2].CLK
+clk => data_reg[3].CLK
+clk => data_reg[4].CLK
+clk => data_reg[5].CLK
+clk => data_reg[6].CLK
+clk => data_reg[7].CLK
+reset => data_reg[0].ACLR
+reset => data_reg[1].ACLR
+reset => data_reg[2].ACLR
+reset => data_reg[3].ACLR
+reset => data_reg[4].ACLR
+reset => data_reg[5].ACLR
+reset => data_reg[6].ACLR
+reset => data_reg[7].ACLR
+data_i[0] => data_reg[0].DATAIN
+data_i[1] => data_reg[1].DATAIN
+data_i[2] => data_reg[2].DATAIN
+data_i[3] => data_reg[3].DATAIN
+data_i[4] => data_reg[4].DATAIN
+data_i[5] => data_reg[5].DATAIN
+data_i[6] => data_reg[6].DATAIN
+data_i[7] => data_reg[7].DATAIN
+data_o[0] <= data_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+data_o[1] <= data_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+data_o[2] <= data_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+data_o[3] <= data_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+data_o[4] <= data_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+data_o[5] <= data_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+data_o[6] <= data_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+data_o[7] <= data_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE10_NANO_SoC_GHRD|mult_4bits:mult_4bits_inst2|controlador_mult:controlador_inst
+clk_i => state~1.DATAIN
+rst_i => state~3.DATAIN
+strt_cmpt_i => next_state.ST_BIT0.DATAB
+strt_cmpt_i => Selector1.IN3
+strt_cmpt_i => Selector0.IN1
+state_o[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+state_o[1] <= state_o.DB_MAX_OUTPUT_PORT_TYPE
+state_o[2] <= state_o.DB_MAX_OUTPUT_PORT_TYPE
 
 

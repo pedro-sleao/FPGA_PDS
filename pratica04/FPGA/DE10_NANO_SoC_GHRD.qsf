@@ -472,6 +472,8 @@ set_global_assignment -name USE_DLL_FREQUENCY_FOR_DQS_DELAY_CHAIN ON
 set_global_assignment -name UNIPHY_SEQUENCER_DQS_CONFIG_ENABLE ON
 set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
 set_global_assignment -name ECO_REGENERATE_REPORT ON
+set_global_assignment -name SYSTEMVERILOG_FILE hdl_files/dp_ram/dp_ram_defines.sv
+set_global_assignment -name SYSTEMVERILOG_FILE hdl_files/dp_ram/dp_ram.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hdl_files/utils/registrador.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hdl_files/utils/avalon_to_wishbone_bridge.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hdl_files/mult_4bits/multiplicador_defines.sv

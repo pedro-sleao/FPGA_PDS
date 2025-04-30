@@ -46,20 +46,17 @@
          type = "String";
       }
    }
-   element avmm_to_wishbone_bridge_0
+   element avmm_to_wishbone_bridge
    {
       datum _sortIndex
       {
          value = "0";
          type = "int";
       }
-   }
-   element avmm_to_wishbone_bridge_0.avmm
-   {
-      datum baseAddress
+      datum sopceditor_expanded
       {
-         value = "262272";
-         type = "String";
+         value = "1";
+         type = "boolean";
       }
    }
    element button_pio
@@ -307,7 +304,7 @@
  <instanceScript></instanceScript>
  <interface
    name="avmm_to_wishbone_bridge_0_wishbone"
-   internal="avmm_to_wishbone_bridge_0.wishbone"
+   internal="avmm_to_wishbone_bridge.wishbone"
    type="conduit"
    dir="end" />
  <interface
@@ -404,7 +401,7 @@
   <parameter name="writable" value="true" />
  </module>
  <module
-   name="avmm_to_wishbone_bridge_0"
+   name="avmm_to_wishbone_bridge"
    kind="avmm_to_wishbone_bridge"
    version="1.0"
    enabled="1">
@@ -1080,7 +1077,7 @@
    kind="avalon"
    version="20.1"
    start="hps_0.h2f_lw_axi_master"
-   end="avmm_to_wishbone_bridge_0.avmm">
+   end="avmm_to_wishbone_bridge.avmm">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00040080" />
   <parameter name="defaultConnection" value="false" />
@@ -1252,7 +1249,7 @@
    kind="clock"
    version="20.1"
    start="clk_0.clk"
-   end="avmm_to_wishbone_bridge_0.clock" />
+   end="avmm_to_wishbone_bridge.clock" />
  <connection
    kind="clock"
    version="20.1"
@@ -1352,7 +1349,7 @@
    kind="reset"
    version="20.1"
    start="clk_0.clk_reset"
-   end="avmm_to_wishbone_bridge_0.reset" />
+   end="avmm_to_wishbone_bridge.reset" />
  <connection
    kind="reset"
    version="20.1"
