@@ -384,7 +384,6 @@ mult_4bits mult_4bits_inst2 (
 	.fim_o (fim_o_w2)
 );
 
-
 assign LED = Y_o_w;
 
 
