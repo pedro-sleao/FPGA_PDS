@@ -8,19 +8,16 @@ Created on Wed May 14 09:36:17 2025
 
 import sage.all as sage
 
-def ntt(a: list[int], q: int) -> list[int]:
-    if len(a) >= q:
+n = 256
+q = 3329
+Zq = sage.Integers(q)
+primitive_root = min(Zq.zeta(n, all=True))
+
+def ntt_256_3329(a: list[int]) -> list[int]:
+    if len(a) != n:
         raise ValueError()
     if not all((0 <= int(val) < q) for val in a):
         raise ValueError()
-    if (q-1) % len(a) != 0:
-        raise ValueError()
-        
-    n = len(a)
-    
-    Zq = sage.Integers(q)
-    
-    primitive_root = min(Zq.zeta(n, all=True))
     
     A = [0 for i in range(n)]
         
@@ -30,19 +27,11 @@ def ntt(a: list[int], q: int) -> list[int]:
         
     return A
 
-def intt(A: list[int], q: int) -> list[int]:
-    if len(A) >= q:
+def intt_256_3329(A: list[int]) -> list[int]:
+    if len(A) != n:
         raise ValueError()
     if not all((0 <= int(val) < q) for val in A):
         raise ValueError()
-    if (q-1) % len(A) != 0:
-        raise ValueError()
-
-    n = len(A)
-    
-    Zq = sage.Integers(q)
-    
-    primitive_root = min(Zq.zeta(n, all=True))
     
     a = [0 for i in range(n)]
         
@@ -52,11 +41,10 @@ def intt(A: list[int], q: int) -> list[int]:
         a[j] = a[j]*sage.inverse_mod(n, q)
         
     return a
-                        
-B = ntt([1, 2, 3, 4], 7681)
+                   
+B = ntt_256_3329([1 for i in range(n)])
+b = intt_256_3329(B)
 
 print(B)
-
-b = intt(B, 7681)
-
 print(b)
+
