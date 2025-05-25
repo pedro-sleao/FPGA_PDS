@@ -42,7 +42,7 @@ def intt_256_3329(A: list[int]) -> list[int]:
         
     return a
                    
-B = ntt_256_3329([1 for i in range(n)])
+B = ntt_256_3329([i for i in range(n)])
 b = intt_256_3329(B)
 
 print(B)

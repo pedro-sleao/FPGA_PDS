@@ -1,34 +1,46 @@
 import sage.all as sage
 
-def ct_ntt(a: list[int], q: int) -> list[int]:
-    if len(a) >= q:
+n = 256
+q = 3329
+Zq = sage.Integers(q)
+primitive_root = min(Zq.zeta(n, all=True))
+
+def bit_reverse_copy(a, n):
+    result = [0]*n
+    bits = n.bit_length()-1
+    for k in range(n):
+        rev = 0
+        x = k
+        for _ in range(bits):
+            rev = (rev << 1) | (x & 1)
+            x >>= 1
+        result[rev] = a[k]
+    return result
+
+def ct_ntt_256_3329(a: list[int]) -> list[int]:
+    if len(a) != n:
         raise ValueError()
     if not all((0 <= int(val) < q) for val in a):
         raise ValueError()
-    if (q-1) % len(a) != 0:
-        raise ValueError()
-    
-    n = len(a)
 
-    if n == 1:
-        return [a[0]]
+    A = bit_reverse_copy(a, n)
 
-    Zq = sage.Integers(q)
-    
-    primitive_root = Zq.zeta(2*n)
-    
-    A = [0 for i in range(n)]
-
-    evens = ct_ntt(a[::2], q)
-    odds = ct_ntt(a[1::2], q)
-
-    for i in range(n//2):
-        A[i] = Zq(evens[i] + primitive_root**(2*i+1)*odds[i])
-        A[i + n//2] = Zq(evens[i] - primitive_root**(2*i+1)*odds[i])
+    m = 1   
+    while m < n:
+        w_m = primitive_root ** (n // (2*m))
+        for i in range(0, n, 2*m):
+            w = Zq(1)
+            for j in range(m):
+                u = A[i + j]
+                v = Zq(w * A[i + j + m])
+                A[i + j] = Zq(u + v)
+                A[i + j + m] = Zq(u - v)
+                w *= Zq(w_m)
+        m <<= 1
 
     return A
 
-a = [1, 2, 3, 4, 5, 6, 7, 8]
-A = ct_ntt(a, 7681)
+a = [i for i in range(n)]
+A = ct_ntt_256_3329(a)
 
 print(A)
