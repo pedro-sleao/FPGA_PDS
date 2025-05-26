@@ -40,7 +40,34 @@ def ct_ntt_256_3329(a: list[int]) -> list[int]:
 
     return A
 
+def gs_intt_256_3329(A: list[int]) -> list[int]:
+    if len(A) != n:
+        raise ValueError()
+    if not all((0 <= int(val) < q) for val in A):
+        raise ValueError()
+
+    a = A[:]
+
+    m = n//2   
+    while m > 0:
+        w_m = primitive_root ** (-n // (2*m))
+        for i in range(0, n, 2*m):
+            w = Zq(1)
+            for j in range(m):
+                u = a[i + j]
+                v = a[i + j + m]
+                a[i + j] = Zq(u + v)
+                a[i + j + m] = Zq((u - v) * w)
+                w *= Zq(w_m)
+        m >>= 1
+    
+    a = [i*sage.inverse_mod(n, q) for i in a]
+
+    a = bit_reverse_copy(a, n)
+
+    return a
+
 a = [i for i in range(n)]
 A = ct_ntt_256_3329(a)
 
-print(A)
+print(gs_intt_256_3329(A))
