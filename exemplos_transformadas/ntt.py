@@ -46,5 +46,5 @@ B = ntt_256_3329([i for i in range(n)])
 b = intt_256_3329(B)
 
 print(B)
-print(b)
+# print(b)
 

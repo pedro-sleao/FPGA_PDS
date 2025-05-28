@@ -70,4 +70,4 @@ def gs_intt_256_3329(A: list[int]) -> list[int]:
 a = [i for i in range(n)]
 A = ct_ntt_256_3329(a)
 
-print(gs_intt_256_3329(A))
+print(A)
