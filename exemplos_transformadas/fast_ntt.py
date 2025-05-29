@@ -34,7 +34,7 @@ def ct_ntt_256_3329(a: list[int]) -> list[int]:
                 v = montgomery_red_3329(w * A[i + j + m])
                 A[i + j] = montgomery_red_3329(u + v)
                 A[i + j + m] = montgomery_red_3329(u - v)
-                w *= w_m
+                w = montgomery_red_3329(w*w_m)
         m <<= 1
 
     return A
