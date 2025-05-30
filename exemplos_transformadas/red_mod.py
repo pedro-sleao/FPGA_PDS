@@ -34,5 +34,3 @@ def kred_3329(a):
     c1 = a//(2**m)
     return k_red*c0 - c1
 
-
-print(kred_3329(3330))
