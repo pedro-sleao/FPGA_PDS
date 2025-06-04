@@ -48,7 +48,7 @@ def gs_intt_256_3329(A: list[int]) -> list[int]:
 
     a = A[:]
 
-    m = n//2   
+    m = n//2    
     while m > 0:
         w_m = primitive_root ** (-n // (2*m))
         for i in range(0, n, 2*m):

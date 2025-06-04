@@ -1,5 +1,9 @@
 from red_mod import kred_3329, barret_red_3329, montgomery_red_3329, k_red
 
+n = 256
+q = 3329
+primitive_root = 17
+
 def reverse_Bits(n, no_of_bits):
     result = 0
     for i in range(no_of_bits):
@@ -7,12 +11,6 @@ def reverse_Bits(n, no_of_bits):
         result |= n & 1
         n >>= 1
     return result
-
-n = 256
-q = 3329
-primitive_root = 17
-twiddle_factors = [pow(primitive_root, reverse_Bits(i, 7), q) for i in range(n)]
-# print(twiddle_factors)
 
 def bit_reverse_copy(a, n):
     result = [0]*n
@@ -26,30 +24,55 @@ def bit_reverse_copy(a, n):
         result[rev] = a[k]
     return result
 
+twiddle_factors = [pow(primitive_root, reverse_Bits(i, 7), q) for i in range(128)]
+
 def ct_ntt_256_3329(a: list[int]) -> list[int]:
     if len(a) != n:
         raise ValueError()
     if not all((0 <= int(val) < q) for val in a):
         raise ValueError()
 
-    A = [0]*n
+    f = a.copy()
+    i = 1
+    length = 128
 
-    t = n
-    m = 1   
-    while m < n:
-        t = t//2
-        for i in range(0, m):
-            j1 = 2*i*t
-            j2 = j1 + t - 1
-            S = twiddle_factors[m + i]
-            for j in range(j1, j2+1):
-                u = a[j]
-                v = (a[j+t]*S) % q
-                A[j] = (u + v) % q
-                A[j+t] = (u - v) % q
-        m = 2*m
+    while length >= 2:
+        for start in range(0, 256, 2 * length):
+            zeta = twiddle_factors[i]
+            i += 1
+            for j in range(start, start + length):
+                t = (zeta * f[j + length]) % q
+                f[j + length] = (f[j] - t) % q
+                f[j] = (f[j] + t) % q
+        length //= 2
 
-    return A
+    return f
+
+def ct_intt_256_3329(a: list[int]) -> list[int]:
+    if len(a) != n:
+        raise ValueError()
+    if not all((0 <= int(val) < q) for val in a):
+        raise ValueError()
+
+    f = a.copy()
+
+    i = 127
+    length = 2
+    while length <= 128:
+        for start in range(0, 256, 2 * length):
+            zeta = twiddle_factors[i]
+            i -= 1
+            for j in range(start, start + length):
+                t = f[j]
+                f[j] = (f[j+length] + t) % q
+                f[j + length] = (zeta*(f[j+length] - t)) % q
+        length *= 2
+
+    for i, x in enumerate(f):
+        f[i] = (x*3303) % q
+
+    return f
+
 
 a = [i for i in range(n)]
 A = ct_ntt_256_3329(a)
