@@ -24,7 +24,7 @@ def bit_reverse_copy(a, n):
         result[rev] = a[k]
     return result
 
-twiddle_factors = [pow(primitive_root, reverse_Bits(i, 7), q) for i in range(128)]
+twiddle_factors = [pow(primitive_root, reverse_Bits(i, 7), q) for i in range(256)]
 
 def ct_ntt_256_3329(a: list[int]) -> list[int]:
     if len(a) != n:
@@ -73,8 +73,48 @@ def ct_intt_256_3329(a: list[int]) -> list[int]:
 
     return f
 
+def ntt_ct_kred(a: list[int]) -> list[int]:
+    t = n
+    m = 1
+    while m < n:
+        t = t//2
+        for i in range(m):
+            j1 = 2*i*t
+            j2 = j1 + t - 1
+            S = twiddle_factors[m+i]
+            for j in range(j1, j2+1):
+                U = a[j]
+                V = a[j+t]*S
+                a[j] = (U + V) % q
+                a[j+t] = (U - V) % q
+        m = 2*m
+    return a
+
+def intt_ct_kred(a: list[int]) -> list[int]:
+    t = 1
+    m = n
+    while m > 1:
+        j1 = 0
+        h = m//2
+        for i in range(h):
+            j2 = j1 + t - 1
+            S = pow(twiddle_factors[h+i], -1, q)
+            for j in range(j1, j2+1):
+                U = a[j]
+                V = a[j+t]
+                a[j] = (U + V) % q
+                a[j+t] = ((U - V)*S) % q
+            j1 = j1 + 2*t
+        m = m//2
+        t = 2*t
+    
+    for j in range(n):
+        a[j] = (a[j]*pow(n, -1, q)) % q
+
+    return a
+
 
 a = [i for i in range(n)]
-A = ct_ntt_256_3329(a)
+A = ntt_ct_kred(a)
 
-print(A)
+print(intt_ct_kred(A))

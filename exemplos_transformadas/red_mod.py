@@ -34,18 +34,9 @@ def kred_3329(a):
     c1 = a//(2**m)
     return k_red*c0 - c1
 
-def k_red_bits(C: int) -> int:
-    Clow = C & 0xFF
-    Clow_ext = Clow
-
-    Chigh = C >> 8
-    C0 = Clow_ext << 4
-
-    C1 = Chigh
-
-    S = C0 - (C1 + Clow_ext + (Clow_ext << 1))
-
-    return S
+def kred_2x_3329(a):
+    c0 = a % (2**m)
+    c1 = a//(2**m) % (2**m)
+    c2 = a//(2**m)
+    return k_red**2 * c0 - k_red*c1 + c2
     
-
-print(k_red_bits(3330))
