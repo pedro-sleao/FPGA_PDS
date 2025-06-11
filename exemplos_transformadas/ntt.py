@@ -42,9 +42,15 @@ def intt_256_3329(A: list[int]) -> list[int]:
         
     return a
                    
-B = ntt_256_3329([i for i in range(n)])
-b = intt_256_3329(B)
+a = [i for i in range(n)]
+b = [i for i in range(n)]
 
-print(B)
-# print(b)
+A = ntt_256_3329(a)
+B = ntt_256_3329(b)
+
+C = [(x*y)%q for x, y in zip(A, B)]
+
+result = intt_256_3329(C)
+
+print(result)
 
