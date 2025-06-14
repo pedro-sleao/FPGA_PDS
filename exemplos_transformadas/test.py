@@ -35,13 +35,50 @@ def kred_2x(a):
     c2 = a//(2**(2*m))
     return k_red**2 * c0 - k_red*c1 + c2
 
+def mul_test(a, b):
+    c = [0] * n
+    mask = n - 1
+
+    for i in range(n):
+        for j in range(n):
+            index = (i + j) & mask
+            prod = a[i] * b[j]
+            if i + j >= n:
+                c[index] = (c[index] - prod) % q
+            else:
+                c[index] = (c[index] + prod) % q
+
+    return c
+
+def pmul(a, b):
+    c = [0]*n
+    for i in range(n):
+        c[i] = kred(a[i]*b[i])
+        c[i] = kred(c[i])
+    return c
+
+def correction(a, p, N):
+    for i in range(N):
+        mask = a[i] >> 31
+        a[i] += (p & mask) - p
+        mask = a[i] >> 31
+        a[i] += (p & mask)
+    return a
+
+def two_reduce(a):
+    for i in range(n):
+        a[i] = kred(a[i])
+        a[i] = kred(a[i])
+    return a
+
+
 def ntt_ct_kred(a: list[int]) -> list[int]:
     t = n
     m = 1
     while m < n:
         t = t//2
         for i in range(m):
-            j1 = 2*i*t
+            j1 = 2*i*t  
             j2 = j1 + t - 1
             S = twiddle_factors_kred[m+i]
             for j in range(j1, j2+1):
@@ -57,7 +94,7 @@ def ntt_ct_kred(a: list[int]) -> list[int]:
         m = 2*m
     return a
 
-def intt_ct_kred(a: list[int]) -> list[int]:
+def intt_gs_kred(a: list[int]) -> list[int]:
     t = 1
     m = n
     while m > 2:
@@ -81,10 +118,12 @@ def intt_ct_kred(a: list[int]) -> list[int]:
         t = 2*t
 
     n_inv = pow(n, -1, q)
+    k_inv_7 = pow(k_red, -7, q)
+    k_inv_8 = pow(k_red, -8, q)
     k_inv_11 = pow(k_red, -11, q)
     k_inv_10 = pow(k_red, -10, q)
-    nK_inv = (n_inv * k_inv_11) % q
-    psiK_inv = (n_inv * k_inv_10 * twiddle_factors_kred_inv[1]) % q
+    nK_inv = (n_inv * k_inv_8) % q
+    psiK_inv = (n_inv * k_inv_7 * twiddle_factors_kred_inv[1]) % q
 
     for j in range(t):
         U = a[j]
@@ -95,7 +134,19 @@ def intt_ct_kred(a: list[int]) -> list[int]:
     return a
 
 a = [i for i in range(n)]
-A = ntt_ct_kred(a)
+b = [i for i in range(n)]
 
-print(A)
+C = mul_test(a, b)
+
+A = ntt_ct_kred(a)
+B = ntt_ct_kred(b)
+
+D = pmul(A, B)
+D = correction(D, q, n)
+
+C_ = intt_gs_kred(D)
+C_ = two_reduce(C_)
+C_ = correction(C_, q, n)
+
+print(C == C_)
 

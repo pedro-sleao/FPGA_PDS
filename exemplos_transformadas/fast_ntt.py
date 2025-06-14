@@ -25,6 +25,7 @@ def bit_reverse_copy(a, n):
     return result
 
 twiddle_factors = [pow(primitive_root, reverse_Bits(i, 7), q) for i in range(256)]
+twiddle_factors_kred = [(i*pow(k_red, -1, q)) % q for i in twiddle_factors]
 
 def ct_ntt_256_3329(a: list[int]) -> list[int]:
     if len(a) != n:
@@ -48,7 +49,7 @@ def ct_ntt_256_3329(a: list[int]) -> list[int]:
 
     return f
 
-def ct_intt_256_3329(a: list[int]) -> list[int]:
+def gs_intt_256_3329(a: list[int]) -> list[int]:
     if len(a) != n:
         raise ValueError()
     if not all((0 <= int(val) < q) for val in a):
@@ -81,16 +82,16 @@ def ntt_ct_kred(a: list[int]) -> list[int]:
         for i in range(m):
             j1 = 2*i*t
             j2 = j1 + t - 1
-            S = twiddle_factors[m+i]
+            S = twiddle_factors_kred[m+i]
             for j in range(j1, j2+1):
                 U = a[j]
-                V = a[j+t]*S
+                V = kred_3329(a[j+t]*S)
                 a[j] = (U + V) % q
                 a[j+t] = (U - V) % q
         m = 2*m
     return a
 
-def intt_ct_kred(a: list[int]) -> list[int]:
+def intt_gs_kred(a: list[int]) -> list[int]:
     t = 1
     m = n
     while m > 1:
@@ -98,18 +99,20 @@ def intt_ct_kred(a: list[int]) -> list[int]:
         h = m//2
         for i in range(h):
             j2 = j1 + t - 1
-            S = pow(twiddle_factors[h+i], -1, q)
+            S = pow(twiddle_factors[h+i], -1, q)*pow(k_red, -1, q) % q
             for j in range(j1, j2+1):
                 U = a[j]
                 V = a[j+t]
+                temp = (U - V) % q
                 a[j] = (U + V) % q
-                a[j+t] = ((U - V)*S) % q
+                a[j+t] = kred_3329(temp*S)
             j1 = j1 + 2*t
         m = m//2
         t = 2*t
     
     for j in range(n):
-        a[j] = (a[j]*pow(n, -1, q)) % q
+        nk_inv = (pow(n, -1, q)*pow(k_red, -1, q)) % q
+        a[j] = kred_3329(a[j]*nk_inv)
 
     return a
 
@@ -117,4 +120,4 @@ def intt_ct_kred(a: list[int]) -> list[int]:
 a = [i for i in range(n)]
 A = ntt_ct_kred(a)
 
-print(intt_ct_kred(A))
+print(intt_gs_kred(A))
