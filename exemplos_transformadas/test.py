@@ -1,12 +1,12 @@
 import sage.all as sage
 from LUT import *
 
-q = 12289
-n = 512
-k_red = 3
+q = 3329
+n = 256
+k_red = 13
 k_red_inv = pow(k_red, -1, q)
-m = 12
-primitive_root = 3
+m = 8
+primitive_root = 17
 
 def reverse_Bits(n, no_of_bits):
     result = 0
@@ -16,13 +16,13 @@ def reverse_Bits(n, no_of_bits):
         n >>= 1
     return result
 
-twiddle_factors = [pow(primitive_root, reverse_Bits(i, 8), q) for i in range(512)]
+twiddle_factors = [pow(primitive_root, reverse_Bits(i, 7), q) for i in range(256)]
 
-#twiddle_factors_kred = [(i * k_red_inv) % q for i in twiddle_factors]
-#twiddle_factors_kred_inv = [(pow(i, -1, q) * k_red_inv) % q for i in twiddle_factors]
+twiddle_factors_kred = [(i * k_red_inv) % q for i in twiddle_factors]
+twiddle_factors_kred_inv = [(pow(i, -1, q) * k_red_inv) % q for i in twiddle_factors]
 
-twiddle_factors_kred = psi_12289_rev_kinv_512
-twiddle_factors_kred_inv = psi_12289_inv_rev_kinv_512
+# twiddle_factors_kred = psi_12289_rev_kinv_512
+# twiddle_factors_kred_inv = psi_12289_inv_rev_kinv_512
 
 def kred(a):
     c0 = a % (2**m)
@@ -148,5 +148,5 @@ C_ = intt_gs_kred(D)
 C_ = two_reduce(C_)
 C_ = correction(C_, q, n)
 
-print(C == C_)
+print(C_)
 

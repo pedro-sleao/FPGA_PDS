@@ -7,15 +7,7 @@ Created on Fri Mar 28 11:06:17 2025
 """
 
 import socket
-import numpy
-    
-def generate_test_result():
-    with open("test_numbers.txt", "w") as f:
-        for i in range(10):
-            for b in range(10):
-                f.write(f"{i * b}\n")
 
-generate_test_result()
 serverAddressPort   = ("10.42.0.66", 9090) 
 
 # Create a UDP socket at client side
