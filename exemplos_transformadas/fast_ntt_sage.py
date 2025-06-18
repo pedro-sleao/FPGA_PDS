@@ -1,3 +1,5 @@
+# Implementação da NTT e INTT utilizando Cooley-Tukey e Gentlemen-Sande
+
 import sage.all as sage
 
 n = 256

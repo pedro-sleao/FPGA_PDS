@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May 14 09:36:17 2025
-
-@author: pedro
-"""
+# Implementação da NTT e INTT pela definição
 
 import sage.all as sage
 

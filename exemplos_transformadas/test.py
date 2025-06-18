@@ -1,4 +1,10 @@
-import sage.all as sage
+# Implementação dos algoritmos de NTT descritos no seguinte artigo:
+# Speeding up the Number Theoretic Transform
+# for Faster Ideal Lattice-Based Cryptography
+# Patrick Longa and Michael Naehrig
+# ================================================
+# Alguns passos/funções foram retirados da biblioteca LatticeCrypto, disponível no artigo.
+
 from LUT import *
 
 q = 3329
