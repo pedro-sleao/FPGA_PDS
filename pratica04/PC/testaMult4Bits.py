@@ -8,7 +8,7 @@ Created on Fri Mar 28 11:06:17 2025
 
 import socket
 
-serverAddressPort   = ("10.42.0.66", 9090) 
+serverAddressPort   = ("10.42.0.162", 9090) 
 
 # Create a UDP socket at client side
 UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
