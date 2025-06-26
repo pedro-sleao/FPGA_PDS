@@ -93,10 +93,10 @@ module soc_system (
 	reset_reset_n);	
 
 	output	[4:0]	avmm_to_wishbone_bridge_0_wishbone_address;
-	input	[31:0]	avmm_to_wishbone_bridge_0_wishbone_datain;
-	output	[31:0]	avmm_to_wishbone_bridge_0_wishbone_dataout;
+	input	[159:0]	avmm_to_wishbone_bridge_0_wishbone_datain;
+	output	[159:0]	avmm_to_wishbone_bridge_0_wishbone_dataout;
 	output		avmm_to_wishbone_bridge_0_wishbone_writeenable;
-	output	[3:0]	avmm_to_wishbone_bridge_0_wishbone_selectarray;
+	output	[9:0]	avmm_to_wishbone_bridge_0_wishbone_selectarray;
 	output		avmm_to_wishbone_bridge_0_wishbone_strobeout;
 	input		avmm_to_wishbone_bridge_0_wishbone_acknowledged;
 	input	[1:0]	button_pio_external_connection_export;

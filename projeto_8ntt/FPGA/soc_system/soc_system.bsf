@@ -27,8 +27,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 88)
 		(input)
-		(text "avmm_to_wishbone_bridge_0_wishbone_datain[31..0]" (rect 0 0 214 12)(font "Arial" (font_size 8)))
-		(text "avmm_to_wishbone_bridge_0_wishbone_datain[31..0]" (rect 4 77 292 88)(font "Arial" (font_size 8)))
+		(text "avmm_to_wishbone_bridge_0_wishbone_datain[159..0]" (rect 0 0 219 12)(font "Arial" (font_size 8)))
+		(text "avmm_to_wishbone_bridge_0_wishbone_datain[159..0]" (rect 4 77 298 88)(font "Arial" (font_size 8)))
 		(line (pt 0 88)(pt 304 88)(line_width 3))
 	)
 	(port
@@ -251,8 +251,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 104)
 		(output)
-		(text "avmm_to_wishbone_bridge_0_wishbone_dataout[31..0]" (rect 0 0 220 12)(font "Arial" (font_size 8)))
-		(text "avmm_to_wishbone_bridge_0_wishbone_dataout[31..0]" (rect 4 93 298 104)(font "Arial" (font_size 8)))
+		(text "avmm_to_wishbone_bridge_0_wishbone_dataout[159..0]" (rect 0 0 225 12)(font "Arial" (font_size 8)))
+		(text "avmm_to_wishbone_bridge_0_wishbone_dataout[159..0]" (rect 4 93 304 104)(font "Arial" (font_size 8)))
 		(line (pt 0 104)(pt 304 104)(line_width 3))
 	)
 	(port
@@ -265,8 +265,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 136)
 		(output)
-		(text "avmm_to_wishbone_bridge_0_wishbone_selectarray[3..0]" (rect 0 0 233 12)(font "Arial" (font_size 8)))
-		(text "avmm_to_wishbone_bridge_0_wishbone_selectarray[3..0]" (rect 4 125 316 136)(font "Arial" (font_size 8)))
+		(text "avmm_to_wishbone_bridge_0_wishbone_selectarray[9..0]" (rect 0 0 233 12)(font "Arial" (font_size 8)))
+		(text "avmm_to_wishbone_bridge_0_wishbone_selectarray[9..0]" (rect 4 125 316 136)(font "Arial" (font_size 8)))
 		(line (pt 0 136)(pt 304 136)(line_width 3))
 	)
 	(port

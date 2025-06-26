@@ -59,6 +59,14 @@
          type = "boolean";
       }
    }
+   element avmm_to_wishbone_bridge.avmm
+   {
+      datum baseAddress
+      {
+         value = "263168";
+         type = "String";
+      }
+   }
    element button_pio
    {
       datum _sortIndex
@@ -405,9 +413,9 @@
    kind="avmm_to_wishbone_bridge"
    version="1.0"
    enabled="1">
-  <parameter name="BE_WIDTH" value="4" />
+  <parameter name="BE_WIDTH" value="10" />
   <parameter name="BUS_WIDTH" value="5" />
-  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="DATA_WIDTH" value="160" />
  </module>
  <module name="button_pio" kind="altera_avalon_pio" version="20.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="true" />
@@ -1079,7 +1087,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="avmm_to_wishbone_bridge.avmm">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040080" />
+  <parameter name="baseAddress" value="0x00040400" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection

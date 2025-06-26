@@ -1,5 +1,5 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system.qsys --block-symbol-file --output-directory=/home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system --family="Cyclone V" --part=5CSEBA6U23I7
+Info: qsys-generate /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system.qsys --block-symbol-file --output-directory=/home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system --family="Cyclone V" --part=5CSEBA6U23I7
 Progress: Loading FPGA/soc_system.qsys
 Progress: Reading input file
 Progress: Adding ILC [interrupt_latency_counter 20.1]
@@ -45,7 +45,7 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system.qsys --synthesis=VERILOG --output-directory=/home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Info: qsys-generate /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system.qsys --synthesis=VERILOG --output-directory=/home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis --family="Cyclone V" --part=5CSEBA6U23I7
 Progress: Loading FPGA/soc_system.qsys
 Progress: Reading input file
 Progress: Adding ILC [interrupt_latency_counter 20.1]
@@ -99,7 +99,7 @@ Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_002.sender
 Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_002.sender
 Info: ILC: "soc_system" instantiated interrupt_latency_counter "ILC"
 Info: RAMteste: Starting RTL generation for module 'soc_system_RAMteste'
-Info: RAMteste:   Generation command is [exec /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/bin/perl -I /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/lib -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin/europa -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_RAMteste --dir=/tmp/alt0201_5037913905134981412.dir/0003_RAMteste_gen/ --quartus_dir=/home/pedro/intelFPGA_lite/20.1/quartus --verilog --config=/tmp/alt0201_5037913905134981412.dir/0003_RAMteste_gen//soc_system_RAMteste_component_configuration.pl  --do_build_sim=0  ]
+Info: RAMteste:   Generation command is [exec /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/bin/perl -I /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/lib -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin/europa -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=soc_system_RAMteste --dir=/tmp/alt0265_1617691513696560339.dir/0003_RAMteste_gen/ --quartus_dir=/home/pedro/intelFPGA_lite/20.1/quartus --verilog --config=/tmp/alt0265_1617691513696560339.dir/0003_RAMteste_gen//soc_system_RAMteste_component_configuration.pl  --do_build_sim=0  ]
 Info: RAMteste: perl: warning: Setting locale failed.
 Info: RAMteste: perl: warning: Please check that your locale settings:
 Info: RAMteste: 	LANGUAGE = (unset),
@@ -112,7 +112,7 @@ Info: RAMteste: Done RTL generation for module 'soc_system_RAMteste'
 Info: RAMteste: "soc_system" instantiated altera_avalon_onchip_memory2 "RAMteste"
 Info: avmm_to_wishbone_bridge: "soc_system" instantiated avmm_to_wishbone_bridge "avmm_to_wishbone_bridge"
 Info: button_pio: Starting RTL generation for module 'soc_system_button_pio'
-Info: button_pio:   Generation command is [exec /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/bin/perl -I /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/lib -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin/europa -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=/tmp/alt0201_5037913905134981412.dir/0005_button_pio_gen/ --quartus_dir=/home/pedro/intelFPGA_lite/20.1/quartus --verilog --config=/tmp/alt0201_5037913905134981412.dir/0005_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: button_pio:   Generation command is [exec /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/bin/perl -I /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/lib -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin/europa -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=/tmp/alt0265_1617691513696560339.dir/0005_button_pio_gen/ --quartus_dir=/home/pedro/intelFPGA_lite/20.1/quartus --verilog --config=/tmp/alt0265_1617691513696560339.dir/0005_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: button_pio: perl: warning: Setting locale failed.
 Info: button_pio: perl: warning: Please check that your locale settings:
 Info: button_pio: 	LANGUAGE = (unset),
@@ -124,7 +124,7 @@ Info: button_pio: perl: warning: Falling back to the standard locale ("C").
 Info: button_pio: Done RTL generation for module 'soc_system_button_pio'
 Info: button_pio: "soc_system" instantiated altera_avalon_pio "button_pio"
 Info: dipsw_pio: Starting RTL generation for module 'soc_system_dipsw_pio'
-Info: dipsw_pio:   Generation command is [exec /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/bin/perl -I /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/lib -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin/europa -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=/tmp/alt0201_5037913905134981412.dir/0006_dipsw_pio_gen/ --quartus_dir=/home/pedro/intelFPGA_lite/20.1/quartus --verilog --config=/tmp/alt0201_5037913905134981412.dir/0006_dipsw_pio_gen//soc_system_dipsw_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: dipsw_pio:   Generation command is [exec /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/bin/perl -I /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/lib -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin/europa -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_dipsw_pio --dir=/tmp/alt0265_1617691513696560339.dir/0006_dipsw_pio_gen/ --quartus_dir=/home/pedro/intelFPGA_lite/20.1/quartus --verilog --config=/tmp/alt0265_1617691513696560339.dir/0006_dipsw_pio_gen//soc_system_dipsw_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: dipsw_pio: perl: warning: Setting locale failed.
 Info: dipsw_pio: perl: warning: Please check that your locale settings:
 Info: dipsw_pio: 	LANGUAGE = (unset),
@@ -141,7 +141,7 @@ Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
 Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
 Info: jtag_uart: Starting RTL generation for module 'soc_system_jtag_uart'
-Info: jtag_uart:   Generation command is [exec /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/bin/perl -I /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/lib -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin/europa -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=/tmp/alt0201_5037913905134981412.dir/0007_jtag_uart_gen/ --quartus_dir=/home/pedro/intelFPGA_lite/20.1/quartus --verilog --config=/tmp/alt0201_5037913905134981412.dir/0007_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/bin/perl -I /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/lib -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin/europa -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=soc_system_jtag_uart --dir=/tmp/alt0265_1617691513696560339.dir/0007_jtag_uart_gen/ --quartus_dir=/home/pedro/intelFPGA_lite/20.1/quartus --verilog --config=/tmp/alt0265_1617691513696560339.dir/0007_jtag_uart_gen//soc_system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: perl: warning: Setting locale failed.
 Info: jtag_uart: perl: warning: Please check that your locale settings:
 Info: jtag_uart: 	LANGUAGE = (unset),
@@ -153,7 +153,7 @@ Info: jtag_uart: perl: warning: Falling back to the standard locale ("C").
 Info: jtag_uart: Done RTL generation for module 'soc_system_jtag_uart'
 Info: jtag_uart: "soc_system" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: led_pio: Starting RTL generation for module 'soc_system_led_pio'
-Info: led_pio:   Generation command is [exec /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/bin/perl -I /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/lib -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin/europa -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_led_pio --dir=/tmp/alt0201_5037913905134981412.dir/0008_led_pio_gen/ --quartus_dir=/home/pedro/intelFPGA_lite/20.1/quartus --verilog --config=/tmp/alt0201_5037913905134981412.dir/0008_led_pio_gen//soc_system_led_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: led_pio:   Generation command is [exec /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/bin/perl -I /home/pedro/intelFPGA_lite/20.1/quartus/linux64/perl/lib -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin/europa -I /home/pedro/intelFPGA_lite/20.1/quartus/sopc_builder/bin -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/pedro/intelFPGA_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_led_pio --dir=/tmp/alt0265_1617691513696560339.dir/0008_led_pio_gen/ --quartus_dir=/home/pedro/intelFPGA_lite/20.1/quartus --verilog --config=/tmp/alt0265_1617691513696560339.dir/0008_led_pio_gen//soc_system_led_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: led_pio: perl: warning: Setting locale failed.
 Info: led_pio: perl: warning: Please check that your locale settings:
 Info: led_pio: 	LANGUAGE = (unset),
@@ -166,6 +166,8 @@ Info: led_pio: Done RTL generation for module 'soc_system_led_pio'
 Info: led_pio: "soc_system" instantiated altera_avalon_pio "led_pio"
 Info: mm_bridge_0: "soc_system" instantiated altera_avalon_mm_bridge "mm_bridge_0"
 Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
+Info: Interconnect is inserted between master avmm_to_wishbone_bridge_avmm_agent.m0 and slave avmm_to_wishbone_bridge_avmm_translator.avalon_universal_slave_0 because the master has byteenable signal 20 bit wide, but the slave is 10 bit wide.
+Warning: Translator avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator failed to match interface avmm_to_wishbone_bridge_avmm_translator.avalon_universal_slave_0
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
@@ -199,55 +201,67 @@ Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_mer
 Info: avmm_to_wishbone_bridge_avmm_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "avmm_to_wishbone_bridge_avmm_agent"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
 Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: avmm_to_wishbone_bridge_avmm_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "avmm_to_wishbone_bridge_avmm_burst_adapter"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_avalon_st_pipeline_stage.sv
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_avalon_st_pipeline_stage.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avmm_to_wishbone_bridge_avmm_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "avmm_to_wishbone_bridge_avmm_rsp_width_adapter"
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "mm_interconnect_0" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
 Info: mm_bridge_0_m0_translator: "mm_interconnect_1" instantiated altera_merlin_master_translator "mm_bridge_0_m0_translator"
 Info: mm_bridge_0_m0_agent: "mm_interconnect_1" instantiated altera_merlin_master_agent "mm_bridge_0_m0_agent"
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: hps_0_f2h_axi_slave_agent: "mm_interconnect_2" instantiated altera_merlin_axi_slave_ni "hps_0_f2h_axi_slave_agent"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_2" instantiated altera_merlin_router "router_001"
 Info: cmd_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: hps_0_f2h_axi_slave_wr_cmd_width_adapter: "mm_interconnect_2" instantiated altera_merlin_width_adapter "hps_0_f2h_axi_slave_wr_cmd_width_adapter"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: router: "mm_interconnect_3" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_3" instantiated altera_merlin_router "router_001"
 Info: cmd_demux: "mm_interconnect_3" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/pedro/Documentos/FPGA_PDS/pratica04/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_3" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: soc_system: Done "soc_system" with 67 modules, 136 files
+Info: soc_system: Done "soc_system" with 76 modules, 145 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

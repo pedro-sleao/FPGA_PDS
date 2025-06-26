@@ -2662,7 +2662,7 @@ module soc_system_mm_interconnect_1 (
 		.sink5_endofpacket   (rsp_demux_005_src1_endofpacket)                 //          .endofpacket
 	);
 
-	soc_system_mm_interconnect_0_avalon_st_adapter #(
+	soc_system_mm_interconnect_0_avalon_st_adapter_001 #(
 		.inBitsPerSymbol (34),
 		.inUsePackets    (0),
 		.inDataWidth     (34),
@@ -2691,7 +2691,7 @@ module soc_system_mm_interconnect_1 (
 		.out_0_error    (avalon_st_adapter_out_0_error)                           //         .error
 	);
 
-	soc_system_mm_interconnect_0_avalon_st_adapter #(
+	soc_system_mm_interconnect_0_avalon_st_adapter_001 #(
 		.inBitsPerSymbol (34),
 		.inUsePackets    (0),
 		.inDataWidth     (34),
@@ -2720,7 +2720,7 @@ module soc_system_mm_interconnect_1 (
 		.out_0_error    (avalon_st_adapter_001_out_0_error)              //         .error
 	);
 
-	soc_system_mm_interconnect_0_avalon_st_adapter #(
+	soc_system_mm_interconnect_0_avalon_st_adapter_001 #(
 		.inBitsPerSymbol (34),
 		.inUsePackets    (0),
 		.inDataWidth     (34),
@@ -2749,7 +2749,7 @@ module soc_system_mm_interconnect_1 (
 		.out_0_error    (avalon_st_adapter_002_out_0_error)                    //         .error
 	);
 
-	soc_system_mm_interconnect_0_avalon_st_adapter #(
+	soc_system_mm_interconnect_0_avalon_st_adapter_001 #(
 		.inBitsPerSymbol (34),
 		.inUsePackets    (0),
 		.inDataWidth     (34),
@@ -2778,7 +2778,7 @@ module soc_system_mm_interconnect_1 (
 		.out_0_error    (avalon_st_adapter_003_out_0_error)              //         .error
 	);
 
-	soc_system_mm_interconnect_0_avalon_st_adapter #(
+	soc_system_mm_interconnect_0_avalon_st_adapter_001 #(
 		.inBitsPerSymbol (34),
 		.inUsePackets    (0),
 		.inDataWidth     (34),
@@ -2807,7 +2807,7 @@ module soc_system_mm_interconnect_1 (
 		.out_0_error    (avalon_st_adapter_004_out_0_error)              //         .error
 	);
 
-	soc_system_mm_interconnect_0_avalon_st_adapter #(
+	soc_system_mm_interconnect_0_avalon_st_adapter_001 #(
 		.inBitsPerSymbol (34),
 		.inUsePackets    (0),
 		.inDataWidth     (34),

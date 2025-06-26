@@ -303,7 +303,7 @@ wire                  ack_w;
 dp_ram dp_ram_inst(
     //common signal
     .clk  (FPGA_CLK1_50),
-    .reset  (hps_fpga_reset_n),
+    .reset  (reset_button_w), // hps_fpga_reset_n
     //Wishbone Slave interface
     //Wishbone interface:
     .adr_i   (address_w),  //Address In
@@ -313,32 +313,24 @@ dp_ram dp_ram_inst(
     .sel_i   (sel_w),  //Select input array
     .stb_i   (stb_w),  //Strobe In
     .ack_o   (ack_w),  //Acknowledged Out
-	 //Mult4bits:
+	 //NTT:
 	 .A_o		 (A_w),
-	 .B_o		 (B_w),
 	 .en_o	 (en_w),
-	 .Y_i		 (Y_o_w2),
-	 .fim_i	 (fim_o_w2)
+	 .Y_i		 (Y_o_w),
+	 .fim_i	 (fim_o_w)
 );
 
-// Sinais do segundo multiplicador 4bits
-wire  [3:0] 		A_w;
-wire  [3:0] 		B_w;
+// Sinais da NTT
+wire  [11:0] 		A_w[7:0];
 wire        		en_w;
-wire		[7: 0]	Y_o_w2;
-wire				  	fim_o_w2;
+wire	[7: 0]	   Y_o_w;
+wire				  	fim_o_w;
 
-mult_4bits mult_4bits_inst2 (
-	.clk_i (FPGA_CLK1_50),
-	.rst_i (1'b1),
-	.en_i (en_w),
-	.A_i (A_w),
-	.B_i (B_w),
-	.Y_o (Y_o_w2),
-	.fim_o (fim_o_w2)
-);
+// Sinais de teste
+wire					reset_button_w;
 
-assign LED = Y_o_w2;
-
+assign reset_button_w = KEY[0];
+assign LED[0] = reset_button_w;
+assign LED[7:1] = A_w[0][6:0];
 
 endmodule
