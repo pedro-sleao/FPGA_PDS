@@ -291,9 +291,9 @@ end
 //###############################################################
 
 // Sinais da nova dual port ram
-wire                  address_w;
-wire		[31: 0]	  data_i_w;
-wire		[31: 0]	  data_o_w;
+wire     [3: 0]     address_w;
+wire		[15: 0]	  data_i_w;
+wire		[15: 0]	  data_o_w;
 wire                  we_w;
 wire		[3: 0]	  sel_w;
 wire                  stb_w;
@@ -303,7 +303,7 @@ wire                  ack_w;
 dp_ram dp_ram_inst(
     //common signal
     .clk  (FPGA_CLK1_50),
-    .reset  (reset_button_w), // hps_fpga_reset_n
+    .reset  (hps_fpga_reset_n), // hps_fpga_reset_n
     //Wishbone Slave interface
     //Wishbone interface:
     .adr_i   (address_w),  //Address In
@@ -320,17 +320,21 @@ dp_ram dp_ram_inst(
 	 .fim_i	 (fim_o_w)
 );
 
+// Teste do somador
+somador_modular somador_inst(
+	 .a (A_w[0]),
+	 .b (A_w[1]),
+	 .q (3329),
+	 .y (Y_o_w)
+);
+
 // Sinais da NTT
 wire  [11:0] 		A_w[7:0];
 wire        		en_w;
-wire	[7: 0]	   Y_o_w;
+wire	[11:0]	   Y_o_w;
 wire				  	fim_o_w;
 
-// Sinais de teste
-wire					reset_button_w;
-
-assign reset_button_w = KEY[0];
-assign LED[0] = reset_button_w;
+assign LED[0] = en_w;
 assign LED[7:1] = A_w[0][6:0];
 
 endmodule

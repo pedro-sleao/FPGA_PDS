@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 20.1 711 (Future versions may contain additional information.) -->
- <!-- 2025.06.26.17:49:58 -->
+ <!-- 2025.06.27.12:05:57 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1750970998</value>
+  <value>1751036757</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -2102,7 +2102,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="BUS_WIDTH">
    <type>int</type>
-   <value>5</value>
+   <value>4</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -2110,7 +2110,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="DATA_WIDTH">
    <type>int</type>
-   <value>160</value>
+   <value>16</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -2118,7 +2118,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="BE_WIDTH">
    <type>int</type>
-   <value>10</value>
+   <value>2</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -2178,7 +2178,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>320</value>
+    <value>32</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -2218,7 +2218,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="bitsPerSymbol">
     <type>int</type>
-    <value>16</value>
+    <value>8</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -2483,7 +2483,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>avmm_address</name>
     <direction>Input</direction>
-    <width>5</width>
+    <width>4</width>
     <role>address</role>
    </port>
    <port>
@@ -2495,7 +2495,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>avmm_readdata</name>
     <direction>Output</direction>
-    <width>160</width>
+    <width>16</width>
     <role>readdata</role>
    </port>
    <port>
@@ -2507,13 +2507,13 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>avmm_writedata</name>
     <direction>Input</direction>
-    <width>160</width>
+    <width>16</width>
     <role>writedata</role>
    </port>
    <port>
     <name>avmm_byteenable</name>
     <direction>Input</direction>
-    <width>10</width>
+    <width>2</width>
     <role>byteenable</role>
    </port>
    <port>
@@ -2660,19 +2660,19 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>adr_o</name>
     <direction>Output</direction>
-    <width>5</width>
+    <width>4</width>
     <role>address</role>
    </port>
    <port>
     <name>data_i</name>
     <direction>Input</direction>
-    <width>160</width>
+    <width>16</width>
     <role>datain</role>
    </port>
    <port>
     <name>data_o</name>
     <direction>Output</direction>
-    <width>160</width>
+    <width>16</width>
     <role>dataout</role>
    </port>
    <port>
@@ -2684,7 +2684,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>sel_o</name>
     <direction>Output</direction>
-    <width>10</width>
+    <width>2</width>
     <role>selectarray</role>
    </port>
    <port>
@@ -23037,7 +23037,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>avmm</slaveName>
     <name>avmm_to_wishbone_bridge.avmm</name>
     <baseAddress>263168</baseAddress>
-    <span>320</span>
+    <span>32</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>true</isBridge>
@@ -49966,7 +49966,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>avmm</slaveName>
     <name>avmm_to_wishbone_bridge.avmm</name>
     <baseAddress>263168</baseAddress>
-    <span>320</span>
+    <span>32</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>true</isBridge>
@@ -52007,7 +52007,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>avmm</slaveName>
     <name>avmm_to_wishbone_bridge.avmm</name>
     <baseAddress>4280550400</baseAddress>
-    <span>320</span>
+    <span>32</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>true</isBridge>
@@ -52902,7 +52902,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>avmm</slaveName>
     <name>avmm_to_wishbone_bridge.avmm</name>
     <baseAddress>4280550400</baseAddress>
-    <span>320</span>
+    <span>32</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>true</isBridge>
@@ -84012,7 +84012,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1750970998</value>
+   <value>1751036757</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -84032,7 +84032,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1750970998</value>
+   <value>1751036757</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -84048,7 +84048,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1750970998</value>
+   <value>1751036757</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>

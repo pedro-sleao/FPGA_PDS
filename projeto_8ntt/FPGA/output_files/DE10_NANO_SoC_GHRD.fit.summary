@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Jun 26 17:55:17 2025
+Fitter Status : Successful - Fri Jun 27 14:50:41 2025
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : DE10_NANO_SoC_GHRD
 Top-level Entity Name : DE10_NANO_SoC_GHRD
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 3,263 / 41,910 ( 8 % )
-Total registers : 4739
+Logic utilization (in ALMs) : 3,253 / 41,910 ( 8 % )
+Total registers : 4786
 Total pins : 172 / 314 ( 55 % )
 Total virtual pins : 0
 Total block memory bits : 2,944 / 5,662,720 ( < 1 % )

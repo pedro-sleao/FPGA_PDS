@@ -2,9 +2,9 @@
 
 module dp_ram
     #(      
-        parameter  BUS_WIDTH  = 1,
-        parameter  DATA_WIDTH = 160,
-        parameter  BE_WIDTH   = 10
+        parameter  BUS_WIDTH  = 4,
+        parameter  DATA_WIDTH = 16,
+        parameter  BE_WIDTH   = 2
     )
     (
     //Common signal:
@@ -23,42 +23,13 @@ module dp_ram
     //NTT:
 	 output [11:0] 			 A_o[7:0],
     output       				 en_o,
-    input  [7:0]            Y_i,
+    input  [11:0]           Y_i,
     input                   fim_i
     ); 
 
-// Sinais do registrador de controle
-wire dpram_control_reg_i_w;
-wire dpram_control_reg_o_w;
-
-// Logica de atualizacao do registrador de controle
-assign dpram_control_reg_i_w = (we_i && sel_i[`SEL_CONTROL_BIT])? data_i[0]: dpram_control_reg_o_w;
-
-registrador
-	#(
-	.DATA_WIDTH(1)
-	)
-	control_reg_inst2
-		(
-		.clk (clk),
-		.reset (reset),
-		.data_i (dpram_control_reg_i_w),
-		.data_o (dpram_control_reg_o_w)
-		);
-		
-// Registradores dos numeros
-reg [11:0] A[7:0];
-
-// Sinais dos registradores dos numeros
-wire [11:0] A_i_w[7:0];
-
-// Logica de atualizacao dos resgistradores dos numeros
-genvar j;
-generate
-	for (j = 0; j < 8; j = j + 1) begin: regs_w
-		assign A_i_w[j] = (we_i && sel_i[`SEL_DATA_IN_BIT])? data_i[((j+2)*16)-1:(j+1)*16]: A[j];
-	end
-endgenerate
+// Registradores dos numeros e de controle
+reg [11:0] A[8:1];
+reg dpram_control_reg;
 
 // Atualizacao dos registradores
 integer i;
@@ -66,19 +37,30 @@ always @(posedge clk, negedge reset)
 begin
 	if (reset == 1'b0)
 	begin
-		for (i = 0; i < 8; i = i + 1)
+		for (i = 1; i < 9; i = i + 1)
 			A[i] <= 12'd0;
 	end
 	else
 	begin
-		for (i = 0; i < 8; i = i + 1)
-			A[i] <= A_i_w[i];
+		if ((adr_i == 1'b0) && (we_i))
+		begin
+			dpram_control_reg <= data_i[0];
+		end
+		else
+		begin
+			if ((adr_i < 4'b1001) && (we_i))
+			begin
+				A[adr_i] <= data_i;
+			end
+		end
 	end
 end
 
 // Saida
 assign A_o = A;
-assign en_o = dpram_control_reg_o_w;
-assign data_o = {15'd0,fim_i,4'd0,A[7],4'd0,A[6],4'd0,A[5],4'd0,A[4],4'd0,A[3],4'd0,A[2],4'd0,A[1],4'd0,A[0],15'd0,dpram_control_reg_o_w};
-
+assign en_o = dpram_control_reg;
+assign data_o = (adr_i == 1'b0) ? {15'b0, dpram_control_reg} :
+					 (adr_i < 4'b1001) ? {4'b0, A[adr_i]} : 
+					 (adr_i == 4'b1001) ? {15'b0, 1'b1} : {4'b0, Y_i};
+					 
 endmodule

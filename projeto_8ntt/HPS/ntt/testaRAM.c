@@ -36,7 +36,7 @@
 #include "peripheral.h"
 
 #define PORT_1_MEM_BASE 0x40400
-#define PORT_1_ADDR_SPAN 10
+#define PORT_1_ADDR_SPAN 11
 #define PORT_1_MEM_SPAN PORT_1_ADDR_SPAN*16
 
 
@@ -88,7 +88,7 @@ int main()
 			}
 			else
 			{
-				mem_write = (0x0001)+i;
+				mem_write = 1800; // (0x0001)+i
 			}
 			
 			printf("Endereco: %X, Valor: %X\n", 4*i, mem_write);
@@ -100,8 +100,8 @@ int main()
 	for(i = 0; i < PORT_1_ADDR_SPAN; i++)
 	{
 		usleep(100);
-		mem_read =  peripheral_read16(dualPortRam,i);
-		printf("Endereco: %X, Valor: %X\n", 4*i, mem_read);
+		mem_read16 =  peripheral_read16(dualPortRam,i);
+		printf("Endereco: %X, Valor: %X\n", 4*i, mem_read16);
 		
 	}
 }

@@ -7,125 +7,125 @@
 
 `timescale 1 ps / 1 ps
 module soc_system_mm_interconnect_0_mm_interconnect_0 (
-		input  wire         clk_0_clk_clock_bridge_out_clk_clk,                                             //                                     clk_0_clk_clock_bridge_out_clk.clk
-		input  wire         avmm_to_wishbone_bridge_avmm_agent_clk_reset_reset_bridge_in_reset_reset,       // avmm_to_wishbone_bridge_avmm_agent_clk_reset_reset_bridge_in_reset.reset
-		input  wire [20:0]  avmm_to_wishbone_bridge_avmm_agent_m0_address,                                  //                              avmm_to_wishbone_bridge_avmm_agent_m0.address
-		output wire         avmm_to_wishbone_bridge_avmm_agent_m0_waitrequest,                              //                                                                   .waitrequest
-		input  wire [4:0]   avmm_to_wishbone_bridge_avmm_agent_m0_burstcount,                               //                                                                   .burstcount
-		input  wire [19:0]  avmm_to_wishbone_bridge_avmm_agent_m0_byteenable,                               //                                                                   .byteenable
-		input  wire         avmm_to_wishbone_bridge_avmm_agent_m0_read,                                     //                                                                   .read
-		output wire [159:0] avmm_to_wishbone_bridge_avmm_agent_m0_readdata,                                 //                                                                   .readdata
-		output wire         avmm_to_wishbone_bridge_avmm_agent_m0_readdatavalid,                            //                                                                   .readdatavalid
-		input  wire         avmm_to_wishbone_bridge_avmm_agent_m0_write,                                    //                                                                   .write
-		input  wire [159:0] avmm_to_wishbone_bridge_avmm_agent_m0_writedata,                                //                                                                   .writedata
-		input  wire         avmm_to_wishbone_bridge_avmm_agent_m0_lock,                                     //                                                                   .lock
-		input  wire         avmm_to_wishbone_bridge_avmm_agent_m0_debugaccess,                              //                                                                   .debugaccess
-		output wire [20:0]  avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_address,       //   avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0.address
-		output wire [4:0]   avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_burstcount,    //                                                                   .burstcount
-		output wire [19:0]  avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_byteenable,    //                                                                   .byteenable
-		output wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_debugaccess,   //                                                                   .debugaccess
-		output wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_lock,          //                                                                   .lock
-		input  wire [159:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_readdata,      //                                                                   .readdata
-		input  wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_readdatavalid, //                                                                   .readdatavalid
-		output wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_read,          //                                                                   .read
-		input  wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_waitrequest,   //                                                                   .waitrequest
-		output wire [159:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_writedata,     //                                                                   .writedata
-		output wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_write          //                                                                   .write
+		input  wire        clk_0_clk_clock_bridge_out_clk_clk,                                             //                                     clk_0_clk_clock_bridge_out_clk.clk
+		input  wire        avmm_to_wishbone_bridge_avmm_agent_clk_reset_reset_bridge_in_reset_reset,       // avmm_to_wishbone_bridge_avmm_agent_clk_reset_reset_bridge_in_reset.reset
+		input  wire [20:0] avmm_to_wishbone_bridge_avmm_agent_m0_address,                                  //                              avmm_to_wishbone_bridge_avmm_agent_m0.address
+		output wire        avmm_to_wishbone_bridge_avmm_agent_m0_waitrequest,                              //                                                                   .waitrequest
+		input  wire [0:0]  avmm_to_wishbone_bridge_avmm_agent_m0_burstcount,                               //                                                                   .burstcount
+		input  wire [1:0]  avmm_to_wishbone_bridge_avmm_agent_m0_byteenable,                               //                                                                   .byteenable
+		input  wire        avmm_to_wishbone_bridge_avmm_agent_m0_read,                                     //                                                                   .read
+		output wire [15:0] avmm_to_wishbone_bridge_avmm_agent_m0_readdata,                                 //                                                                   .readdata
+		output wire        avmm_to_wishbone_bridge_avmm_agent_m0_readdatavalid,                            //                                                                   .readdatavalid
+		input  wire        avmm_to_wishbone_bridge_avmm_agent_m0_write,                                    //                                                                   .write
+		input  wire [15:0] avmm_to_wishbone_bridge_avmm_agent_m0_writedata,                                //                                                                   .writedata
+		input  wire        avmm_to_wishbone_bridge_avmm_agent_m0_lock,                                     //                                                                   .lock
+		input  wire        avmm_to_wishbone_bridge_avmm_agent_m0_debugaccess,                              //                                                                   .debugaccess
+		output wire [20:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_address,       //   avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0.address
+		output wire [0:0]  avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_burstcount,    //                                                                   .burstcount
+		output wire [1:0]  avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_byteenable,    //                                                                   .byteenable
+		output wire        avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_debugaccess,   //                                                                   .debugaccess
+		output wire        avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_lock,          //                                                                   .lock
+		input  wire [15:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_readdata,      //                                                                   .readdata
+		input  wire        avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_readdatavalid, //                                                                   .readdatavalid
+		output wire        avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_read,          //                                                                   .read
+		input  wire        avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_waitrequest,   //                                                                   .waitrequest
+		output wire [15:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_writedata,     //                                                                   .writedata
+		output wire        avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_write          //                                                                   .write
 	);
 
-	wire          avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_waitrequest;                                 // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_waitrequest -> avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_waitrequest
-	wire  [159:0] avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_readdata;                                    // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_readdata -> avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_readdata
-	wire          avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_debugaccess;                                 // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_debugaccess -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_debugaccess
-	wire   [20:0] avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_address;                                     // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_address -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_address
-	wire          avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_read;                                        // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_read -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_read
-	wire   [19:0] avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_byteenable;                                  // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_byteenable -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_byteenable
-	wire          avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_readdatavalid;                               // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_readdatavalid -> avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_readdatavalid
-	wire          avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_lock;                                        // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_lock -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_lock
-	wire          avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_write;                                       // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_write -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_write
-	wire  [159:0] avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_writedata;                                   // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_writedata -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_writedata
-	wire    [4:0] avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_burstcount;                                  // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_burstcount -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_burstcount
-	wire  [159:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_readdata;               // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_readdata -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_readdata
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_waitrequest;            // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_waitrequest -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_waitrequest
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_debugaccess;            // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_debugaccess -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_debugaccess
-	wire   [20:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_address;                // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_address -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_address
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_read;                   // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_read -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_read
-	wire   [19:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_byteenable;             // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_byteenable -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_byteenable
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_readdatavalid;          // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_readdatavalid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_readdatavalid
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_lock;                   // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_lock -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_lock
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_write;                  // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_write -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_write
-	wire  [159:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_writedata;              // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_writedata -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_writedata
-	wire    [4:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_burstcount;             // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_burstcount -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_burstcount
-	wire          rsp_mux_src_valid;                                                                                                      // rsp_mux:src_valid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_valid
-	wire  [232:0] rsp_mux_src_data;                                                                                                       // rsp_mux:src_data -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_data
-	wire          rsp_mux_src_ready;                                                                                                      // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_ready -> rsp_mux:src_ready
-	wire    [0:0] rsp_mux_src_channel;                                                                                                    // rsp_mux:src_channel -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_channel
-	wire          rsp_mux_src_startofpacket;                                                                                              // rsp_mux:src_startofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_startofpacket
-	wire          rsp_mux_src_endofpacket;                                                                                                // rsp_mux:src_endofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_endofpacket
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rf_source_valid;                                 // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_source_valid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:in_valid
-	wire  [233:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rf_source_data;                                  // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_source_data -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:in_data
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rf_source_ready;                                 // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:in_ready -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_source_ready
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rf_source_startofpacket;                         // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_source_startofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:in_startofpacket
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rf_source_endofpacket;                           // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_source_endofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:in_endofpacket
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo_out_valid;                              // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:out_valid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_sink_valid
-	wire  [233:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo_out_data;                               // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:out_data -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_sink_data
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo_out_ready;                              // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_sink_ready -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:out_ready
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo_out_startofpacket;                      // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:out_startofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_sink_startofpacket
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo_out_endofpacket;                        // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:out_endofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_sink_endofpacket
-	wire          cmd_mux_src_valid;                                                                                                      // cmd_mux:src_valid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_valid
-	wire  [232:0] cmd_mux_src_data;                                                                                                       // cmd_mux:src_data -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_data
-	wire          cmd_mux_src_ready;                                                                                                      // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_ready -> cmd_mux:src_ready
-	wire    [0:0] cmd_mux_src_channel;                                                                                                    // cmd_mux:src_channel -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_channel
-	wire          cmd_mux_src_startofpacket;                                                                                              // cmd_mux:src_startofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_startofpacket
-	wire          cmd_mux_src_endofpacket;                                                                                                // cmd_mux:src_endofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_endofpacket
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent_cp_valid;         // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:cp_valid -> router:sink_valid
-	wire  [232:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent_cp_data;          // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:cp_data -> router:sink_data
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent_cp_ready;         // router:sink_ready -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:cp_ready
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent_cp_startofpacket; // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:cp_startofpacket -> router:sink_startofpacket
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent_cp_endofpacket;   // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:cp_endofpacket -> router:sink_endofpacket
-	wire          router_src_valid;                                                                                                       // router:src_valid -> cmd_demux:sink_valid
-	wire  [232:0] router_src_data;                                                                                                        // router:src_data -> cmd_demux:sink_data
-	wire          router_src_ready;                                                                                                       // cmd_demux:sink_ready -> router:src_ready
-	wire    [0:0] router_src_channel;                                                                                                     // router:src_channel -> cmd_demux:sink_channel
-	wire          router_src_startofpacket;                                                                                               // router:src_startofpacket -> cmd_demux:sink_startofpacket
-	wire          router_src_endofpacket;                                                                                                 // router:src_endofpacket -> cmd_demux:sink_endofpacket
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rp_valid;                                        // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rp_valid -> router_001:sink_valid
-	wire  [232:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rp_data;                                         // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rp_data -> router_001:sink_data
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rp_ready;                                        // router_001:sink_ready -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rp_ready
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rp_startofpacket;                                // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rp_startofpacket -> router_001:sink_startofpacket
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rp_endofpacket;                                  // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rp_endofpacket -> router_001:sink_endofpacket
-	wire          router_001_src_valid;                                                                                                   // router_001:src_valid -> rsp_demux:sink_valid
-	wire  [232:0] router_001_src_data;                                                                                                    // router_001:src_data -> rsp_demux:sink_data
-	wire          router_001_src_ready;                                                                                                   // rsp_demux:sink_ready -> router_001:src_ready
-	wire    [0:0] router_001_src_channel;                                                                                                 // router_001:src_channel -> rsp_demux:sink_channel
-	wire          router_001_src_startofpacket;                                                                                           // router_001:src_startofpacket -> rsp_demux:sink_startofpacket
-	wire          router_001_src_endofpacket;                                                                                             // router_001:src_endofpacket -> rsp_demux:sink_endofpacket
-	wire          cmd_demux_src0_valid;                                                                                                   // cmd_demux:src0_valid -> cmd_mux:sink0_valid
-	wire  [232:0] cmd_demux_src0_data;                                                                                                    // cmd_demux:src0_data -> cmd_mux:sink0_data
-	wire          cmd_demux_src0_ready;                                                                                                   // cmd_mux:sink0_ready -> cmd_demux:src0_ready
-	wire    [0:0] cmd_demux_src0_channel;                                                                                                 // cmd_demux:src0_channel -> cmd_mux:sink0_channel
-	wire          cmd_demux_src0_startofpacket;                                                                                           // cmd_demux:src0_startofpacket -> cmd_mux:sink0_startofpacket
-	wire          cmd_demux_src0_endofpacket;                                                                                             // cmd_demux:src0_endofpacket -> cmd_mux:sink0_endofpacket
-	wire          rsp_demux_src0_valid;                                                                                                   // rsp_demux:src0_valid -> rsp_mux:sink0_valid
-	wire  [232:0] rsp_demux_src0_data;                                                                                                    // rsp_demux:src0_data -> rsp_mux:sink0_data
-	wire          rsp_demux_src0_ready;                                                                                                   // rsp_mux:sink0_ready -> rsp_demux:src0_ready
-	wire    [0:0] rsp_demux_src0_channel;                                                                                                 // rsp_demux:src0_channel -> rsp_mux:sink0_channel
-	wire          rsp_demux_src0_startofpacket;                                                                                           // rsp_demux:src0_startofpacket -> rsp_mux:sink0_startofpacket
-	wire          rsp_demux_src0_endofpacket;                                                                                             // rsp_demux:src0_endofpacket -> rsp_mux:sink0_endofpacket
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rdata_fifo_src_valid;                            // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_src_valid -> avalon_st_adapter:in_0_valid
-	wire  [161:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rdata_fifo_src_data;                             // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_src_data -> avalon_st_adapter:in_0_data
-	wire          avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rdata_fifo_src_ready;                            // avalon_st_adapter:in_0_ready -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_src_ready
-	wire          avalon_st_adapter_out_0_valid;                                                                                          // avalon_st_adapter:out_0_valid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_sink_valid
-	wire  [161:0] avalon_st_adapter_out_0_data;                                                                                           // avalon_st_adapter:out_0_data -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_sink_data
-	wire          avalon_st_adapter_out_0_ready;                                                                                          // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_sink_ready -> avalon_st_adapter:out_0_ready
-	wire    [0:0] avalon_st_adapter_out_0_error;                                                                                          // avalon_st_adapter:out_0_error -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_sink_error
+	wire         avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_waitrequest;                                 // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_waitrequest -> avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_waitrequest
+	wire  [15:0] avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_readdata;                                    // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_readdata -> avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_readdata
+	wire         avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_debugaccess;                                 // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_debugaccess -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_debugaccess
+	wire  [20:0] avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_address;                                     // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_address -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_address
+	wire         avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_read;                                        // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_read -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_read
+	wire   [1:0] avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_byteenable;                                  // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_byteenable -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_byteenable
+	wire         avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_readdatavalid;                               // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_readdatavalid -> avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_readdatavalid
+	wire         avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_lock;                                        // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_lock -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_lock
+	wire         avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_write;                                       // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_write -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_write
+	wire  [15:0] avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_writedata;                                   // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_writedata -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_writedata
+	wire   [0:0] avmm_to_wishbone_bridge_avmm_agent_m0_translator_avalon_universal_master_0_burstcount;                                  // avmm_to_wishbone_bridge_avmm_agent_m0_translator:uav_burstcount -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:uav_burstcount
+	wire  [15:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_readdata;               // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_readdata -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_readdata
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_waitrequest;            // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_waitrequest -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_waitrequest
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_debugaccess;            // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_debugaccess -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_debugaccess
+	wire  [20:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_address;                // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_address -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_address
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_read;                   // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_read -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_read
+	wire   [1:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_byteenable;             // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_byteenable -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_byteenable
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_readdatavalid;          // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_readdatavalid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_readdatavalid
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_lock;                   // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_lock -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_lock
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_write;                  // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_write -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_write
+	wire  [15:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_writedata;              // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_writedata -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_writedata
+	wire   [0:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_burstcount;             // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator:av_burstcount -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:av_burstcount
+	wire         rsp_mux_src_valid;                                                                                                      // rsp_mux:src_valid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_valid
+	wire  [70:0] rsp_mux_src_data;                                                                                                       // rsp_mux:src_data -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_data
+	wire         rsp_mux_src_ready;                                                                                                      // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_ready -> rsp_mux:src_ready
+	wire   [0:0] rsp_mux_src_channel;                                                                                                    // rsp_mux:src_channel -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_channel
+	wire         rsp_mux_src_startofpacket;                                                                                              // rsp_mux:src_startofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_startofpacket
+	wire         rsp_mux_src_endofpacket;                                                                                                // rsp_mux:src_endofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:rp_endofpacket
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rf_source_valid;                                 // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_source_valid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:in_valid
+	wire  [71:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rf_source_data;                                  // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_source_data -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:in_data
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rf_source_ready;                                 // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:in_ready -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_source_ready
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rf_source_startofpacket;                         // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_source_startofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:in_startofpacket
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rf_source_endofpacket;                           // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_source_endofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:in_endofpacket
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo_out_valid;                              // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:out_valid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_sink_valid
+	wire  [71:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo_out_data;                               // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:out_data -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_sink_data
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo_out_ready;                              // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_sink_ready -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:out_ready
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo_out_startofpacket;                      // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:out_startofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_sink_startofpacket
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo_out_endofpacket;                        // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rsp_fifo:out_endofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rf_sink_endofpacket
+	wire         cmd_mux_src_valid;                                                                                                      // cmd_mux:src_valid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_valid
+	wire  [70:0] cmd_mux_src_data;                                                                                                       // cmd_mux:src_data -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_data
+	wire         cmd_mux_src_ready;                                                                                                      // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_ready -> cmd_mux:src_ready
+	wire   [0:0] cmd_mux_src_channel;                                                                                                    // cmd_mux:src_channel -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_channel
+	wire         cmd_mux_src_startofpacket;                                                                                              // cmd_mux:src_startofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_startofpacket
+	wire         cmd_mux_src_endofpacket;                                                                                                // cmd_mux:src_endofpacket -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:cp_endofpacket
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent_cp_valid;         // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:cp_valid -> router:sink_valid
+	wire  [70:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent_cp_data;          // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:cp_data -> router:sink_data
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent_cp_ready;         // router:sink_ready -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:cp_ready
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent_cp_startofpacket; // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:cp_startofpacket -> router:sink_startofpacket
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent_cp_endofpacket;   // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_translator_avalon_anti_slave_0_agent:cp_endofpacket -> router:sink_endofpacket
+	wire         router_src_valid;                                                                                                       // router:src_valid -> cmd_demux:sink_valid
+	wire  [70:0] router_src_data;                                                                                                        // router:src_data -> cmd_demux:sink_data
+	wire         router_src_ready;                                                                                                       // cmd_demux:sink_ready -> router:src_ready
+	wire   [0:0] router_src_channel;                                                                                                     // router:src_channel -> cmd_demux:sink_channel
+	wire         router_src_startofpacket;                                                                                               // router:src_startofpacket -> cmd_demux:sink_startofpacket
+	wire         router_src_endofpacket;                                                                                                 // router:src_endofpacket -> cmd_demux:sink_endofpacket
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rp_valid;                                        // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rp_valid -> router_001:sink_valid
+	wire  [70:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rp_data;                                         // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rp_data -> router_001:sink_data
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rp_ready;                                        // router_001:sink_ready -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rp_ready
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rp_startofpacket;                                // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rp_startofpacket -> router_001:sink_startofpacket
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rp_endofpacket;                                  // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rp_endofpacket -> router_001:sink_endofpacket
+	wire         router_001_src_valid;                                                                                                   // router_001:src_valid -> rsp_demux:sink_valid
+	wire  [70:0] router_001_src_data;                                                                                                    // router_001:src_data -> rsp_demux:sink_data
+	wire         router_001_src_ready;                                                                                                   // rsp_demux:sink_ready -> router_001:src_ready
+	wire   [0:0] router_001_src_channel;                                                                                                 // router_001:src_channel -> rsp_demux:sink_channel
+	wire         router_001_src_startofpacket;                                                                                           // router_001:src_startofpacket -> rsp_demux:sink_startofpacket
+	wire         router_001_src_endofpacket;                                                                                             // router_001:src_endofpacket -> rsp_demux:sink_endofpacket
+	wire         cmd_demux_src0_valid;                                                                                                   // cmd_demux:src0_valid -> cmd_mux:sink0_valid
+	wire  [70:0] cmd_demux_src0_data;                                                                                                    // cmd_demux:src0_data -> cmd_mux:sink0_data
+	wire         cmd_demux_src0_ready;                                                                                                   // cmd_mux:sink0_ready -> cmd_demux:src0_ready
+	wire   [0:0] cmd_demux_src0_channel;                                                                                                 // cmd_demux:src0_channel -> cmd_mux:sink0_channel
+	wire         cmd_demux_src0_startofpacket;                                                                                           // cmd_demux:src0_startofpacket -> cmd_mux:sink0_startofpacket
+	wire         cmd_demux_src0_endofpacket;                                                                                             // cmd_demux:src0_endofpacket -> cmd_mux:sink0_endofpacket
+	wire         rsp_demux_src0_valid;                                                                                                   // rsp_demux:src0_valid -> rsp_mux:sink0_valid
+	wire  [70:0] rsp_demux_src0_data;                                                                                                    // rsp_demux:src0_data -> rsp_mux:sink0_data
+	wire         rsp_demux_src0_ready;                                                                                                   // rsp_mux:sink0_ready -> rsp_demux:src0_ready
+	wire   [0:0] rsp_demux_src0_channel;                                                                                                 // rsp_demux:src0_channel -> rsp_mux:sink0_channel
+	wire         rsp_demux_src0_startofpacket;                                                                                           // rsp_demux:src0_startofpacket -> rsp_mux:sink0_startofpacket
+	wire         rsp_demux_src0_endofpacket;                                                                                             // rsp_demux:src0_endofpacket -> rsp_mux:sink0_endofpacket
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rdata_fifo_src_valid;                            // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_src_valid -> avalon_st_adapter:in_0_valid
+	wire  [17:0] avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rdata_fifo_src_data;                             // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_src_data -> avalon_st_adapter:in_0_data
+	wire         avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent_rdata_fifo_src_ready;                            // avalon_st_adapter:in_0_ready -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_src_ready
+	wire         avalon_st_adapter_out_0_valid;                                                                                          // avalon_st_adapter:out_0_valid -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_sink_valid
+	wire  [17:0] avalon_st_adapter_out_0_data;                                                                                           // avalon_st_adapter:out_0_data -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_sink_data
+	wire         avalon_st_adapter_out_0_ready;                                                                                          // avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_sink_ready -> avalon_st_adapter:out_0_ready
+	wire   [0:0] avalon_st_adapter_out_0_error;                                                                                          // avalon_st_adapter:out_0_error -> avmm_to_wishbone_bridge_avmm_translator_avalon_universal_slave_0_agent:rdata_fifo_sink_error
 
 	altera_merlin_master_translator #(
 		.AV_ADDRESS_W                (21),
-		.AV_DATA_W                   (160),
-		.AV_BURSTCOUNT_W             (5),
-		.AV_BYTEENABLE_W             (20),
+		.AV_DATA_W                   (16),
+		.AV_BURSTCOUNT_W             (1),
+		.AV_BYTEENABLE_W             (2),
 		.UAV_ADDRESS_W               (21),
-		.UAV_BURSTCOUNT_W            (5),
+		.UAV_BURSTCOUNT_W            (1),
 		.USE_READ                    (1),
 		.USE_WRITE                   (1),
 		.USE_BEGINBURSTTRANSFER      (0),
@@ -136,7 +136,7 @@ module soc_system_mm_interconnect_0_mm_interconnect_0 (
 		.USE_WAITREQUEST             (1),
 		.USE_READRESPONSE            (0),
 		.USE_WRITERESPONSE           (0),
-		.AV_SYMBOLS_PER_WORD         (20),
+		.AV_SYMBOLS_PER_WORD         (2),
 		.AV_ADDRESS_SYMBOLS          (1),
 		.AV_BURSTCOUNT_SYMBOLS       (1),
 		.AV_CONSTANT_BURST_BEHAVIOR  (0),
@@ -181,20 +181,20 @@ module soc_system_mm_interconnect_0_mm_interconnect_0 (
 
 	altera_merlin_slave_translator #(
 		.AV_ADDRESS_W                   (21),
-		.AV_DATA_W                      (160),
-		.UAV_DATA_W                     (160),
-		.AV_BURSTCOUNT_W                (5),
-		.AV_BYTEENABLE_W                (20),
-		.UAV_BYTEENABLE_W               (20),
+		.AV_DATA_W                      (16),
+		.UAV_DATA_W                     (16),
+		.AV_BURSTCOUNT_W                (1),
+		.AV_BYTEENABLE_W                (2),
+		.UAV_BYTEENABLE_W               (2),
 		.UAV_ADDRESS_W                  (21),
-		.UAV_BURSTCOUNT_W               (5),
+		.UAV_BURSTCOUNT_W               (1),
 		.AV_READLATENCY                 (0),
 		.USE_READDATAVALID              (1),
 		.USE_WAITREQUEST                (1),
 		.USE_UAV_CLKEN                  (0),
 		.USE_READRESPONSE               (0),
 		.USE_WRITERESPONSE              (0),
-		.AV_SYMBOLS_PER_WORD            (20),
+		.AV_SYMBOLS_PER_WORD            (2),
 		.AV_ADDRESS_SYMBOLS             (1),
 		.AV_BURSTCOUNT_SYMBOLS          (1),
 		.AV_CONSTANT_BURST_BEHAVIOR     (0),
@@ -244,50 +244,50 @@ module soc_system_mm_interconnect_0_mm_interconnect_0 (
 	);
 
 	altera_merlin_master_agent #(
-		.PKT_ORI_BURST_SIZE_H      (232),
-		.PKT_ORI_BURST_SIZE_L      (230),
-		.PKT_RESPONSE_STATUS_H     (229),
-		.PKT_RESPONSE_STATUS_L     (228),
-		.PKT_QOS_H                 (217),
-		.PKT_QOS_L                 (217),
-		.PKT_DATA_SIDEBAND_H       (215),
-		.PKT_DATA_SIDEBAND_L       (215),
-		.PKT_ADDR_SIDEBAND_H       (214),
-		.PKT_ADDR_SIDEBAND_L       (214),
-		.PKT_BURST_TYPE_H          (213),
-		.PKT_BURST_TYPE_L          (212),
-		.PKT_CACHE_H               (227),
-		.PKT_CACHE_L               (224),
-		.PKT_THREAD_ID_H           (220),
-		.PKT_THREAD_ID_L           (220),
-		.PKT_BURST_SIZE_H          (211),
-		.PKT_BURST_SIZE_L          (209),
-		.PKT_TRANS_EXCLUSIVE       (206),
-		.PKT_TRANS_LOCK            (205),
-		.PKT_BEGIN_BURST           (216),
-		.PKT_PROTECTION_H          (223),
-		.PKT_PROTECTION_L          (221),
-		.PKT_BURSTWRAP_H           (208),
-		.PKT_BURSTWRAP_L           (208),
-		.PKT_BYTE_CNT_H            (207),
-		.PKT_BYTE_CNT_L            (207),
-		.PKT_ADDR_H                (200),
-		.PKT_ADDR_L                (180),
-		.PKT_TRANS_COMPRESSED_READ (201),
-		.PKT_TRANS_POSTED          (202),
-		.PKT_TRANS_WRITE           (203),
-		.PKT_TRANS_READ            (204),
-		.PKT_DATA_H                (159),
+		.PKT_ORI_BURST_SIZE_H      (70),
+		.PKT_ORI_BURST_SIZE_L      (68),
+		.PKT_RESPONSE_STATUS_H     (67),
+		.PKT_RESPONSE_STATUS_L     (66),
+		.PKT_QOS_H                 (55),
+		.PKT_QOS_L                 (55),
+		.PKT_DATA_SIDEBAND_H       (53),
+		.PKT_DATA_SIDEBAND_L       (53),
+		.PKT_ADDR_SIDEBAND_H       (52),
+		.PKT_ADDR_SIDEBAND_L       (52),
+		.PKT_BURST_TYPE_H          (51),
+		.PKT_BURST_TYPE_L          (50),
+		.PKT_CACHE_H               (65),
+		.PKT_CACHE_L               (62),
+		.PKT_THREAD_ID_H           (58),
+		.PKT_THREAD_ID_L           (58),
+		.PKT_BURST_SIZE_H          (49),
+		.PKT_BURST_SIZE_L          (47),
+		.PKT_TRANS_EXCLUSIVE       (44),
+		.PKT_TRANS_LOCK            (43),
+		.PKT_BEGIN_BURST           (54),
+		.PKT_PROTECTION_H          (61),
+		.PKT_PROTECTION_L          (59),
+		.PKT_BURSTWRAP_H           (46),
+		.PKT_BURSTWRAP_L           (46),
+		.PKT_BYTE_CNT_H            (45),
+		.PKT_BYTE_CNT_L            (45),
+		.PKT_ADDR_H                (38),
+		.PKT_ADDR_L                (18),
+		.PKT_TRANS_COMPRESSED_READ (39),
+		.PKT_TRANS_POSTED          (40),
+		.PKT_TRANS_WRITE           (41),
+		.PKT_TRANS_READ            (42),
+		.PKT_DATA_H                (15),
 		.PKT_DATA_L                (0),
-		.PKT_BYTEEN_H              (179),
-		.PKT_BYTEEN_L              (160),
-		.PKT_SRC_ID_H              (218),
-		.PKT_SRC_ID_L              (218),
-		.PKT_DEST_ID_H             (219),
-		.PKT_DEST_ID_L             (219),
-		.ST_DATA_W                 (233),
+		.PKT_BYTEEN_H              (17),
+		.PKT_BYTEEN_L              (16),
+		.PKT_SRC_ID_H              (56),
+		.PKT_SRC_ID_L              (56),
+		.PKT_DEST_ID_H             (57),
+		.PKT_DEST_ID_L             (57),
+		.ST_DATA_W                 (71),
 		.ST_CHANNEL_W              (1),
-		.AV_BURSTCOUNT_W           (5),
+		.AV_BURSTCOUNT_W           (1),
 		.SUPPRESS_0_BYTEEN_RSP     (0),
 		.ID                        (0),
 		.BURSTWRAP_VALUE           (1),
@@ -325,38 +325,38 @@ module soc_system_mm_interconnect_0_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_agent #(
-		.PKT_ORI_BURST_SIZE_H      (232),
-		.PKT_ORI_BURST_SIZE_L      (230),
-		.PKT_RESPONSE_STATUS_H     (229),
-		.PKT_RESPONSE_STATUS_L     (228),
-		.PKT_BURST_SIZE_H          (211),
-		.PKT_BURST_SIZE_L          (209),
-		.PKT_TRANS_LOCK            (205),
-		.PKT_BEGIN_BURST           (216),
-		.PKT_PROTECTION_H          (223),
-		.PKT_PROTECTION_L          (221),
-		.PKT_BURSTWRAP_H           (208),
-		.PKT_BURSTWRAP_L           (208),
-		.PKT_BYTE_CNT_H            (207),
-		.PKT_BYTE_CNT_L            (207),
-		.PKT_ADDR_H                (200),
-		.PKT_ADDR_L                (180),
-		.PKT_TRANS_COMPRESSED_READ (201),
-		.PKT_TRANS_POSTED          (202),
-		.PKT_TRANS_WRITE           (203),
-		.PKT_TRANS_READ            (204),
-		.PKT_DATA_H                (159),
+		.PKT_ORI_BURST_SIZE_H      (70),
+		.PKT_ORI_BURST_SIZE_L      (68),
+		.PKT_RESPONSE_STATUS_H     (67),
+		.PKT_RESPONSE_STATUS_L     (66),
+		.PKT_BURST_SIZE_H          (49),
+		.PKT_BURST_SIZE_L          (47),
+		.PKT_TRANS_LOCK            (43),
+		.PKT_BEGIN_BURST           (54),
+		.PKT_PROTECTION_H          (61),
+		.PKT_PROTECTION_L          (59),
+		.PKT_BURSTWRAP_H           (46),
+		.PKT_BURSTWRAP_L           (46),
+		.PKT_BYTE_CNT_H            (45),
+		.PKT_BYTE_CNT_L            (45),
+		.PKT_ADDR_H                (38),
+		.PKT_ADDR_L                (18),
+		.PKT_TRANS_COMPRESSED_READ (39),
+		.PKT_TRANS_POSTED          (40),
+		.PKT_TRANS_WRITE           (41),
+		.PKT_TRANS_READ            (42),
+		.PKT_DATA_H                (15),
 		.PKT_DATA_L                (0),
-		.PKT_BYTEEN_H              (179),
-		.PKT_BYTEEN_L              (160),
-		.PKT_SRC_ID_H              (218),
-		.PKT_SRC_ID_L              (218),
-		.PKT_DEST_ID_H             (219),
-		.PKT_DEST_ID_L             (219),
+		.PKT_BYTEEN_H              (17),
+		.PKT_BYTEEN_L              (16),
+		.PKT_SRC_ID_H              (56),
+		.PKT_SRC_ID_L              (56),
+		.PKT_DEST_ID_H             (57),
+		.PKT_DEST_ID_L             (57),
 		.PKT_SYMBOL_W              (8),
 		.ST_CHANNEL_W              (1),
-		.ST_DATA_W                 (233),
-		.AVS_BURSTCOUNT_W          (5),
+		.ST_DATA_W                 (71),
+		.AVS_BURSTCOUNT_W          (1),
 		.SUPPRESS_0_BYTEEN_CMD     (0),
 		.PREVENT_FIFO_OVERFLOW     (1),
 		.USE_READRESPONSE          (0),
@@ -410,7 +410,7 @@ module soc_system_mm_interconnect_0_mm_interconnect_0 (
 
 	altera_avalon_sc_fifo #(
 		.SYMBOLS_PER_BEAT    (1),
-		.BITS_PER_SYMBOL     (234),
+		.BITS_PER_SYMBOL     (72),
 		.FIFO_DEPTH          (2),
 		.CHANNEL_WIDTH       (0),
 		.ERROR_WIDTH         (0),
@@ -550,16 +550,16 @@ module soc_system_mm_interconnect_0_mm_interconnect_0 (
 	);
 
 	soc_system_mm_interconnect_0_avalon_st_adapter #(
-		.inBitsPerSymbol (162),
+		.inBitsPerSymbol (18),
 		.inUsePackets    (0),
-		.inDataWidth     (162),
+		.inDataWidth     (18),
 		.inChannelWidth  (0),
 		.inErrorWidth    (0),
 		.inUseEmptyPort  (0),
 		.inUseValid      (1),
 		.inUseReady      (1),
 		.inReadyLatency  (0),
-		.outDataWidth    (162),
+		.outDataWidth    (18),
 		.outChannelWidth (0),
 		.outErrorWidth   (1),
 		.outUseEmptyPort (0),

@@ -92,11 +92,11 @@ module soc_system (
 	ramteste_s2_byteenable,
 	reset_reset_n);	
 
-	output	[4:0]	avmm_to_wishbone_bridge_0_wishbone_address;
-	input	[159:0]	avmm_to_wishbone_bridge_0_wishbone_datain;
-	output	[159:0]	avmm_to_wishbone_bridge_0_wishbone_dataout;
+	output	[3:0]	avmm_to_wishbone_bridge_0_wishbone_address;
+	input	[15:0]	avmm_to_wishbone_bridge_0_wishbone_datain;
+	output	[15:0]	avmm_to_wishbone_bridge_0_wishbone_dataout;
 	output		avmm_to_wishbone_bridge_0_wishbone_writeenable;
-	output	[9:0]	avmm_to_wishbone_bridge_0_wishbone_selectarray;
+	output	[1:0]	avmm_to_wishbone_bridge_0_wishbone_selectarray;
 	output		avmm_to_wishbone_bridge_0_wishbone_strobeout;
 	input		avmm_to_wishbone_bridge_0_wishbone_acknowledged;
 	input	[1:0]	button_pio_external_connection_export;

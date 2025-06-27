@@ -49,14 +49,14 @@ module soc_system_mm_interconnect_0_router_default_decode
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 2 
    )
-  (output [91 - 90 : 0] default_destination_id,
+  (output [89 - 88 : 0] default_destination_id,
    output [3-1 : 0] default_wr_channel,
    output [3-1 : 0] default_rd_channel,
    output [3-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[91 - 90 : 0];
+    DEFAULT_DESTID[89 - 88 : 0];
 
   generate
     if (DEFAULT_CHANNEL == -1) begin : no_default_channel_assignment
@@ -93,7 +93,7 @@ module soc_system_mm_interconnect_0_router
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [116-1 : 0]    sink_data,
+    input  [114-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -102,7 +102,7 @@ module soc_system_mm_interconnect_0_router
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [116-1    : 0] src_data,
+    output reg [114-1    : 0] src_data,
     output reg [3-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
@@ -114,11 +114,11 @@ module soc_system_mm_interconnect_0_router
     // -------------------------------------------------------
     localparam PKT_ADDR_H = 56;
     localparam PKT_ADDR_L = 36;
-    localparam PKT_DEST_ID_H = 91;
-    localparam PKT_DEST_ID_L = 90;
-    localparam PKT_PROTECTION_H = 106;
-    localparam PKT_PROTECTION_L = 104;
-    localparam ST_DATA_W = 116;
+    localparam PKT_DEST_ID_H = 89;
+    localparam PKT_DEST_ID_L = 88;
+    localparam PKT_PROTECTION_H = 104;
+    localparam PKT_PROTECTION_L = 102;
+    localparam ST_DATA_W = 114;
     localparam ST_CHANNEL_W = 3;
     localparam DECODER_TYPE = 0;
 
@@ -136,13 +136,13 @@ module soc_system_mm_interconnect_0_router
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h40000 - 64'h0); 
     localparam PAD1 = log2ceil(64'h40010 - 64'h40000); 
-    localparam PAD2 = log2ceil(64'h40600 - 64'h40400); 
+    localparam PAD2 = log2ceil(64'h40420 - 64'h40400); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h40600;
+    localparam ADDR_RANGE = 64'h40420;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -202,7 +202,7 @@ module soc_system_mm_interconnect_0_router
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
     end
 
-    // ( 0x40400 .. 0x40600 )
+    // ( 0x40400 .. 0x40420 )
     if ( {address[RG:PAD2],{PAD2{1'b0}}} == 19'h40400   ) begin
             src_channel = 3'b001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
