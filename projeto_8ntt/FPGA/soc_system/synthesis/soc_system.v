@@ -4,7 +4,7 @@
 
 `timescale 1 ps / 1 ps
 module soc_system (
-		output wire [3:0]  avmm_to_wishbone_bridge_0_wishbone_address,      // avmm_to_wishbone_bridge_0_wishbone.address
+		output wire [4:0]  avmm_to_wishbone_bridge_0_wishbone_address,      // avmm_to_wishbone_bridge_0_wishbone.address
 		input  wire [15:0] avmm_to_wishbone_bridge_0_wishbone_datain,       //                                   .datain
 		output wire [15:0] avmm_to_wishbone_bridge_0_wishbone_dataout,      //                                   .dataout
 		output wire        avmm_to_wishbone_bridge_0_wishbone_writeenable,  //                                   .writeenable
@@ -84,16 +84,6 @@ module soc_system (
 		output wire        memory_mem_odt,                                  //                                   .mem_odt
 		output wire [3:0]  memory_mem_dm,                                   //                                   .mem_dm
 		input  wire        memory_oct_rzqin,                                //                                   .oct_rzqin
-		input  wire        ramteste_clk2_clk,                               //                      ramteste_clk2.clk
-		input  wire        ramteste_reset2_reset,                           //                    ramteste_reset2.reset
-		input  wire        ramteste_reset2_reset_req,                       //                                   .reset_req
-		input  wire [1:0]  ramteste_s2_address,                             //                        ramteste_s2.address
-		input  wire        ramteste_s2_chipselect,                          //                                   .chipselect
-		input  wire        ramteste_s2_clken,                               //                                   .clken
-		input  wire        ramteste_s2_write,                               //                                   .write
-		output wire [31:0] ramteste_s2_readdata,                            //                                   .readdata
-		input  wire [31:0] ramteste_s2_writedata,                           //                                   .writedata
-		input  wire [3:0]  ramteste_s2_byteenable,                          //                                   .byteenable
 		input  wire        reset_reset_n                                    //                              reset.reset_n
 	);
 
@@ -136,7 +126,7 @@ module soc_system (
 	wire          mm_interconnect_0_avmm_to_wishbone_bridge_avmm_chipselect;    // mm_interconnect_0:avmm_to_wishbone_bridge_avmm_chipselect -> avmm_to_wishbone_bridge:avmm_chipselect
 	wire   [15:0] mm_interconnect_0_avmm_to_wishbone_bridge_avmm_readdata;      // avmm_to_wishbone_bridge:avmm_readdata -> mm_interconnect_0:avmm_to_wishbone_bridge_avmm_readdata
 	wire          mm_interconnect_0_avmm_to_wishbone_bridge_avmm_waitrequest;   // avmm_to_wishbone_bridge:avmm_waitrequest -> mm_interconnect_0:avmm_to_wishbone_bridge_avmm_waitrequest
-	wire    [3:0] mm_interconnect_0_avmm_to_wishbone_bridge_avmm_address;       // mm_interconnect_0:avmm_to_wishbone_bridge_avmm_address -> avmm_to_wishbone_bridge:avmm_address
+	wire    [4:0] mm_interconnect_0_avmm_to_wishbone_bridge_avmm_address;       // mm_interconnect_0:avmm_to_wishbone_bridge_avmm_address -> avmm_to_wishbone_bridge:avmm_address
 	wire          mm_interconnect_0_avmm_to_wishbone_bridge_avmm_read;          // mm_interconnect_0:avmm_to_wishbone_bridge_avmm_read -> avmm_to_wishbone_bridge:avmm_read
 	wire    [1:0] mm_interconnect_0_avmm_to_wishbone_bridge_avmm_byteenable;    // mm_interconnect_0:avmm_to_wishbone_bridge_avmm_byteenable -> avmm_to_wishbone_bridge:avmm_byteenable
 	wire          mm_interconnect_0_avmm_to_wishbone_bridge_avmm_begintransfer; // mm_interconnect_0:avmm_to_wishbone_bridge_avmm_begintransfer -> avmm_to_wishbone_bridge:avmm_begintransfer
@@ -152,13 +142,6 @@ module soc_system (
 	wire          mm_interconnect_0_mm_bridge_0_s0_write;                       // mm_interconnect_0:mm_bridge_0_s0_write -> mm_bridge_0:s0_write
 	wire   [31:0] mm_interconnect_0_mm_bridge_0_s0_writedata;                   // mm_interconnect_0:mm_bridge_0_s0_writedata -> mm_bridge_0:s0_writedata
 	wire    [0:0] mm_interconnect_0_mm_bridge_0_s0_burstcount;                  // mm_interconnect_0:mm_bridge_0_s0_burstcount -> mm_bridge_0:s0_burstcount
-	wire          mm_interconnect_0_ramteste_s1_chipselect;                     // mm_interconnect_0:RAMteste_s1_chipselect -> RAMteste:chipselect
-	wire   [31:0] mm_interconnect_0_ramteste_s1_readdata;                       // RAMteste:readdata -> mm_interconnect_0:RAMteste_s1_readdata
-	wire    [1:0] mm_interconnect_0_ramteste_s1_address;                        // mm_interconnect_0:RAMteste_s1_address -> RAMteste:address
-	wire    [3:0] mm_interconnect_0_ramteste_s1_byteenable;                     // mm_interconnect_0:RAMteste_s1_byteenable -> RAMteste:byteenable
-	wire          mm_interconnect_0_ramteste_s1_write;                          // mm_interconnect_0:RAMteste_s1_write -> RAMteste:write
-	wire   [31:0] mm_interconnect_0_ramteste_s1_writedata;                      // mm_interconnect_0:RAMteste_s1_writedata -> RAMteste:writedata
-	wire          mm_interconnect_0_ramteste_s1_clken;                          // mm_interconnect_0:RAMteste_s1_clken -> RAMteste:clken
 	wire          mm_bridge_0_m0_waitrequest;                                   // mm_interconnect_1:mm_bridge_0_m0_waitrequest -> mm_bridge_0:m0_waitrequest
 	wire   [31:0] mm_bridge_0_m0_readdata;                                      // mm_interconnect_1:mm_bridge_0_m0_readdata -> mm_bridge_0:m0_readdata
 	wire          mm_bridge_0_m0_debugaccess;                                   // mm_bridge_0:m0_debugaccess -> mm_interconnect_1:mm_bridge_0_m0_debugaccess
@@ -275,8 +258,7 @@ module soc_system (
 	wire          irq_mapper_receiver1_irq;                                     // button_pio:irq -> [irq_mapper:receiver1_irq, irq_mapper_001:receiver1_irq]
 	wire          irq_mapper_receiver2_irq;                                     // dipsw_pio:irq -> [irq_mapper:receiver2_irq, irq_mapper_001:receiver2_irq]
 	wire          irq_mapper_receiver0_irq;                                     // jtag_uart:av_irq -> [irq_mapper:receiver0_irq, irq_mapper_001:receiver0_irq]
-	wire          rst_controller_reset_out_reset;                               // rst_controller:reset_out -> [ILC:reset_n, RAMteste:reset, avmm_to_wishbone_bridge:rst_i, button_pio:reset_n, dipsw_pio:reset_n, irq_mapper:reset, jtag_uart:rst_n, led_pio:reset_n, mm_bridge_0:reset, mm_interconnect_0:avmm_to_wishbone_bridge_reset_reset_bridge_in_reset_reset, mm_interconnect_1:fpga_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:mm_bridge_0_reset_reset_bridge_in_reset_reset, mm_interconnect_2:hps_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_2:hps_only_master_master_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_3:f2sdram_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_3:f2sdram_only_master_master_translator_reset_reset_bridge_in_reset_reset, rst_translator:in_reset, sysid_qsys:reset_n]
-	wire          rst_controller_reset_out_reset_req;                           // rst_controller:reset_req -> [RAMteste:reset_req, rst_translator:reset_req_in]
+	wire          rst_controller_reset_out_reset;                               // rst_controller:reset_out -> [ILC:reset_n, avmm_to_wishbone_bridge:rst_i, button_pio:reset_n, dipsw_pio:reset_n, irq_mapper:reset, jtag_uart:rst_n, led_pio:reset_n, mm_bridge_0:reset, mm_interconnect_0:avmm_to_wishbone_bridge_reset_reset_bridge_in_reset_reset, mm_interconnect_1:fpga_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:mm_bridge_0_reset_reset_bridge_in_reset_reset, mm_interconnect_2:hps_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_2:hps_only_master_master_translator_reset_reset_bridge_in_reset_reset, mm_interconnect_3:f2sdram_only_master_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_3:f2sdram_only_master_master_translator_reset_reset_bridge_in_reset_reset, sysid_qsys:reset_n]
 	wire          rst_controller_001_reset_out_reset;                           // rst_controller_001:reset_out -> [mm_interconnect_0:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_2:hps_0_f2h_axi_slave_agent_reset_sink_reset_bridge_in_reset_reset, mm_interconnect_3:hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset_reset]
 
 	interrupt_latency_counter #(
@@ -294,32 +276,8 @@ module soc_system (
 		.avmm_rddata (mm_interconnect_1_ilc_avalon_slave_readdata)   //             .readdata
 	);
 
-	soc_system_RAMteste ramteste (
-		.clk         (clk_clk),                                  //   clk1.clk
-		.address     (mm_interconnect_0_ramteste_s1_address),    //     s1.address
-		.clken       (mm_interconnect_0_ramteste_s1_clken),      //       .clken
-		.chipselect  (mm_interconnect_0_ramteste_s1_chipselect), //       .chipselect
-		.write       (mm_interconnect_0_ramteste_s1_write),      //       .write
-		.readdata    (mm_interconnect_0_ramteste_s1_readdata),   //       .readdata
-		.writedata   (mm_interconnect_0_ramteste_s1_writedata),  //       .writedata
-		.byteenable  (mm_interconnect_0_ramteste_s1_byteenable), //       .byteenable
-		.reset       (rst_controller_reset_out_reset),           // reset1.reset
-		.reset_req   (rst_controller_reset_out_reset_req),       //       .reset_req
-		.address2    (ramteste_s2_address),                      //     s2.address
-		.chipselect2 (ramteste_s2_chipselect),                   //       .chipselect
-		.clken2      (ramteste_s2_clken),                        //       .clken
-		.write2      (ramteste_s2_write),                        //       .write
-		.readdata2   (ramteste_s2_readdata),                     //       .readdata
-		.writedata2  (ramteste_s2_writedata),                    //       .writedata
-		.byteenable2 (ramteste_s2_byteenable),                   //       .byteenable
-		.clk2        (ramteste_clk2_clk),                        //   clk2.clk
-		.reset2      (ramteste_reset2_reset),                    // reset2.reset
-		.reset_req2  (ramteste_reset2_reset_req),                //       .reset_req
-		.freeze      (1'b0)                                      // (terminated)
-	);
-
 	avalon_to_wishone_bridge #(
-		.BUS_WIDTH  (4),
+		.BUS_WIDTH  (5),
 		.DATA_WIDTH (16),
 		.BE_WIDTH   (2)
 	) avmm_to_wishbone_bridge (
@@ -744,14 +702,7 @@ module soc_system (
 		.mm_bridge_0_s0_byteenable                                           (mm_interconnect_0_mm_bridge_0_s0_byteenable),                  //                                                              .byteenable
 		.mm_bridge_0_s0_readdatavalid                                        (mm_interconnect_0_mm_bridge_0_s0_readdatavalid),               //                                                              .readdatavalid
 		.mm_bridge_0_s0_waitrequest                                          (mm_interconnect_0_mm_bridge_0_s0_waitrequest),                 //                                                              .waitrequest
-		.mm_bridge_0_s0_debugaccess                                          (mm_interconnect_0_mm_bridge_0_s0_debugaccess),                 //                                                              .debugaccess
-		.RAMteste_s1_address                                                 (mm_interconnect_0_ramteste_s1_address),                        //                                                   RAMteste_s1.address
-		.RAMteste_s1_write                                                   (mm_interconnect_0_ramteste_s1_write),                          //                                                              .write
-		.RAMteste_s1_readdata                                                (mm_interconnect_0_ramteste_s1_readdata),                       //                                                              .readdata
-		.RAMteste_s1_writedata                                               (mm_interconnect_0_ramteste_s1_writedata),                      //                                                              .writedata
-		.RAMteste_s1_byteenable                                              (mm_interconnect_0_ramteste_s1_byteenable),                     //                                                              .byteenable
-		.RAMteste_s1_chipselect                                              (mm_interconnect_0_ramteste_s1_chipselect),                     //                                                              .chipselect
-		.RAMteste_s1_clken                                                   (mm_interconnect_0_ramteste_s1_clken)                           //                                                              .clken
+		.mm_bridge_0_s0_debugaccess                                          (mm_interconnect_0_mm_bridge_0_s0_debugaccess)                  //                                                              .debugaccess
 	);
 
 	soc_system_mm_interconnect_1 mm_interconnect_1 (
@@ -912,7 +863,7 @@ module soc_system (
 		.NUM_RESET_INPUTS          (1),
 		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
 		.SYNC_DEPTH                (2),
-		.RESET_REQUEST_PRESENT     (1),
+		.RESET_REQUEST_PRESENT     (0),
 		.RESET_REQ_WAIT_TIME       (1),
 		.MIN_RST_ASSERTION_TIME    (3),
 		.RESET_REQ_EARLY_DSRT_TIME (1),
@@ -934,41 +885,41 @@ module soc_system (
 		.USE_RESET_REQUEST_IN15    (0),
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller (
-		.reset_in0      (~reset_reset_n),                     // reset_in0.reset
-		.clk            (clk_clk),                            //       clk.clk
-		.reset_out      (rst_controller_reset_out_reset),     // reset_out.reset
-		.reset_req      (rst_controller_reset_out_reset_req), //          .reset_req
-		.reset_req_in0  (1'b0),                               // (terminated)
-		.reset_in1      (1'b0),                               // (terminated)
-		.reset_req_in1  (1'b0),                               // (terminated)
-		.reset_in2      (1'b0),                               // (terminated)
-		.reset_req_in2  (1'b0),                               // (terminated)
-		.reset_in3      (1'b0),                               // (terminated)
-		.reset_req_in3  (1'b0),                               // (terminated)
-		.reset_in4      (1'b0),                               // (terminated)
-		.reset_req_in4  (1'b0),                               // (terminated)
-		.reset_in5      (1'b0),                               // (terminated)
-		.reset_req_in5  (1'b0),                               // (terminated)
-		.reset_in6      (1'b0),                               // (terminated)
-		.reset_req_in6  (1'b0),                               // (terminated)
-		.reset_in7      (1'b0),                               // (terminated)
-		.reset_req_in7  (1'b0),                               // (terminated)
-		.reset_in8      (1'b0),                               // (terminated)
-		.reset_req_in8  (1'b0),                               // (terminated)
-		.reset_in9      (1'b0),                               // (terminated)
-		.reset_req_in9  (1'b0),                               // (terminated)
-		.reset_in10     (1'b0),                               // (terminated)
-		.reset_req_in10 (1'b0),                               // (terminated)
-		.reset_in11     (1'b0),                               // (terminated)
-		.reset_req_in11 (1'b0),                               // (terminated)
-		.reset_in12     (1'b0),                               // (terminated)
-		.reset_req_in12 (1'b0),                               // (terminated)
-		.reset_in13     (1'b0),                               // (terminated)
-		.reset_req_in13 (1'b0),                               // (terminated)
-		.reset_in14     (1'b0),                               // (terminated)
-		.reset_req_in14 (1'b0),                               // (terminated)
-		.reset_in15     (1'b0),                               // (terminated)
-		.reset_req_in15 (1'b0)                                // (terminated)
+		.reset_in0      (~reset_reset_n),                 // reset_in0.reset
+		.clk            (clk_clk),                        //       clk.clk
+		.reset_out      (rst_controller_reset_out_reset), // reset_out.reset
+		.reset_req      (),                               // (terminated)
+		.reset_req_in0  (1'b0),                           // (terminated)
+		.reset_in1      (1'b0),                           // (terminated)
+		.reset_req_in1  (1'b0),                           // (terminated)
+		.reset_in2      (1'b0),                           // (terminated)
+		.reset_req_in2  (1'b0),                           // (terminated)
+		.reset_in3      (1'b0),                           // (terminated)
+		.reset_req_in3  (1'b0),                           // (terminated)
+		.reset_in4      (1'b0),                           // (terminated)
+		.reset_req_in4  (1'b0),                           // (terminated)
+		.reset_in5      (1'b0),                           // (terminated)
+		.reset_req_in5  (1'b0),                           // (terminated)
+		.reset_in6      (1'b0),                           // (terminated)
+		.reset_req_in6  (1'b0),                           // (terminated)
+		.reset_in7      (1'b0),                           // (terminated)
+		.reset_req_in7  (1'b0),                           // (terminated)
+		.reset_in8      (1'b0),                           // (terminated)
+		.reset_req_in8  (1'b0),                           // (terminated)
+		.reset_in9      (1'b0),                           // (terminated)
+		.reset_req_in9  (1'b0),                           // (terminated)
+		.reset_in10     (1'b0),                           // (terminated)
+		.reset_req_in10 (1'b0),                           // (terminated)
+		.reset_in11     (1'b0),                           // (terminated)
+		.reset_req_in11 (1'b0),                           // (terminated)
+		.reset_in12     (1'b0),                           // (terminated)
+		.reset_req_in12 (1'b0),                           // (terminated)
+		.reset_in13     (1'b0),                           // (terminated)
+		.reset_req_in13 (1'b0),                           // (terminated)
+		.reset_in14     (1'b0),                           // (terminated)
+		.reset_req_in14 (1'b0),                           // (terminated)
+		.reset_in15     (1'b0),                           // (terminated)
+		.reset_req_in15 (1'b0)                            // (terminated)
 	);
 
 	altera_reset_controller #(

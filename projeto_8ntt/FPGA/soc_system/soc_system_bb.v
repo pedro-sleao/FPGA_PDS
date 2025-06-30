@@ -80,19 +80,9 @@ module soc_system (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	ramteste_clk2_clk,
-	ramteste_reset2_reset,
-	ramteste_reset2_reset_req,
-	ramteste_s2_address,
-	ramteste_s2_chipselect,
-	ramteste_s2_clken,
-	ramteste_s2_write,
-	ramteste_s2_readdata,
-	ramteste_s2_writedata,
-	ramteste_s2_byteenable,
 	reset_reset_n);	
 
-	output	[3:0]	avmm_to_wishbone_bridge_0_wishbone_address;
+	output	[4:0]	avmm_to_wishbone_bridge_0_wishbone_address;
 	input	[15:0]	avmm_to_wishbone_bridge_0_wishbone_datain;
 	output	[15:0]	avmm_to_wishbone_bridge_0_wishbone_dataout;
 	output		avmm_to_wishbone_bridge_0_wishbone_writeenable;
@@ -172,15 +162,5 @@ module soc_system (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	input		ramteste_clk2_clk;
-	input		ramteste_reset2_reset;
-	input		ramteste_reset2_reset_req;
-	input	[1:0]	ramteste_s2_address;
-	input		ramteste_s2_chipselect;
-	input		ramteste_s2_clken;
-	input		ramteste_s2_write;
-	output	[31:0]	ramteste_s2_readdata;
-	input	[31:0]	ramteste_s2_writedata;
-	input	[3:0]	ramteste_s2_byteenable;
 	input		reset_reset_n;
 endmodule

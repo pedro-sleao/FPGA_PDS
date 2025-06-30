@@ -102,19 +102,6 @@ wire                fpga_clk_50;
 assign fpga_clk_50 = FPGA_CLK1_50;
 assign stm_hw_events = {{15{1'b0}}, SW, fpga_led_internal, fpga_debounced_buttons};
 
-// test ram regs
-registrador
-	#(
-	.DATA_WIDTH(1)
-	)
-	control_reg_inst
-		(
-		.clk (FPGA_CLK1_50),
-		.reset (1'b1),
-		.data_i (control_reg_i_w),
-		.data_o (control_reg_o_w)
-		);
-
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -205,16 +192,6 @@ soc_system u0(
                 .hps_0_f2h_debug_reset_req_reset_n(~hps_debug_reset),        //      hps_0_f2h_debug_reset_req.reset_n
                 .hps_0_f2h_stm_hw_events_stm_hwevents(stm_hw_events),        //        hps_0_f2h_stm_hw_events.stm_hwevents
                 .hps_0_f2h_warm_reset_req_reset_n(~hps_warm_reset),          //       hps_0_f2h_warm_reset_req.reset_n
-                .ramteste_s2_address                   (ram_address),                   //                    ramteste_s2.address
-                .ramteste_s2_chipselect                (1),                //                               .chipselect
-                .ramteste_s2_clken                     (1),                     //                               .clken
-                .ramteste_s2_write                     (write_ram_en),                     //                               .write
-                .ramteste_s2_readdata                  (read_ram),                  //                               .readdata
-                .ramteste_s2_writedata                 (write_ram_data),                 //                               .writedata
-                .ramteste_s2_byteenable                (4'b1111),                //                               .byteenable
-                .ramteste_clk2_clk                     (FPGA_CLK1_50),                     //                  ramteste_clk2.clk
-                .ramteste_reset2_reset                 (),                 //                ramteste_reset2.reset
-                .ramteste_reset2_reset_req             (),              //                               .reset_req
                 .avmm_to_wishbone_bridge_0_wishbone_address      (address_w),      // avmm_to_wishbone_bridge_0_wishbone.address
                 .avmm_to_wishbone_bridge_0_wishbone_datain       (data_o_w),       //                                   .datain
                 .avmm_to_wishbone_bridge_0_wishbone_dataout      (data_i_w),      //                                   .dataout
@@ -290,8 +267,8 @@ end
 
 //###############################################################
 
-// Sinais da nova dual port ram
-wire     [3: 0]     address_w;
+// Sinais da dual port ram
+wire     [4: 0]     address_w;
 wire		[15: 0]	  data_i_w;
 wire		[15: 0]	  data_o_w;
 wire                  we_w;
@@ -324,17 +301,34 @@ dp_ram dp_ram_inst(
 somador_modular somador_inst(
 	 .a (A_w[0]),
 	 .b (A_w[1]),
-	 .q (3329),
-	 .y (Y_o_w)
+	 .y (Y_o_w[0])
+);
+
+// Teste do subtrator
+subtrator_modular subtrator_inst(
+	 .a (A_w[0]),
+	 .b (A_w[1]),
+	 .y (Y_o_w[1])
+);
+
+// Teste do multiplicador
+montgomery_mult_mod mmm_inst(
+	 .clk (FPGA_CLK1_50),
+	 .rst (hps_fpga_reset_n),
+	 .start (en_w),
+	 .a (A_w[0]),
+	 .b (A_w[1]),
+	 .result (Y_o_w[2]),
+	 .done (fim_o_w)
 );
 
 // Sinais da NTT
 wire  [11:0] 		A_w[7:0];
 wire        		en_w;
-wire	[11:0]	   Y_o_w;
+wire	[11:0]	   Y_o_w[7:0];
 wire				  	fim_o_w;
 
 assign LED[0] = en_w;
-assign LED[7:1] = A_w[0][6:0];
+assign LED[7:1] = Y_o_w[2][6:0];
 
 endmodule

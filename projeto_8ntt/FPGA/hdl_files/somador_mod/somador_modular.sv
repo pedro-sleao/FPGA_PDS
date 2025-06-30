@@ -1,7 +1,8 @@
 module somador_modular #(
-    parameter N = 12
+    parameter N = 12,
+	 parameter [N-1:0] q = 12'd3329
 )(
-    input  wire [N-1:0] a, b, q,
+    input  wire [N-1:0] a, b,
     output wire [N-1:0] y
 );
 

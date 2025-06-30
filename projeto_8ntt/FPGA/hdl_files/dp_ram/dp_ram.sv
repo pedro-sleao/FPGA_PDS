@@ -2,7 +2,7 @@
 
 module dp_ram
     #(      
-        parameter  BUS_WIDTH  = 4,
+        parameter  BUS_WIDTH  = 5,
         parameter  DATA_WIDTH = 16,
         parameter  BE_WIDTH   = 2
     )
@@ -23,7 +23,7 @@ module dp_ram
     //NTT:
 	 output [11:0] 			 A_o[7:0],
     output       				 en_o,
-    input  [11:0]           Y_i,
+    input  [11:0]           Y_i[16:9],
     input                   fim_i
     ); 
 
@@ -61,6 +61,6 @@ assign A_o = A;
 assign en_o = dpram_control_reg;
 assign data_o = (adr_i == 1'b0) ? {15'b0, dpram_control_reg} :
 					 (adr_i < 4'b1001) ? {4'b0, A[adr_i]} : 
-					 (adr_i == 4'b1001) ? {15'b0, 1'b1} : {4'b0, Y_i};
+					 (adr_i < 5'b10001) ? {4'b0, Y_i[adr_i]} : {15'b0, fim_i};
 					 
 endmodule

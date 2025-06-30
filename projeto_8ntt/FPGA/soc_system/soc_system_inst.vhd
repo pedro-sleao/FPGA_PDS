@@ -1,6 +1,6 @@
 	component soc_system is
 		port (
-			avmm_to_wishbone_bridge_0_wishbone_address      : out   std_logic_vector(3 downto 0);                     -- address
+			avmm_to_wishbone_bridge_0_wishbone_address      : out   std_logic_vector(4 downto 0);                     -- address
 			avmm_to_wishbone_bridge_0_wishbone_datain       : in    std_logic_vector(15 downto 0) := (others => 'X'); -- datain
 			avmm_to_wishbone_bridge_0_wishbone_dataout      : out   std_logic_vector(15 downto 0);                    -- dataout
 			avmm_to_wishbone_bridge_0_wishbone_writeenable  : out   std_logic;                                        -- writeenable
@@ -80,16 +80,6 @@
 			memory_mem_odt                                  : out   std_logic;                                        -- mem_odt
 			memory_mem_dm                                   : out   std_logic_vector(3 downto 0);                     -- mem_dm
 			memory_oct_rzqin                                : in    std_logic                     := 'X';             -- oct_rzqin
-			ramteste_clk2_clk                               : in    std_logic                     := 'X';             -- clk
-			ramteste_reset2_reset                           : in    std_logic                     := 'X';             -- reset
-			ramteste_reset2_reset_req                       : in    std_logic                     := 'X';             -- reset_req
-			ramteste_s2_address                             : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- address
-			ramteste_s2_chipselect                          : in    std_logic                     := 'X';             -- chipselect
-			ramteste_s2_clken                               : in    std_logic                     := 'X';             -- clken
-			ramteste_s2_write                               : in    std_logic                     := 'X';             -- write
-			ramteste_s2_readdata                            : out   std_logic_vector(31 downto 0);                    -- readdata
-			ramteste_s2_writedata                           : in    std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
-			ramteste_s2_byteenable                          : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- byteenable
 			reset_reset_n                                   : in    std_logic                     := 'X'              -- reset_n
 		);
 	end component soc_system;
@@ -176,16 +166,6 @@
 			memory_mem_odt                                  => CONNECTED_TO_memory_mem_odt,                                  --                                   .mem_odt
 			memory_mem_dm                                   => CONNECTED_TO_memory_mem_dm,                                   --                                   .mem_dm
 			memory_oct_rzqin                                => CONNECTED_TO_memory_oct_rzqin,                                --                                   .oct_rzqin
-			ramteste_clk2_clk                               => CONNECTED_TO_ramteste_clk2_clk,                               --                      ramteste_clk2.clk
-			ramteste_reset2_reset                           => CONNECTED_TO_ramteste_reset2_reset,                           --                    ramteste_reset2.reset
-			ramteste_reset2_reset_req                       => CONNECTED_TO_ramteste_reset2_reset_req,                       --                                   .reset_req
-			ramteste_s2_address                             => CONNECTED_TO_ramteste_s2_address,                             --                        ramteste_s2.address
-			ramteste_s2_chipselect                          => CONNECTED_TO_ramteste_s2_chipselect,                          --                                   .chipselect
-			ramteste_s2_clken                               => CONNECTED_TO_ramteste_s2_clken,                               --                                   .clken
-			ramteste_s2_write                               => CONNECTED_TO_ramteste_s2_write,                               --                                   .write
-			ramteste_s2_readdata                            => CONNECTED_TO_ramteste_s2_readdata,                            --                                   .readdata
-			ramteste_s2_writedata                           => CONNECTED_TO_ramteste_s2_writedata,                           --                                   .writedata
-			ramteste_s2_byteenable                          => CONNECTED_TO_ramteste_s2_byteenable,                          --                                   .byteenable
 			reset_reset_n                                   => CONNECTED_TO_reset_reset_n                                    --                              reset.reset_n
 		);
 

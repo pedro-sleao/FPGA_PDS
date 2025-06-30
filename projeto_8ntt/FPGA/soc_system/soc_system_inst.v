@@ -79,16 +79,6 @@
 		.memory_mem_odt                                  (<connected-to-memory_mem_odt>),                                  //                                   .mem_odt
 		.memory_mem_dm                                   (<connected-to-memory_mem_dm>),                                   //                                   .mem_dm
 		.memory_oct_rzqin                                (<connected-to-memory_oct_rzqin>),                                //                                   .oct_rzqin
-		.ramteste_clk2_clk                               (<connected-to-ramteste_clk2_clk>),                               //                      ramteste_clk2.clk
-		.ramteste_reset2_reset                           (<connected-to-ramteste_reset2_reset>),                           //                    ramteste_reset2.reset
-		.ramteste_reset2_reset_req                       (<connected-to-ramteste_reset2_reset_req>),                       //                                   .reset_req
-		.ramteste_s2_address                             (<connected-to-ramteste_s2_address>),                             //                        ramteste_s2.address
-		.ramteste_s2_chipselect                          (<connected-to-ramteste_s2_chipselect>),                          //                                   .chipselect
-		.ramteste_s2_clken                               (<connected-to-ramteste_s2_clken>),                               //                                   .clken
-		.ramteste_s2_write                               (<connected-to-ramteste_s2_write>),                               //                                   .write
-		.ramteste_s2_readdata                            (<connected-to-ramteste_s2_readdata>),                            //                                   .readdata
-		.ramteste_s2_writedata                           (<connected-to-ramteste_s2_writedata>),                           //                                   .writedata
-		.ramteste_s2_byteenable                          (<connected-to-ramteste_s2_byteenable>),                          //                                   .byteenable
 		.reset_reset_n                                   (<connected-to-reset_reset_n>)                                    //                              reset.reset_n
 	);
 
