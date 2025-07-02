@@ -88,7 +88,7 @@ int main()
 			}
 			else
 			{
-				mem_write = 0x0001 + i; // (0x0001)+i
+				mem_write = 1801 + i; // (0x0001)+i
 			}
 			
 			printf("Endereco: %X, Valor: %X\n", 4*i, mem_write);

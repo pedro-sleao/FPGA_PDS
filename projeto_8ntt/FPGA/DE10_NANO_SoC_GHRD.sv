@@ -297,28 +297,27 @@ dp_ram dp_ram_inst(
 	 .fim_i	 (fim_o_w)
 );
 
-// Teste do somador
-somador_modular somador_inst(
-	 .a (A_w[0]),
-	 .b (A_w[1]),
-	 .y (Y_o_w[0])
-);
-
-// Teste do subtrator
-subtrator_modular subtrator_inst(
-	 .a (A_w[0]),
-	 .b (A_w[1]),
-	 .y (Y_o_w[1])
+// Teste do ctbf
+ctbf ctbf_inst (
+    .clk (FPGA_CLK1_50),
+    .reset (hps_fpga_reset_n),
+    .start (en_w),
+    .in_1 (A_w[0]),
+    .in_2 (A_w[1]),
+    .twf (12'd4),
+    .out_1 (Y_o_w[0]),
+    .out_2 (Y_o_w[1]),
+    .done (Y_o_w[2][0])
 );
 
 // Teste do multiplicador
-montgomery_mult_mod mmm_inst(
+montgomery_mult_mod mmm_teste_inst(
 	 .clk (FPGA_CLK1_50),
 	 .rst (hps_fpga_reset_n),
 	 .start (en_w),
 	 .a (A_w[0]),
 	 .b (A_w[1]),
-	 .result (Y_o_w[2]),
+	 .result (Y_o_w[3]),
 	 .done (fim_o_w)
 );
 

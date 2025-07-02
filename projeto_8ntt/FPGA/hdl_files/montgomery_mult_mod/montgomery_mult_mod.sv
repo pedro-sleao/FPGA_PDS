@@ -9,74 +9,136 @@ module montgomery_mult_mod (
     input  clk,
     input  rst,
     input  start,
-    input  [k-1:0] a,
-    input  [k-1:0] b,
-    output [k-1:0] result,
+    input  [11:0] a,
+    input  [11:0] b,
+    output [11:0] result,
     output done
 );
 
 // INTERNAL REGS ###################### 
-reg [2*k-1:0] am, bm, t, u, cm;
-reg [k-1:0] c;
-reg done_reg;
+
+registrador
+	#(
+	.DATA_WIDTH(24)
+	)
+	reg_am_inst
+		(
+		.clk (clk),
+		.reset (rst),
+		.data_i (am_i_w),
+		.data_o (am_o_w)
+		);
+
+registrador
+	#(
+	.DATA_WIDTH(24)
+	)
+	reg_bm_inst
+		(
+		.clk (clk),
+		.reset (rst),
+		.data_i (bm_i_w),
+		.data_o (bm_o_w)
+		);
+
+registrador
+	#(
+	.DATA_WIDTH(24)
+	)
+	reg_t_inst
+		(
+		.clk (clk),
+		.reset (rst),
+		.data_i (t_i_w),
+		.data_o (t_o_w)
+		);
+		
+registrador
+	#(
+	.DATA_WIDTH(24)
+	)
+	reg_u_inst
+		(
+		.clk (clk),
+		.reset (rst),
+		.data_i (u_i_w),
+		.data_o (u_o_w)
+		);
+			
+registrador
+	#(
+	.DATA_WIDTH(24)
+	)
+	reg_cm_inst
+		(
+		.clk (clk),
+		.reset (rst),
+		.data_i (cm_i_w),
+		.data_o (cm_o_w)
+		);
+		
+registrador
+	#(
+	.DATA_WIDTH(12)
+	)
+	reg_c_inst
+		(
+		.clk (clk),
+		.reset (rst),
+		.data_i (c_i_w),
+		.data_o (c_o_w)
+		);
+		
+registrador
+	#(
+	.DATA_WIDTH(1)
+	)
+	reg_done_inst
+		(
+		.clk (clk),
+		.reset (rst),
+		.data_i (done_i_w),
+		.data_o (done_o_w)
+		);
 
 // INTERNAL SIGNALS ###################
 estado_mmm_t state, next_state;
+wire [23:0] am_i_w, am_o_w, bm_i_w, bm_o_w, t_i_w, t_o_w, u_i_w, u_o_w, cm_i_w, cm_o_w;
+wire [11:0] c_i_w, c_o_w;
+wire done_i_w, done_o_w;
 
-always @(posedge clk or negedge rst) begin
+always @(posedge clk, negedge rst) begin
 	if (rst == 1'b0)
-		state <= IDLE;
+		state <= ST_IDLE;
 	else
 		state <= next_state;
 end
 
-always @(*) begin
+always @(start, state) begin
 	case (state)
-		IDLE: next_state = start ? CONVERT : IDLE;
-		CONVERT: next_state = MULTIPLY;
-		MULTIPLY: next_state = END;
-		END: next_state = !start ? IDLE : END;
-		default: next_state = IDLE;
+		ST_IDLE: next_state <= start ? ST_CONVERT : ST_IDLE;
+		ST_CONVERT: next_state <= ST_MULTIPLY;
+		ST_MULTIPLY: next_state <= ST_CALC_COEFF;
+		ST_CALC_COEFF: next_state <= ST_REDUCE;
+		ST_REDUCE: next_state <= ST_CONVERT_BACK;
+		ST_CONVERT_BACK: next_state <= ST_END;
+		ST_END: next_state <= !start ? ST_IDLE : ST_END;
+		default: next_state <= ST_IDLE;
 	endcase
 end
 
-always @(posedge clk or negedge rst) begin
-	if (rst == 1'b0) begin
-		am <= 0;
-		bm <= 0;
-		t <= 0;
-		u <= 0;
-		cm <= 0;
-		c <= 0;
-		done_reg <= 0;
-	end else begin
-		case (state)
-			 IDLE: begin
-				  done_reg <= 0;
-			 end
-
-			 CONVERT: begin
-				  am = (a << k) % q;   // a * R mod q
-				  bm = (b << k) % q;   // b * R mod q
-			 end
-
-			 MULTIPLY: begin
-				  t = am * bm; 
-				  u = (t * q_invn_r) & (r - 1); // mod R
-				  cm = (t + u * q) >> k;
-			 end
-
-			 END: begin
-				  c <= (cm * r_inv) % q; // volta para domínio normal
-				  done_reg <= 1;
-			 end
-		endcase
-	end
-end
+// Logica de atualizacao dos registradores
+assign am_i_w = (state == ST_CONVERT) ? (a << k) % q : am_o_w;
+assign bm_i_w = (state == ST_CONVERT) ? (b << k) % q : bm_o_w;
+assign t_i_w = (state == ST_MULTIPLY) ? am_o_w * bm_o_w : t_o_w;
+assign u_i_w = (state == ST_CALC_COEFF) ? (t_o_w * q_invn_r) & (r - 1) : u_o_w;
+assign cm_i_w = (state == ST_REDUCE) ? (t_o_w + u_o_w * q) >> k : cm_o_w;
+assign c_i_w = (state == ST_END) ? (cm_o_w * r_inv) % q : c_o_w;
+assign done_i_w = (state == ST_END) ? 1 : 0;
 
 // Saidas
-assign done = done_reg;
-assign result = c;
+assign done = done_o_w;
+assign result = c_o_w;
 	 
 endmodule
 

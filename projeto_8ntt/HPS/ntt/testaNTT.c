@@ -30,16 +30,40 @@
 #include <netinet/in.h>
 #include <netdb.h>
 
+//Codigo da RAM
+#include "trataHEX.h"
+#include "ram.h"
+#include "peripheral.h"
+
 //Codigo da ntt
 #include "ntt.h"
 
 #include <unistd.h>
 
+//RAM
+#define PORT_1_MEM_BASE 0x40400
+#define PORT_1_ADDR_SPAN 18
+#define PORT_1_MEM_SPAN PORT_1_ADDR_SPAN*16
+#define CONTROL_ADDR 0
+#define NUMBERS_ADDR_BASE 1
+#define RESULT_ADDR_BASE 9
+#define STATUS_ADDR 17
 //UDP
 #define N_BUF    32
 
 int main() 
-{
+{	
+	//Codigo RAM:
+	uint32_t i;        //para iteracoes
+	uint32_t entrada;        //para iteracoes
+	uint32_t mem_read;
+	uint32_t mem_read_lsw;
+	uint32_t mem_read_msw;
+	uint32_t mem_write;
+	uint16_t mem_read16;
+	uint8_t  mem_read8;
+	peripheral dualPortRam;
+
 	//Codigo UDP:
 	int sock, length, n, flags;
 	socklen_t fromlen;
@@ -47,6 +71,7 @@ int main()
 	struct sockaddr_in from;
 	char buf[N_BUF];
     int16_t a[N];
+	int16_t fpga_result[N];
 	
 	sock=socket(AF_INET, SOCK_DGRAM, 0);
 	if (sock < 0) printf("Opening socket");
@@ -67,6 +92,9 @@ int main()
 	printf("* DATE           : 2025.1 - 25/06/2025\n");
 	printf("*---------------------------------------------------------------------\n");
 
+	printf("defining the access to the memory peripherals\n");
+	dualPortRam = peripheral_create(PORT_1_MEM_BASE, PORT_1_MEM_SPAN);
+
 	while(1)
 	{
 		printf("Aguardando pacote do PC...\n");
@@ -75,20 +103,26 @@ int main()
 
         split_str_to_ints16(buf, N, 4, a);
 
+		printf("Reset control bit\n");
+		peripheral_write16(dualPortRam, 0, 0x0);
+		
+		printf("Writing numbers...\n");
         for (int i = 0; i < N; i++) {
-            printf("%d ", a[i]);
+            peripheral_write16(dualPortRam, NUMBERS_ADDR_BASE + i, a[i]);
         }
-        printf("\n");
 
-        ct_ntt_8_3329(a);
+		printf("Set control bit\n");
+		peripheral_write16(dualPortRam, CONTROL_ADDR, 0x1);
+		
+		while(!peripheral_read16(dualPortRam,STATUS_ADDR));
 
-        for (int i = 0; i < N; i++) {
-            printf("%d ", a[i]);
-        }
-        printf("\n");
+		for (int i = 0; i < N; i++) {
+			fpga_result[i] = peripheral_read16(dualPortRam, RESULT_ADDR_BASE + i);
+			printf("Endereco: %X, Valor: %X\n", 4*i, fpga_result[i]);
+		}
 
         char result_buf[N_BUF];
-        ints16_to_str_fixed_width(a, N, 4, result_buf);
+        ints16_to_str_fixed_width(fpga_result, N, 4, result_buf);
 
 	   	if (n < 0) printf("recvfrom");
 	   	else

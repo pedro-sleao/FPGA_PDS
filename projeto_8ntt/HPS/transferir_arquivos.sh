@@ -1,6 +1,6 @@
 #!/bin/bash
 PASTA_LOCAL="./ntt"
-IP_DESTINO="root@10.42.0.234"
+IP_DESTINO="root@10.42.0.201"
 PASTA_DESTINO="projeto_8ntt"
 echo "Subindo Arquivos do Projeto - $PASTA_LOCAL:"
 scp $PASTA_LOCAL/* $IP_DESTINO:/home/root/$PASTA_DESTINO
