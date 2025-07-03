@@ -8,13 +8,16 @@ Created on Wed Jun 25 08:48:05 2025
 
 import socket
 
-serverAddressPort   = ("10.42.0.223", 9090) 
+serverAddressPort   = ("10.42.0.42", 9090) 
 
 # Create a UDP socket at client side
 UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
-polys = ["00100200300010203303010008802222", "00000001000200030004000500060007",
-         "00100020003000400050010020003222"]
+#polys = ["00100200300010203303010008802222", "00000001000200030004000500060007",
+#         "00100020003000400050010020003222"]
+
+polys = ["33003300330033003300330033003300"]
+
 
 for i in range(len(polys)):
     msgFromClient       = f"{polys[i]}"

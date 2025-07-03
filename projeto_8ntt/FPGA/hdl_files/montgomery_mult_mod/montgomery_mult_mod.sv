@@ -67,7 +67,7 @@ registrador
 			
 registrador
 	#(
-	.DATA_WIDTH(24)
+	.DATA_WIDTH(25)
 	)
 	reg_cm_inst
 		(
@@ -103,7 +103,8 @@ registrador
 
 // INTERNAL SIGNALS ###################
 estado_mmm_t state, next_state;
-wire [23:0] am_i_w, am_o_w, bm_i_w, bm_o_w, t_i_w, t_o_w, u_i_w, u_o_w, cm_i_w, cm_o_w;
+wire [23:0] am_i_w, am_o_w, bm_i_w, bm_o_w, t_i_w, t_o_w, u_i_w, u_o_w;
+wire [24:0] cm_i_w, cm_o_w;
 wire [11:0] c_i_w, c_o_w;
 wire done_i_w, done_o_w;
 
@@ -131,7 +132,7 @@ end
 assign am_i_w = (state == ST_CONVERT) ? (a << k) % q : am_o_w;
 assign bm_i_w = (state == ST_CONVERT) ? (b << k) % q : bm_o_w;
 assign t_i_w = (state == ST_MULTIPLY) ? am_o_w * bm_o_w : t_o_w;
-assign u_i_w = (state == ST_CALC_COEFF) ? (t_o_w * q_invn_r) & (r - 1) : u_o_w;
+assign u_i_w = (state == ST_CALC_COEFF) ? (t_o_w * q_invn_r) % r : u_o_w;
 assign cm_i_w = (state == ST_REDUCE) ? (t_o_w + u_o_w * q) >> k : cm_o_w;
 assign c_i_w = (state == ST_END) ? (cm_o_w * r_inv) % q : c_o_w;
 assign done_i_w = (state == ST_END) ? 1 : 0;

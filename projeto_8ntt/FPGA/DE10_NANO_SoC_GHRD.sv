@@ -308,6 +308,26 @@ ntt_8pt ntt_8pt_inst (
     .estagio2_done (estagio2_o_w)
 );
 
+//ntt_bf8 ntt_bf8_inst (
+//    .clk (FPGA_CLK1_50),
+//    .reset (hps_fpga_reset_n),
+//    .start (en_w),
+//    .in (A_w),
+//	 .twf (12'd1600),
+//    .out (Y_o_w),
+//    .done (estagio2_o_w)
+//);
+
+//montgomery_mult_mod mmm_inst(
+//	 .clk (FPGA_CLK1_50),
+//	 .rst (hps_fpga_reset_n),
+//	 .start (en_w),
+//	 .a (12'd1600),
+//	 .b (12'd2222),
+//	 .result (Y_o_w[0]),
+//	 .done (estagio2_o_w)
+//);	 
+
 // Sinais da NTT
 wire  [11:0] 		A_w[7:0];
 wire        		en_w;

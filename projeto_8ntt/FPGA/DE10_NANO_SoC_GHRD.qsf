@@ -492,4 +492,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE hdl_files/ntt/ctbf.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hdl_files/ntt/ntt_defines.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hdl_files/ntt/ntt_bf4.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hdl_files/ntt/ntt_8pt.sv
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (SystemVerilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
