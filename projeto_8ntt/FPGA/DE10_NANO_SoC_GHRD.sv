@@ -294,38 +294,25 @@ dp_ram dp_ram_inst(
 	 .A_o		 (A_w),
 	 .en_o	 (en_w),
 	 .Y_i		 (Y_o_w),
-	 .fim_i	 (fim_o_w)
+	 .fim_estagio1_i	 (estagio1_o_w),
+	 .fim_estagio2_i	 (estagio2_o_w)
 );
 
-// Teste do ctbf
-ctbf ctbf_inst (
+ntt_8pt ntt_8pt_inst (
     .clk (FPGA_CLK1_50),
     .reset (hps_fpga_reset_n),
     .start (en_w),
-    .in_1 (A_w[0]),
-    .in_2 (A_w[1]),
-    .twf (12'd4),
-    .out_1 (Y_o_w[0]),
-    .out_2 (Y_o_w[1]),
-    .done (Y_o_w[2][0])
-);
-
-// Teste do multiplicador
-montgomery_mult_mod mmm_teste_inst(
-	 .clk (FPGA_CLK1_50),
-	 .rst (hps_fpga_reset_n),
-	 .start (en_w),
-	 .a (A_w[0]),
-	 .b (A_w[1]),
-	 .result (Y_o_w[3]),
-	 .done (fim_o_w)
+    .in (A_w),
+    .out (Y_o_w),
+	 .estagio1_done (estagio1_o_w),
+    .estagio2_done (estagio2_o_w)
 );
 
 // Sinais da NTT
 wire  [11:0] 		A_w[7:0];
 wire        		en_w;
 wire	[11:0]	   Y_o_w[7:0];
-wire				  	fim_o_w;
+wire				  	estagio1_o_w, estagio2_o_w;
 
 assign LED[0] = en_w;
 assign LED[7:1] = Y_o_w[2][6:0];

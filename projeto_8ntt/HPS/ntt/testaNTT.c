@@ -47,7 +47,8 @@
 #define CONTROL_ADDR 0
 #define NUMBERS_ADDR_BASE 1
 #define RESULT_ADDR_BASE 9
-#define STATUS_ADDR 17
+#define STAGE1_STATUS_ADDR 17
+#define STAGE2_STATUS_ADDR 18
 //UDP
 #define N_BUF    32
 
@@ -114,7 +115,7 @@ int main()
 		printf("Set control bit\n");
 		peripheral_write16(dualPortRam, CONTROL_ADDR, 0x1);
 		
-		while(!peripheral_read16(dualPortRam,STATUS_ADDR));
+		while(!peripheral_read16(dualPortRam,STAGE2_STATUS_ADDR));
 
 		for (int i = 0; i < N; i++) {
 			fpga_result[i] = peripheral_read16(dualPortRam, RESULT_ADDR_BASE + i);

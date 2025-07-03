@@ -83,10 +83,12 @@ def mul_test(a, b):
     return c
 
 if __name__ == '__main__':
-    a = [i for i in range(n)]
+    a = [10, 200, 3000, 1020, 3303, 100, 880, 2222]
     b = [i for i in range(n)]
     A = ct_ntt_8_3329(a)
+    print(A)
     B = ct_ntt_8_3329(b)
+    print(B)
     
     C = multiply_ntt(A, B)
 

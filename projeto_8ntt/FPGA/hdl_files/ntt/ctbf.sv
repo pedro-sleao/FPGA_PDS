@@ -4,7 +4,6 @@ module ctbf
         parameter  Q = 3329
     )
     (
-    //Common signal:
     input clk, 
     input reset,
 	 input start,

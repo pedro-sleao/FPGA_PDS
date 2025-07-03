@@ -24,7 +24,8 @@ module dp_ram
 	 output [11:0] 			 A_o[7:0],
     output       				 en_o,
     input  [11:0]           Y_i[16:9],
-    input                   fim_i
+    input                   fim_estagio1_i,
+	 input                   fim_estagio2_i
     ); 
 
 // Registradores dos numeros e de controle
@@ -61,6 +62,7 @@ assign A_o = A;
 assign en_o = dpram_control_reg;
 assign data_o = (adr_i == 1'b0) ? {15'b0, dpram_control_reg} :
 					 (adr_i < 4'b1001) ? {4'b0, A[adr_i]} : 
-					 (adr_i < 5'b10001) ? {4'b0, Y_i[adr_i]} : {15'b0, fim_i};
+					 (adr_i < 5'b10001) ? {4'b0, Y_i[adr_i]} : 
+					 (adr_i == 5'b10001) ? {15'b0, fim_estagio1_i} : {15'b0, fim_estagio2_i};
 					 
 endmodule
