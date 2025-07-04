@@ -1,5 +1,5 @@
 Fitter report for DE10_NANO_SoC_GHRD
-Thu Jul  3 18:17:39 2025
+Fri Jul  4 11:08:28 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Thu Jul  3 18:17:39 2025       ;
+; Fitter Status                   ; Successful - Fri Jul  4 11:08:28 2025       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; DE10_NANO_SoC_GHRD                          ;
 ; Top-level Entity Name           ; DE10_NANO_SoC_GHRD                          ;
@@ -165,9 +165,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  10.5%      ;
-;     Processor 3            ;  10.0%      ;
-;     Processor 4            ;   9.7%      ;
+;     Processor 2            ;  10.6%      ;
+;     Processor 3            ;  10.1%      ;
+;     Processor 4            ;   9.8%      ;
 +----------------------------+-------------+
 
 
@@ -4458,10 +4458,10 @@ Info (176235): Finished register packing
     Extra Info (176218): Packed 64 registers into blocks of type Block RAM
     Extra Info (176218): Packed 242 registers into blocks of type DSP block
     Extra Info (176220): Created 40 register duplicates
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:18
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:20
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:14
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:15
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:13
@@ -4470,13 +4470,13 @@ Info (170195): Router estimated average interconnect usage is 5% of the availabl
     Info (170196): Router estimated peak interconnect usage is 26% of the available device resources in the region that extends from location X0_Y0 to location X10_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:20
-Info (11888): Total time spent on timing analysis during the Fitter is 16.95 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:22
+Info (11888): Total time spent on timing analysis during the Fitter is 17.77 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:28
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:31
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 7 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin HDMI_I2C_SCL has a permanently disabled output enable File: /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/DE10_NANO_SoC_GHRD.sv Line: 14
@@ -4569,10 +4569,10 @@ Info (169186): Following groups of pins have the same dynamic on-chip terminatio
         Info (169066): Type bi-directional pin HPS_DDR3_DQ[21] uses the SSTL-15 Class I I/O standard File: /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/DE10_NANO_SoC_GHRD.sv Line: 37
 Info (144001): Generated suppressed messages file /home/pedro/Documentos/FPGA_PDS/projeto_8ntt/FPGA/output_files/DE10_NANO_SoC_GHRD.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 135 warnings
-    Info: Peak virtual memory: 2803 megabytes
-    Info: Processing ended: Thu Jul  3 18:17:42 2025
-    Info: Elapsed time: 00:02:11
-    Info: Total CPU time (on all processors): 00:04:36
+    Info: Peak virtual memory: 2810 megabytes
+    Info: Processing ended: Fri Jul  4 11:08:31 2025
+    Info: Elapsed time: 00:02:19
+    Info: Total CPU time (on all processors): 00:04:50
 
 
 +----------------------------+
